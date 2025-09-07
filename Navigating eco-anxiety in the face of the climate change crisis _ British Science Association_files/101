@@ -1,0 +1,142 @@
+@import url("/clients/bsa/styles/main.min.css");
+/* @import url("//localhost:5757/main.css"); */
+
+/* AW 12.06.2017 Homebox 2 paragraph hide */
+.homeBox2 p {
+  display: none;
+}
+
+/* AW 12.06.2017 Table colour ZD 18627 */
+.postContent tr:nth-child(2n+1) {
+  background-color: white;
+}
+
+/* AW 13.06.2017 Image border radius ZD 18641 */
+.listContent img {
+  border-radius: 50px 5px 50px 5px;
+}
+
+.postContent img {
+  border-radius: 0px 0px 0px 0px;
+}
+
+/* unhide sidebar EK - 14/06/17 - #18643 */
+section.associated.associatedBox{
+    display: block;
+}
+
+/* hide pointer on inner carousel images - 23/06/17 */
+.homepage .carouselSlide:hover {
+    cursor: pointer;
+}
+
+.carouselSlide:hover {
+    cursor: initial;
+}
+
+/* sidebar images format correction - 23/06/17 */
+.postAside .widgetBanner {
+	border-radius:50px 5px 50px 5px;
+}
+
+/* EVA 24.5.18 change feeds */
+
+.homeFeed {
+    width: 100%;
+    margin:0;
+}
+
+.feedItem {
+    width: 48%;
+    margin-right: 4%;
+}
+
+.feedItem:nth-of-type(2n) {
+    margin-right: 0;
+}
+
+@media screen and (max-width: 1024px){
+
+ .feedItem{
+   width: 100%;
+   margin-right: 0;
+}
+  
+}
+
+/* DI 06.06.2015 Hide sidebar from individual page post ZD 29681 */
+.volunteerquiz .postAside {
+  display: none;
+}
+
+.volunteerquiz .postContent {
+  width: 100%;
+  padding-right: 0px;
+}
+
+
+@media print {
+  .postContent, .postContent * {
+    visibility: visible;
+  }
+  .postContent { 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body * {
+    visibility: visible;
+  }
+  #pageHeader, #pageFooterWrapper, .postFooterWrapper, .postFeedWrapper, .grecaptcha-badge {
+    display: none !important;
+  }
+}
+
+/* Font spacing fix */
+body {
+  letter-spacing: 1px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: normal;
+}
+
+input.text {
+  margin-bottom: 10px;
+}
+
+.postContent a:not(.cta-button),
+.listingIntro a:not(.cta-button),
+.headerTextSubsite a:not(.cta-button),
+.postAside a:not(.cta-button) {
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  body.appg-diversity-inclusion-stem .slick-track {
+    height: 100px;
+  }
+}
+
+/* IM-1181 */
+
+.homeIntroWrapper {
+  max-width: 1000px;
+  margin: 3em auto;
+}
+.homeIntro p {
+  line-height: 1.2em;
+  font-weight: bold;
+}
+.homeIntro .cta-button {
+	margin: auto;
+}
+
+/* 1515610 SA - add BlueSky social icon */
+ul.socialIcons li a.bluesky::before{
+    font-family: "font awesome 6 brands" !important;
+    content: "\e671" !important;
+}
+ul.socialIcons li a.bluesky {
+    background-color: #1b659d;
+}

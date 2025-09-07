@@ -1,0 +1,5245 @@
+﻿@import url('//fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('//fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url('/baseui/v2_4/css/jquery-ui.css');
+
+@font-face {
+    font-family: 'Genericons';
+    src: url('../fonts/genericons-regular-webfont.eot');
+    src: url('../fonts/genericons-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/genericons-regular-webfont.woff') format('woff'), url('../fonts/genericons-regular-webfont.ttf') format('truetype'), url('../fonts/genericons-regular-webfont.svg#genericonsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+* {
+    -webkit-transition: margin 500ms ease-out 50ms;
+    -moz-transition: margin 500ms ease-out 50ms;
+    -o-transition: margin 500ms ease-out 50ms;
+    transition: margin 500ms ease-out 50ms;
+}
+
+* {
+    -webkit-transition: color 500ms ease-out 50ms;
+    -moz-transition: color 500ms ease-out 50ms;
+    -o-transition: color 500ms ease-out 50ms;
+    transition: color 500ms ease-out 50ms;
+}
+
+* {
+    -webkit-transition: background-color 500ms ease-out 50ms;
+    -moz-transition: background-color 500ms ease-out 50ms;
+    -o-transition: background-color 500ms ease-out 50ms;
+    transition: background-color 500ms ease-out 50ms;
+}
+
+* {
+    -webkit-transition: border-color 500ms ease-out 50ms;
+    -moz-transition: border-color 500ms ease-out 50ms;
+    -o-transition: border-color 500ms ease-out 50ms;
+    transition: border-color 500ms ease-out 50ms;
+}
+
+html {
+    line-height: 1.4;
+    background-color: white;
+    font-size: 62.5%;
+    /* Sets up the Base 10 stuff */
+}
+
+body {
+    font-family: 'Lato', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    font-size: 1.8rem;
+}
+
+h1, h2, h3, h4, legend {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 40px;
+    font-size: 4rem;
+    margin-top: 0;
+    /*OVER RIDES NORMALIZE.CSS*/
+    margin-bottom: 20px;
+    /*OVER RIDES NORMALIZE.CSS*/
+}
+
+h2, .eventContent .associatedAppeal .appealTitle {
+    font-size: 30px;
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 24px;
+    font-size: 2.4rem;
+}
+
+h4, .deliveryAmount span, .promoCode label {
+    font-size: 18px;
+    font-size: 1.8rem;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+}
+
+q {
+    quotes: inherit;
+}
+
+    q:before {
+        content: open-quote;
+    }
+
+    q:after {
+        content: close-quote;
+    }
+
+/*OVER RIDES NORMALIZE.CSS*/
+.infoBox {
+    display: block;
+    background-color: #303030;
+}
+
+    .infoBox:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .infoBox:hover {
+        background-color: #303030;
+    }
+
+/*
+Final Platform Definitions
+*/
+body.login fieldset.signInForm .formQuestion,
+body.lobby-login fieldset > .formQuestion,
+body.lobby-login section > div > .formQuestion,
+body.signup fieldset > .formQuestion,
+body.signup fieldset > div > .formQuestion,
+body.pages-post fieldset > .formQuestion,
+body.pages-post fieldset > div > .formQuestion,
+body.my-details fieldset > .formQuestion,
+body.my-details fieldset > div > .formQuestion {
+    max-width: 600px;
+}
+
+header {
+    width: 100%;
+}
+
+    header:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+a {
+    text-decoration: none;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+    a:link, a:visited, .readMore {
+        color: #207A99;
+        cursor: pointer;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a.button {
+        word-wrap: inherit;
+        word-break: inherit;
+    }
+
+        .button, a.button:link, a.button:visited, button, #totaliserActions .buttonDonate, #totaliserActions .buttonFundraise, .commentAddImage, .carouselButtons li {
+            display: inline-block;
+            -webkit-border-radius: 6px 6px 6px 6px;
+            -moz-border-radius: 6px 6px 6px 6px;
+            -ms-border-radius: 6px 6px 6px 6px;
+            -o-border-radius: 6px 6px 6px 6px;
+            border-radius: 6px 6px 6px 6px;
+            border: none;
+            padding: 0.25rem 1rem;
+            background-color: orange;
+            color: #303030;
+            text-align: center;
+        }
+
+            .button:hover {
+                text-decoration: none;
+                background-color: #FFC55C;
+            }
+
+    a.buttonIcon:link, a.buttonIcon:visited {
+        display: inline-block;
+        font-family: 'Genericons';
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+        overflow: hidden;
+        -webkit-border-radius: 50% 50% 50% 50%;
+        -moz-border-radius: 50% 50% 50% 50%;
+        -ms-border-radius: 50% 50% 50% 50%;
+        -o-border-radius: 50% 50% 50% 50%;
+        border-radius: 50% 50% 50% 50%;
+        width: 23px;
+        height: 23px;
+        background-color: white;
+        color: orange;
+        text-align: center;
+    }
+
+        a.buttonIcon:link:before, a.buttonIcon:visited:before {
+            display: block;
+        }
+
+        a.buttonIcon:link:hover, a.buttonIcon:visited:hover {
+            text-decoration: none;
+            zoom: 1;
+            filter: alpha(opacity=75);
+            opacity: 0.75;
+        }
+
+        a.buttonIcon:link:hover, a.buttonIcon:visited:hover {
+            background-color: orange;
+            color: #303030;
+            text-decoration: none;
+        }
+
+.buttonIcon.remove:before {
+    content: "\f405";
+    padding: 1px 1px 0px 0px;
+}
+
+/*cross*/
+.buttonIcon.expand:before {
+    content: "\f502";
+    padding-top: 6px;
+}
+
+/*down arrow with fill*/
+.buttonIcon.decreaseQuantity:before {
+    content: "\f431";
+    padding: 0px 3px;
+}
+
+/*down arrow*/
+.buttonIcon.increaseQuantity:before {
+    content: "\f432";
+    padding: 0px 3px;
+}
+
+/*up arrow*/
+.facebook:before {
+    content: '\f203';
+    /*FB*/
+    color: #3751A0;
+}
+
+.twitter:before {
+    content: '\f202';
+    /*Twitter*/
+    color: #00AAE5;
+}
+
+.youTube:before {
+    content: '\f213';
+    /*You Tube*/
+    color: #DA0001;
+}
+
+.shareEmail:before {
+    content: '\f410';
+    /*envelope*/
+}
+
+.error {
+    color: crimson;
+}
+
+.success {
+    color: limegreen;
+}
+
+/*
+Tables
+*/
+table {
+    width: 100%;
+    margin-top: 40px;
+}
+
+caption {
+    text-align: left;
+}
+
+tbody {
+    background-color: ghostWhite;
+}
+
+td {
+    padding: 5px;
+}
+
+thead {
+    background-color: #f3f3f3;
+}
+
+a.skipLink {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+    a.skipLink:focus {
+        position: static;
+        width: auto;
+        height: auto;
+    }
+
+/*
+Forms
+*/
+fieldset {
+    margin-top: 20px;
+}
+
+legend {
+    font-size: 30px;
+    font-size: 3rem;
+    margin-bottom: 0;
+    border-bottom: 1px dotted orange;
+    width: 100%;
+}
+
+fieldset fieldset legend {
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-family: 'Lato', Arial, sans-serif;
+    border: none;
+}
+
+.formQuestion, .customFrom, .customForm {
+    display: block;
+    margin-top: 20px;
+}
+
+    .formQuestion label, .formQuestion span {
+        display: block;
+    }
+
+.donationComment {
+    clear: both;
+}
+
+select, textarea, input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], input[type="search"], input[type="url"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    -moz-box-sizing: border-box;
+    /*Over-writes normalize.css*/
+    -webkit-box-sizing: border-box;
+    /*Over-writes normalize.css*/
+    box-sizing: border-box;
+    /*Over-writes normalize.css*/
+    border: 1px solid gainsboro;
+    -webkit-border-radius: 2px 2px 2px 2px;
+    -moz-border-radius: 2px 2px 2px 2px;
+    -ms-border-radius: 2px 2px 2px 2px;
+    -o-border-radius: 2px 2px 2px 2px;
+    border-radius: 2px 2px 2px 2px;
+}
+
+    select:active, select:focus, textarea:active, textarea:focus, input[type="text"]:active, input[type="text"]:focus, input[type="email"]:active, input[type="email"]:focus, input[type="tel"]:active, input[type="tel"]:focus, input[type="number"]:active, input[type="number"]:focus, input[type="password"]:active, input[type="password"]:focus, input[type="search"]:active, input[type="search"]:focus, input[type="url"]:active, input[type="url"]:focus {
+        background-color: ghostWhite;
+    }
+
+.formQuestion .checkboxRadio, .formQuestion .checkboxRadio span, .formQuestion span span {
+    display: inline;
+}
+
+.formWrapper button, .formWrapper #totaliserActions .buttonDonate, #totaliserActions .formWrapper .buttonDonate, .formWrapper #totaliserActions .buttonFundraise, #totaliserActions .formWrapper .buttonFundraise, .formWrapper .commentAddImage, .formWrapper .carouselButtons li, .carouselButtons .formWrapper li {
+    margin-top: 10px;
+}
+
+button.formThirdStep {
+    margin-top: 10px;
+}
+
+.formSecondStep.postcodeLookUp {
+    margin-left: 0;
+    border: none;
+}
+
+.checkboxRadioGrid:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.checkboxRadioGrid .checkboxLabelPair, .checkboxRadioGrid .radioLabelPair {
+    float: left;
+    width: 33%;
+}
+
+.customForm .checkboxRadioGrid > label {
+    display: block;
+    clear: both;
+}
+
+.checkboxRadioGrid .checkboxRadioPair label, .checkboxRadioGrid .radioLabelPair label {
+    padding-right: 10px;
+}
+
+.formImage {
+    margin-top: 20px;
+}
+
+    .formImage img {
+        width: 100%;
+    }
+
+/*
+Site header
+*/
+.mainLogo {
+    float: left;
+    display: block;
+    width: 100px;
+    height: 66px;
+    margin-top: 20px;
+    text-indent: -999px;
+    background: no-repeat 0 0;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    /*PRINT BACKGROUND IMAGE FOR CHROME AND SAFARI*/
+}
+
+.mainCallToAction {
+    float: right;
+}
+
+.searchContainer {
+    float: right;
+}
+
+.siteSearch {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+#siteSearch {
+    width: 68%;
+}
+
+.headerFollowContainer {
+    float: right;
+    margin: 10px 0;
+    clear: right;
+}
+
+.headerFollow {
+    margin-right: 10px;
+}
+
+    .headerFollow a {
+        display: inline-block;
+        font-family: 'Genericons';
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+        overflow: hidden;
+        width: 23px;
+        height: 23px;
+    }
+
+        .headerFollow a:before {
+            display: block;
+        }
+
+        .headerFollow a:hover {
+            text-decoration: none;
+            zoom: 1;
+            filter: alpha(opacity=75);
+            opacity: 0.75;
+        }
+
+/*
+Admin bar
+*/
+.adminBar {
+    width: 100%;
+    padding: 1rem;
+    background-color: black;
+    font-family: "ff-din-web-pro", Helvetica, Arial, sans-serif;
+    color: white;
+    font-size: 14px;
+    font-size: 1.4rem;
+    text-align: right;
+}
+
+    .adminBar a:link, .adminBar a:visited {
+        color: orange;
+    }
+
+.adminBarEdit {
+    width: 100%;
+    padding: 1rem;
+    background: url("/manager/images/panel_bg.png") repeat;
+    font-family: "ff-din-web-pro", Helvetica, Arial, sans-serif;
+    color: white;
+    font-size: 14px;
+    font-size: 1.4rem;
+    -moz-box-shadow: 0 1px 10px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 1px 10px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 10px 3px rgba(0, 0, 0, 0.3);
+}
+
+    .adminBarEdit .content:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.editPostDetails {
+    width: 62%;
+    float: left;
+}
+
+.adminBarEdit dl {
+    margin-top: 0;
+}
+
+    .adminBarEdit dl:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.adminBarEdit dt {
+    float: left;
+    font-weight: bold;
+    clear: left;
+}
+
+.adminBarEdit dd {
+    float: left;
+    margin-left: 0.5rem;
+}
+
+.adminBarEdit fieldset {
+    float: left;
+    width: 38%;
+    margin-top: 0;
+    text-align: right;
+}
+
+.adminBarEdit .formQuestion {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 0;
+}
+
+.adminBarEdit button, .adminBarEdit #totaliserActions .buttonDonate, #totaliserActions .adminBarEdit .buttonDonate, .adminBarEdit #totaliserActions .buttonFundraise, #totaliserActions .adminBarEdit .buttonFundraise, .adminBarEdit .commentAddImage, .adminBarEdit .carouselButtons li, .carouselButtons .adminBarEdit li {
+    margin-top: 36px;
+    font-family: "ff-din-web-pro", Helvetica, Arial, sans-serif;
+}
+
+ul.tabs, .postContent ul.tabs, .postContent ul.commentsList {
+    list-style-type: none;
+}
+
+.fundraiserSponsor .formQuestion {
+    width: 30%;
+    float: left;
+    margin-right: 2%;
+}
+
+/*
+Menus
+*/
+.menuMainAlt {
+    display: none;
+    float: right;
+    text-decoration: none;
+    padding: 3px 10px;
+}
+
+.menuMain {
+    float: left;
+    background-color: gainsboro;
+    width: 100%;
+}
+
+    .menuMain ul {
+        padding: 0;
+        list-style: none;
+        /*display: block;*/
+    }
+
+        .menuMain ul:after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        .menuMain ul li {
+            padding: 0px;
+        }
+
+.topLevel {
+    position: relative;
+    width: 1000px;
+    margin: -2px auto 0 auto;
+}
+
+    .topLevel > li {
+        display: inline-block;
+        position: relative;
+    }
+
+.subMenu {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    /*	top: 100%; */
+    min-width: 180px;
+    background-color: #f4f4f4;
+    border: 1px solid #CCC;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 0 0 0 -1px;
+    padding: 0;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+    .subMenu ul {
+        left: 100%;
+        top: 0;
+    }
+
+        .subMenu ul li {
+            display: block;
+        }
+
+.menuMain ul li a {
+    display: block;
+    text-decoration: none;
+    color: #303030;
+}
+
+.menuMain ul li > a {
+    height: 40px;
+    padding: 8px 12px;
+}
+
+.menuMain ul.subMenu li > a {
+    height: inherit;
+}
+
+.menuMain ul.subMenu > li {
+    position: relative;
+}
+
+.menuMain ul ul > li a {
+    padding: 5px 15px 5px 10px;
+    background-color: #f4f4f4;
+    -webkit-transition: background-color 0.2s ease-out;
+    -moz-transition: background-color 0.2s ease-out;
+    -ms-transition: background-color 0.2s ease-out;
+    -o-transition: background-color 0.2s ease-out;
+    transition: background-color 0.2s ease-out;
+}
+
+    .menuMain ul ul > li a:hover {
+        background-color: orange;
+        color: #fff;
+    }
+
+.menuAdminContainer {
+    display: block;
+    width: 100%;
+}
+
+.topLevel > li.menuAdminAltItems {
+    display: none;
+}
+
+    .topLevel > li.menuAdminAltItems.menuAdminBasket {
+        display: none;
+    }
+
+/*
+FOOTER
+*/
+.featureFooter, .postFooter, .commentDetails, .associatedFooter {
+    font-size: 14px;
+    font-size: 1.4rem;
+    border-left: 1px solid gainsboro;
+    padding-left: 10px;
+}
+
+.postFooterWrapper h2, .postFooterWrapper .eventContent .associatedAppeal .appealTitle, .eventContent .associatedAppeal .postFooterWrapper .appealTitle {
+    font-size: 24px;
+    font-size: 2.4rem;
+}
+
+.postFooterWrapper .blogTitle {
+    display: block;
+}
+
+.pageFooterWrapper {
+    Width: 100%;
+    border-top: 1px solid gainsboro;
+}
+
+    .pageFooterWrapper:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.pageFooter {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+    .pageFooter:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.footerAddress, .footerTwitter, .footerLinks {
+    margin: 0 2.5% 20px 2.5%;
+    width: 28%;
+    float: left;
+    margin-top: 40px;
+}
+
+    .footerAddress:after, .footerTwitter:after, .footerLinks:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.footerOrgDetails {
+    width: 100%;
+    clear: both;
+    text-align: center;
+}
+
+    .footerOrgDetails:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.postFooterWrapper {
+    margin-top: 20px;
+}
+
+    .postFooterWrapper:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .postFooterWrapper div {
+        margin-top: 1em;
+    }
+
+.postFooterBlogImage {
+    width: 75px;
+    height: 75px;
+    float: left;
+    margin-right: 10px;
+}
+
+.commentCount strong {
+    color: #303030;
+}
+
+#bodyForm:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.relatedList, .footerDepartmentsList {
+    margin: 0;
+}
+
+    .relatedList li, .footerDepartmentsList li {
+        display: inline;
+    }
+
+        .relatedList li:after, .footerDepartmentsList li:after {
+            content: ", ";
+            padding-right: 10px;
+        }
+
+        .relatedList li:last-child:after, .footerDepartmentsList li:last-child:after {
+            content: " ";
+        }
+
+.footerProductReviews, .footerDepartments, .productFooter .addToBasket {
+    margin-top: 1em;
+}
+
+    .footerProductReviews .starRating {
+        margin: 0;
+    }
+
+.updatedDateWrapper {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+HOMEPAGE
+*/
+.contentContainer {
+    width: 100%;
+}
+
+.homeIntroWrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+    .homeIntroWrapper:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.homeIntro {
+    padding: 40px 0;
+    font-family: 'Open Sans';
+    font-size: 40px;
+    font-size: 4rem;
+    text-align: center;
+}
+
+    .homeIntro:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.homeIntro, .homeHeadlinesIntro, .homeFeedsIntro {
+    margin-bottom: 40px;
+}
+
+.homeFeaturesWrapper, .homeFeedsWrapper {
+    width: 100%;
+    background-color: #f3f3f3;
+}
+
+    .homeFeaturesWrapper:after, .homeFeedsWrapper:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.homeFeedsWrapper {
+    padding-bottom: 40px;
+    background-color: lightgrey;
+}
+
+.homeFeatures, .homeFeeds {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+    .homeFeatures:after, .homeFeeds:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.homeFeed .homeFeaturesTitle, .homeFeedsTitle {
+    padding-top: 40px;
+}
+
+.homeFeature, .homeFeed {
+    margin: 0 2.5% 20px 2.5%;
+    width: 28%;
+    float: left;
+    position: relative;
+}
+
+    .homeFeature:after, .homeFeed:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .homeFeature:after, .homeFeed:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .homeFeature:nth-child(4n+1), .homeFeed:nth-child(4n+1) {
+        clear: left;
+    }
+
+.homeFeature {
+    background-color: white;
+}
+
+    .homeFeature:hover {
+        cursor: pointer;
+        background-color: gainsboro;
+    }
+
+.homeFeatureDetailsWrapper {
+    margin: 0;
+    padding: 10px;
+}
+
+    .homeFeatureDetailsWrapper:hover {
+        margin: 0;
+    }
+
+.feedsTitle {
+    margin: 0;
+    padding: 10px;
+    background-color: ghostWhite;
+}
+
+.feedList, .feedActionWrapper {
+    margin: 0;
+    padding: 10px;
+    background-color: white;
+}
+
+.featureImage, .feedImage {
+    width: 100%;
+}
+
+.homeFeed .banner, .homeFeature .banner {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.feedItem {
+    margin-top: 20px;
+}
+
+.tweetText {
+    margin-top: 0;
+}
+
+.tweetDate {
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+
+.supporterWrapper {
+    padding-top: 2.5%;
+}
+
+    .supporterWrapper:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.homeFeedSupporters .feedItem {
+    margin: 0 2.5% 20px 2.5%;
+    width: 28%;
+    float: left;
+    position: relative;
+}
+
+    .homeFeedSupporters .feedItem:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .homeFeedSupporters .feedItem:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.supporterFundraiser .profilePic {
+    width: 100%;
+    margin-right: 0;
+}
+
+.feedTextWrapper {
+    position: relative;
+    width: 100%;
+    height: 183px;
+    padding: 10px;
+    overflow: hidden;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    float: left;
+    top: 0;
+}
+
+    .feedTextWrapper a {
+        color: orange;
+    }
+
+    .feedTextWrapper h4, .feedTextWrapper .deliveryAmount span, .deliveryAmount .feedTextWrapper span, .feedTextWrapper .promoCode label, .promoCode .feedTextWrapper label, .feedTextWrapper p {
+        display: inline;
+    }
+
+.supporterThanks {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.feedTextWrapper q {
+    display: block;
+    font-size: 14px;
+    font-size: 1.4rem;
+    margin-top: 10px;
+}
+
+/*
+Carousel
+*/
+.carousel {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+    .carousel ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .carousel canvas, .carousel img, .carousel video {
+        width: 100%;
+    }
+
+    /*
+Carousel img exceptions
+*/
+    .carousel .blogDetails img {
+        width: 90px;
+    }
+
+    .carousel .activeSlide {
+        border-bottom: 5px solid orange;
+    }
+
+.carouselSlide {
+    max-height: 510px;
+    overflow: hidden;
+}
+
+    .carouselSlide:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .carouselSlide iframe {
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+.carouselDetailWrapper {
+    display: block;
+    left: 50%;
+    width: 1000px;
+    margin-left: -500px;
+    position: absolute;
+    top: 10px;
+}
+
+    .carouselDetailWrapper:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.carouselSlideDetail {
+    background-color: rgba(0, 0, 0, 0.65);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 365px;
+    padding: 1%;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+.carouselSlideHeading {
+    margin-bottom: 10px;
+}
+
+    .carouselSlideHeading a, .carouselSlideHeading a:link, .carouselSlideHeading a:visited {
+        color: orange;
+    }
+
+.carouselSlideSummary {
+    color: white;
+}
+
+.carouselSlideReadMore {
+    color: orange;
+    cursor: pointer;
+}
+
+.carouselButtons {
+    width: 100%;
+    background-color: black;
+}
+
+    .carouselButtons:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .carouselButtons li {
+        font-size: 15px;
+        font-size: 1.5rem;
+        margin-right: 0;
+        width: 24%;
+        border-right: 1px solid grey;
+        background-color: black;
+        color: white;
+        -webkit-border-radius: 0 0 0 0;
+        -moz-border-radius: 0 0 0 0;
+        -ms-border-radius: 0 0 0 0;
+        -o-border-radius: 0 0 0 0;
+        border-radius: 0 0 0 0;
+        float: left;
+    }
+
+        .carouselButtons li a.button {
+            -webkit-border-radius: 0 0 0 0;
+            -moz-border-radius: 0 0 0 0;
+            -ms-border-radius: 0 0 0 0;
+            -o-border-radius: 0 0 0 0;
+            border-radius: 0 0 0 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+        }
+
+.carouselControls a {
+    position: absolute;
+    bottom: -10px;
+    display: inline-block;
+    font-family: 'Genericons';
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    width: 42px;
+    height: 45px;
+    color: orange;
+    font-size: 30px;
+    font-size: 3rem;
+}
+
+    .carouselControls a:before {
+        display: block;
+    }
+
+    .carouselControls a:hover {
+        text-decoration: none;
+        zoom: 1;
+        filter: alpha(opacity=75);
+        opacity: 0.75;
+    }
+
+        .carouselControls a:hover:before {
+            color: #FFC55C;
+        }
+
+.carouselControlPrev {
+    left: 1%;
+}
+
+.carouselControlNext {
+    right: 1%;
+}
+
+.carouselControlPrev:before {
+    content: '\f503';
+    /*arrow left*/
+}
+
+.carouselControlNext:before {
+    content: '\f501';
+    /*arrow right*/
+}
+
+.totaliserGivingPanel .selectDonationAmount > span {
+    color: white;
+}
+
+.donationAmount #donationAmountOther {
+    width: inherit;
+    margin-left: 20px;
+}
+
+.totaliserGivingPanel .donationAmount, .totaliserGivingPanel .selectDonationFrequency {
+    padding: 0;
+    margin-top: 10px;
+    background-color: #f3f3f3;
+    height: 30px;
+}
+
+    .totaliserGivingPanel .donationAmount:after, .totaliserGivingPanel .selectDonationFrequency:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .totaliserGivingPanel .selectDonationFrequency label {
+        float: left;
+        margin-left: 2px;
+    }
+
+.totaliserGivingPanel .donationAmountFigure, .totaliserGivingPanel .formQuestion.donationFrequency .checkboxRadio {
+    width: 82px;
+    font-size: 20px;
+    font-size: 2rem;
+}
+
+.totaliserGivingPanel .donationAmount input[type=radio], .totaliserGivingPanel .donationFrequency input[type=radio] {
+    top: 8px;
+    margin-right: 16px;
+}
+
+.totaliserGivingPanel .donationAmount input[type=number] {
+    float: left;
+    width: 48%;
+    height: 23px;
+    padding: 2px;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+.totaliserGivingPanel select {
+    float: left;
+    margin-left: 10px;
+    width: 40%;
+    padding: 0;
+}
+
+.totaliserPanel {
+    color: white;
+}
+
+    .totaliserPanel:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.totaliserBG {
+    background-color: gainsboro;
+    height: 100px;
+    width: 50px;
+    display: block;
+    position: relative;
+    padding: 0;
+    float: left;
+    margin-right: 20px;
+}
+
+.totaliserDone {
+    background-color: orange;
+    height: 50%;
+    display: block;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.totaliserPanel .targetWrapper, .totaliserPanel .raisedWrapper {
+    display: block;
+    float: left;
+    width: auto;
+}
+
+.totaliserGiftAid {
+    display: block;
+    font-weight: normal;
+    font-size: .65em;
+    opacity: .5;
+}
+
+.appealTotaliser .totaliserGiftAid {
+    float: left;
+}
+/*
+Banner (revised carousel with background images)
+*/
+.headerBanner {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+    .headerBanner:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .headerBanner ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .headerBanner li {
+        width: 100%;
+    }
+
+    .headerBanner .activeSlide {
+        border-bottom: 5px solid orange;
+    }
+
+.bannerSlides {
+    position: relative;
+    overflow: hidden;
+}
+
+    .bannerSlides:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.bannerSlide {
+    min-height: 475px;
+}
+
+.bannerSlideImage {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.bannerSlide.containsVideo {
+    max-width: inherit;
+}
+
+    .bannerSlide.containsVideo .embed-container {
+        padding-bottom: 45%;
+    }
+
+.videoSlideWrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.bannerSlide iframe {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.bannerDetailWrapper {
+    display: block;
+    left: 50%;
+    width: 1000px;
+    margin-left: -500px;
+    position: absolute;
+    top: 10px;
+}
+
+    .bannerDetailWrapper:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.bannerSlideDetail {
+    background-color: rgba(0, 0, 0, 0.65);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 365px;
+    padding: 1%;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+.bannerSlideHeading {
+    margin-bottom: 10px;
+}
+
+    .bannerSlideHeading a, .bannerSlideHeading a:link, .bannerSlideHeading a:visited {
+        color: orange;
+    }
+
+.bannerSlideSummary {
+    color: white;
+}
+
+.bannerSlideReadMore {
+    color: orange;
+    cursor: pointer;
+}
+
+.bannerSlideDetail.appeal .bannerSlideReadMore {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.bannerSlideDetail .totaliserPanel, .bannerSlideDetail .totaliserGivingPanel {
+    display: block;
+    margin-top: 10px;
+}
+
+.bannerSlideDetail .regularGivingNote {
+    display: block;
+    margin: 10px 0;
+}
+
+.bannerButtons {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: black;
+}
+
+    .bannerButtons:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .bannerButtons li {
+        font-size: 15px;
+        font-size: 1.5rem;
+        margin-right: 0;
+        width: 24%;
+        border-right: 1px solid grey;
+        background-color: black;
+        color: white;
+        -webkit-border-radius: 0 0 0 0;
+        -moz-border-radius: 0 0 0 0;
+        -ms-border-radius: 0 0 0 0;
+        -o-border-radius: 0 0 0 0;
+        border-radius: 0 0 0 0;
+        float: left;
+    }
+
+        .bannerButtons li a.button {
+            -webkit-border-radius: 0 0 0 0;
+            -moz-border-radius: 0 0 0 0;
+            -ms-border-radius: 0 0 0 0;
+            -o-border-radius: 0 0 0 0;
+            border-radius: 0 0 0 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+        }
+
+.bannerControls a {
+    position: absolute;
+    bottom: 50%;
+    display: inline-block;
+    font-family: 'Genericons';
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    width: 42px;
+    height: 45px;
+    margin-bottom: -20px;
+    color: orange;
+    font-size: 30px;
+    font-size: 3rem;
+}
+
+    .bannerControls a:before {
+        display: block;
+    }
+
+    .bannerControls a:hover {
+        text-decoration: none;
+        zoom: 1;
+        filter: alpha(opacity=75);
+        opacity: 0.75;
+    }
+
+        .bannerControls a:hover:before {
+            color: #FFC55C;
+        }
+
+.bannerControlPrev {
+    left: 1%;
+}
+
+.bannerControlNext {
+    right: 1%;
+}
+
+.bannerControlPrev:before {
+    content: '\f503';
+    /*arrow left*/
+}
+
+.bannerControlNext:before {
+    content: '\f501';
+    /*arrow right*/
+}
+
+.bannerControlPause, .bannerControlRotate {
+    top: 10px;
+    right: 1%;
+}
+
+    .bannerControlPause:before {
+        content: '\f448';
+        /*pause icon*/
+    }
+
+    .bannerControlRotate:before {
+        content: '\f452';
+        /*play icon*/
+    }
+
+/*
+Internal Pages
+*/
+.contentBlockWrapper, .tabs, .donorsList, .tabbedListing .headerContent, .appealActions, .appealInteractions, .findAFundraiser, .searchListingIntro, .menuSub ul, .pageHeader .headerContent, .formWrapper, .signInForm, .registerForm, .customForm, .passwordForm {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+    .contentBlockWrapper:after, .pageHeader .headerContent:after, .formWrapper:after, .signInForm:after, .registerForm:after, .customForm:after, .passwordForm:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.containsVideo {
+    max-width: 890px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headerContent:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.headerCarousel {
+    margin-top: 0;
+}
+
+/*OVER WRITES NORMALISE.CSS*/
+.post .headerContent li {
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.headerBanner {
+    width: 100%;
+}
+
+.headerText {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.listingIntro {
+    margin-bottom: 0;
+}
+
+.contentBlockWrapper, .tabs, .donorsList, .tabbedListing .headerContent, .appealActions, .appealInteractions, .findAFundraiser, .searchListingIntro, .menuSub ul {
+    margin-top: 20px;
+    padding-bottom: 40px;
+}
+
+.postBody {
+    float: left;
+    width: 72%;
+    margin-top: 40px;
+}
+
+.breadcrumbWrapper:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.breadcrumbItem {
+    float: left;
+    margin-right: 1%;
+    width: auto;
+    white-space: nowrap;
+}
+
+    .breadcrumbItem:before {
+        content: ">";
+        padding-right: 10%;
+    }
+
+    .breadcrumbItem:first-child:before {
+        content: "";
+        padding-right: 0;
+    }
+
+.postContent h2, .postContent .eventContent .associatedAppeal .appealTitle, .eventContent .associatedAppeal .postContent .appealTitle, .postContent h3, .postContent h4, .postContent .deliveryAmount span, .deliveryAmount .postContent span, .postContent .promoCode label, .promoCode .postContent label, .postContent h5 {
+    margin-top: 20px;
+}
+
+.postContent ol {
+    list-style-type: decimal;
+    padding-left: 25px;
+}
+
+.postContent ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+.postContent dt {
+    font-weight: bold;
+}
+
+.postContent dd {
+    margin-bottom: 10px;
+}
+
+.postContent figure {
+    padding: 10px;
+    background-color: ghostWhite;
+}
+
+.postContent figcaption {
+    padding: 10px;
+    background-color: #f3f3f3;
+}
+
+.postContent blockquote:before {
+    content: '\f106';
+    display: inline-block;
+    margin-right: 5px;
+    font-family: 'Genericons';
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.postContent blockquote:after {
+    content: '\f106';
+    margin-left: 5px;
+    font-family: 'Genericons';
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+}
+
+.postContent blockquote p {
+    display: inline;
+}
+
+.profilePic {
+    float: left;
+    margin-right: 10px;
+}
+
+.tabsWrapper {
+    border-bottom: 2px solid orange;
+}
+
+.tabs {
+    padding-bottom: 0;
+}
+
+    .tabs:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.tab {
+    float: left;
+    margin-right: 1rem;
+}
+
+    .tab a {
+        display: inline-block;
+        -webkit-border-radius: 6px 6px 0 0;
+        -moz-border-radius: 6px 6px 0 0;
+        -ms-border-radius: 6px 6px 0 0;
+        -o-border-radius: 6px 6px 0 0;
+        border-radius: 6px 6px 0 0;
+        border: none;
+        padding: 0.25rem 1rem;
+        background-color: #f3f3f3;
+        color: #303030;
+    }
+
+        .tab a:hover {
+            background-color: #FFC55C;
+        }
+
+    .tab.active a {
+        background-color: orange;
+    }
+
+        .tab.active a:hover {
+            background-color: #FFC55C;
+        }
+
+ul.shareList {
+    margin: 0;
+    padding-left: 0;
+}
+
+.shareList li {
+    float: left;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-right: 10px;
+}
+
+.shareList a {
+    display: inline-block;
+    font-family: 'Genericons';
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    width: 38px;
+    height: 38px;
+    font-size: 28px;
+    font-size: 2.8rem;
+}
+
+    .shareList a:before {
+        display: block;
+    }
+
+    .shareList a:hover {
+        text-decoration: none;
+        zoom: 1;
+        filter: alpha(opacity=75);
+        opacity: 0.75;
+    }
+
+.postAside {
+    float: left;
+    width: 28%;
+    padding-left: 40px;
+}
+
+.associated {
+    margin-top: 40px;
+}
+
+    .associated:first-child {
+        margin-top: 0;
+    }
+
+.widgetBanner {
+    width: 100%;
+}
+
+.associated img.fundraiserProfilePic {
+    width: inherit;
+}
+
+.associatedListing li {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted gainsboro;
+}
+
+    .associatedListing li:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.associatedListing h3 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 18px;
+    font-size: 1.8rem;
+}
+
+.breadcrumbList {
+    width: 100%;
+    display: block;
+}
+
+.associatedListing p {
+    margin: 0;
+    display: none;
+    height: 0;
+    visibility: hidden;
+}
+
+.associatedFundraising .associatedListing p {
+    margin: 0;
+    display: block;
+    height: auto;
+    visibility: visible;
+}
+
+.associatedBox {
+    padding: 10px;
+    background-color: #f3f3f3;
+    cursor: pointer;
+}
+
+.associatedTitle {
+    margin: 10px 0;
+}
+
+.associatedBox .postFooter {
+    border-color: white;
+}
+
+.associatedBox .shareWrapper {
+    display: none;
+}
+
+.yourInput {
+    margin-left: 40px;
+}
+
+.appealWidgetsWrapper .totaliserPanel {
+    color: #303030;
+}
+
+/*
+Comments
+*/
+.postComments {
+    margin-top: 40px;
+}
+
+.registerCommentsWrapper, .signInCommentsWrapper {
+    padding-top: 20px;
+}
+
+.productRating:after, .commentImageWrapper:after, .commentVideoWrapper:after, .comment:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.productRating .formQuestion {
+    margin-top: 0;
+}
+
+.productRating p {
+    margin-bottom: 0;
+}
+
+.ratingOption {
+    float: left;
+    width: 30px;
+    margin-right: 20px;
+}
+
+.commentImageWrapper, .commentVideoWrapper {
+    margin-top: 10px;
+}
+
+.uploadedImage, .uploadedVideo {
+    position: relative;
+}
+
+.uploadedImage, .uploadedVideo {
+    float: left;
+    margin-right: 10px;
+}
+
+.uploadedImage, .uploadedVideo {
+    width: 110px;
+}
+
+    .uploadedImage .commentImageThumbnail, .uploadedVideo .commentVideoThumbnail {
+        width: 100%;
+    }
+
+    .uploadedImage .remove, .uploadedVideo .remove {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+
+.addVideo {
+    float: left;
+    width: 80%;
+    margin-top: 0;
+}
+
+.addComment {
+    margin-top: 20px;
+}
+
+.postComments .addVideo {
+    width: 66%;
+}
+
+.comment, .commentOrganisation {
+    margin-top: 40px;
+}
+
+.commentContentWrapper {
+    width: 75%;
+    float: left;
+}
+
+.commentProfilePic {
+    margin-bottom: 10px;
+    width: 38px;
+}
+
+.commentContent img {
+    display: block;
+    max-width: 100%;
+    padding-bottom: 10px;
+}
+
+.commentContent iframe {
+    border: none;
+    padding-bottom: 10px;
+}
+
+.commentContent p {
+    margin-top: 0;
+}
+
+.commentDetails legend {
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    float: left;
+    margin-right: 20px;
+}
+
+/* always hide comments and post footer on accessibility page; */
+.accessibility #comments, .accessibility .postFooterWrapper {
+    display: none;
+}
+
+.accessibility tbody {
+    background-color: white;
+}
+
+.helpfulComment:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.helpfulOption {
+    float: left;
+    margin-top: 0;
+    margin-right: 20px;
+}
+
+.tabbedListingTitle {
+    display: none;
+}
+
+/*
+Create post forms
+*/
+.enterAddressMap span {
+    display: block;
+    margin-top: 10px;
+}
+
+.formQuestion.commentNotify.labelRadioPair input[type="radio"], .formQuestion.labelRadioPair input[type="radio"], .formQuestion.commentNotify.labelCheckBoxPair input[type="checkbox"], .formQuestion.labelCheckBoxPair input[type="checkbox"], .customForm input[type="checkbox"], .customForm input[type="radio"] {
+    float: left;
+    margin-right: 20px;
+    margin-left: 6px;
+    margin-top: 3px;
+}
+
+.customForm #formCaptcha2, #lblFormCaptcha2,
+#honeybeerit, #honeybeerit2,
+#honeybeeritn, #honeybeeritn2,
+#honeybeeritc, #honeybeeritc2,
+#honeybeeritu, #honeybeeritu2,
+#honeybeeritl, #honeybeeritl2,
+#honeybeeritf, #honeybeeritf2,
+#honeybeeritb, #honeybeeritb2,
+#honeybeeritr, #honeybeeritr2,
+#honeybeeritp, #honeybeeritp2 {
+    display: none;
+}
+
+.formQuestion.commentNotify.labelRadioPair label, .formQuestion.labelRadioPair label, .formQuestion.commentNotify.labelCheckBoxPair label, .formQuestion.labelCheckBoxPair label, .customForm label {
+    width: 90%;
+    display: inline-block;
+}
+
+.customForm label {
+    width: auto;
+}
+
+.contactYou p {
+    margin-top: 1em;
+}
+/*
+Donation and payment forms
+*/
+.formDonatePage legend {
+    background-color: #f3f3f3;
+    padding: 10px 20px;
+}
+
+.yourDonation, .paymentForm {
+    padding: 20px;
+    border: 2px solid #f3f3f3;
+}
+
+.donationForm {
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.donationFormItems {
+    width: 100%;
+    max-width: 740px;
+    float: left;
+}
+
+.donationForm .appealTotaliser {
+    width: 250px;
+    float: right;
+}
+
+.donationForm .totaliserPanel {
+    color: inherit;
+}
+
+.formQuestion.whyDonate {
+    margin-top: 20px;
+}
+
+.selectDonationAmount {
+    margin-top: 0;
+}
+
+.donationAmount, .donationFrequency, .signInWrapper {
+    position: relative;
+    background-color: #f3f3f3;
+    padding: 10px;
+}
+
+.donationPeriod {
+    padding: 0;
+}
+
+.signInWrapper, .registerWrapper {
+    margin-top: 20px;
+}
+
+.donationAmount.donationSelected, .quickGivingPanel .donationAmount.donationSelected, .donationFrequency.frequencySelected {
+    background-color: limegreen;
+}
+
+.donationAmount img, .donationFrequency img {
+    display: block;
+}
+
+.donationAmount .donationAmountThumbnail {
+    width: 82px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.donationAmount input[type=radio], .donationFrequency input[type=radio] {
+    position: absolute;
+    right: 0;
+    top: 26px;
+    margin-right: 26px;
+}
+
+.donationAmountFigure, .formQuestion.donationFrequency .checkboxRadio {
+    font-size: 40px;
+    font-size: 4rem;
+    display: inline-block;
+    width: 160px;
+    vertical-align: middle;
+    border-right: 1px solid gainsboro;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.donationAmountDescription {
+    vertical-align: middle;
+    padding-left: 20px;
+}
+
+.donationAmountOther:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.donationAmountOther label {
+    float: left;
+}
+
+.donationAmount input[type=number] {
+    float: right;
+    width: 59.5%;
+    height: 56px;
+    padding: 10px;
+}
+
+.selectDonationFrequency {
+    margin-top: 40px;
+}
+
+.donationFrequency label {
+    font-weight: bold;
+    width: 85%;
+    text-align: right;
+    float: left;
+}
+
+.formQuestion.donationFrequency:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.formQuestion.donationDate, .formQuestion.donationPeriod {
+    display: block;
+    width: 100%;
+    float: left;
+}
+
+    .formQuestion.donationDate select, .formQuestion.donationPeriod select {
+        width: 20%;
+    }
+
+.formQuestion.donationPeriod {
+    margin-left: 0px;
+    border-bottom: 1px solid #f3f3f3;
+    padding-bottom: 10px;
+}
+
+.formQuestion.donationGiftAid {
+    float: left;
+}
+
+.donationPeriod label {
+    font-weight: inherit;
+    width: 100%;
+    text-align: left;
+}
+
+.regularPayment {
+    float: right;
+    margin-right: 12px;
+}
+
+.totaliserGivingPanel .donationFrequency {
+    background-color: inherit;
+    padding: 4px;
+    color: white;
+    margin-top: 10px;
+}
+
+.donateContinue {
+    zoom: 1;
+    /*filter: alpha(opacity=50);
+	opacity: 0.5;*/
+    text-align: center;
+}
+
+.button.ghostContinue:hover {
+    background-color: orange;
+}
+
+.formDonatePage .signInWrapper {
+    margin-top: 40px;
+}
+
+.cardEndDate input {
+    width: 120px;
+}
+
+.signInWrapper:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.signInWrapper h2, .signInWrapper .eventContent .associatedAppeal .appealTitle, .eventContent .associatedAppeal .signInWrapper .appealTitle {
+    margin-bottom: 0;
+}
+
+.signInWrapper p {
+    float: left;
+    width: 95%;
+}
+
+.signInWrapper a.expand, .signInWrapper a.expand:link {
+    float: right;
+    margin-right: 20px;
+    color: white;
+    background-color: orange;
+}
+
+.donateMonthlyWrapper {
+    margin-top: 0;
+    padding-top: 0;
+    text-align: center;
+    font-size: 30px;
+    font-size: 3rem;
+}
+
+.formDonatePage .registerButtons {
+    text-align: center;
+    font-size: 24px;
+    font-size: 2.4rem;
+}
+
+.appealTotaliser:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.totaliserGraph {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+}
+
+.totaliserGraphTotal {
+    position: absolute;
+    z-index: 1;
+    height: 40px;
+    background-color: #303030;
+}
+
+.totaliserOverlay {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 40px;
+}
+
+.raisedWrapper {
+    width: 100%;
+    float: left;
+    text-align: right;
+}
+
+.targetWrapper {
+    width: 100%;
+    float: right;
+    text-align: right;
+}
+
+.totaliserFigure {
+    font-size: 3.5rem;
+    display: block;
+    float: left;
+    width: 100%;
+    margin: -12px 0 0px 0;
+    padding: 0;
+    text-align: left;
+}
+
+.appealFooterWrapper .totaliserFigure {
+    color: black;
+}
+
+.totaliserLabel {
+    display: block;
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    color: silver;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.donationGiftAidAmount {
+    font-weight: bold;
+}
+
+.appealContentWrapper:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.paymentContent .contentBlock {
+    float: none;
+    margin: 0 auto;
+}
+
+.basket {
+    border-bottom: 1px solid gainsboro;
+}
+
+.donationGiftAid {
+    min-height: 60px;
+    background: url('../Images/giftaid-logo60.png') no-repeat 0 0;
+}
+
+    .donationGiftAid:before {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+/*
+.donationGiftAid .checkboxRadio {
+	display: inline-block;
+	margin-top: 50px;
+	margin-left: 56px;
+}
+*/
+.giftAidStatement {
+    margin: 0 0 30px 30px;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+.donationGiftAid .checkboxRadio {
+    margin: 0;
+    padding: 75px 0 30px 50px;
+    display: block;
+    width: 100%;
+}
+
+.donationGiftAid input {
+    margin: 2px 0 0;
+    float: left;
+}
+
+.itemQuantity, label.donationAmount {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.quantityColumn input {
+    width: 48%;
+    text-align: center;
+}
+
+.priceColumn input {
+    text-align: center;
+}
+
+.basketAdditional h4 span, .total span {
+    display: inline-block;
+    float: right;
+}
+
+.deliveryAmount:after, .promoCode:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.deliveryAmount h4, .deliveryAmount .deliveryAmount span, .deliveryAmount .deliveryAmount span, .deliveryAmount .promoCode label, .promoCode .deliveryAmount label, .deliveryAmount .formQuestion {
+    float: left;
+    width: 31%;
+    margin-right: 20px;
+    margin-top: 0;
+}
+
+.deliveryAmount label {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.deliveryAmount span {
+    display: block;
+    float: right;
+    width: 32%;
+    text-align: right;
+    font-weight: bold;
+}
+
+.promoCode {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+    .promoCode label {
+        float: left;
+        margin-right: 20px;
+        font-weight: bold;
+        margin-top: 12px;
+    }
+
+    .promoCode input {
+        float: left;
+        width: 20%;
+        margin-right: 20px;
+    }
+
+.total {
+    margin-top: 20px;
+}
+
+.donationForm #privacySectionTitle {
+    margin-top: 20px;
+}
+/*
+Basket style
+*/
+.deliveryAmount h3 {
+    float: left;
+}
+
+.deliveryOptions {
+    float: right;
+    width: 40%;
+}
+
+.vat span {
+    float: right;
+}
+
+.deliveryOptions {
+    float: right;
+    width: 40%;
+}
+
+/*
+Listing Pages
+*/
+.listedFilters:after, .appliedFilters:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.listedFilters > li, .appliedFilters li {
+    float: left;
+    margin-left: 2.5%;
+}
+
+    .listedFilters > li:first-child, .appliedFilters li:first-child {
+        margin-left: 0;
+    }
+
+.listWrapper {
+    margin-top: 20px;
+}
+
+    .listWrapper:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.listContent, .postContent {
+    float: left;
+    width: 72%;
+}
+
+.memberProfilePic {
+    float: left;
+    margin-right: 10px;
+    width: 90px;
+}
+
+.listedPost, .listedSubsite {
+    margin-top: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid gainsboro;
+}
+
+    .listedPost:first-child, .listedSubsite:first-child {
+        margin-top: 0;
+    }
+
+.listingBanner {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.listFooter {
+    margin: 20px 0 40px;
+    clear: left;
+    text-align: center;
+}
+
+    .listFooter a {
+        margin-left: 10px;
+        padding-left: 10px;
+        border-left: 1px double gainsboro;
+    }
+
+        .listFooter a:first-child {
+            margin-left: 0;
+            border-left: none;
+        }
+
+/*
+FAQ Listing/Accordians
+*/
+.accordianHeader {
+    padding: 6px;
+    background-color: #f3f3f3;
+    margin-top: 20px;
+}
+
+    .accordianHeader h2, .accordianHeader .eventContent .associatedAppeal .appealTitle, .eventContent .associatedAppeal .accordianHeader .appealTitle {
+        margin: 0;
+        font-weight: normal;
+        font-size: 20px;
+        font-size: 2rem;
+    }
+
+.accordianHeaderText {
+    float: left;
+    width: 95%;
+}
+
+    .accordianHeaderText h2 a {
+        display: block;
+    }
+
+.accordianHeader p {
+    margin: 0;
+}
+
+.accordianHeader .expand {
+    float: right;
+}
+
+.accordianBody.contentBlockWrapper {
+    margin-top: 0;
+    padding: 10px;
+    background-color: ghostWhite;
+}
+
+.accordianBody .contentBlock {
+    float: none;
+    width: 100%;
+}
+
+/*
+Events
+*/
+.listedEvent {
+    margin: 0 2.5% 20px 2.5%;
+    width: 28%;
+    float: left;
+    height: 695px;
+    overflow: hidden;
+}
+
+    .listedEvent:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .listedEvent .readMore, .listedEvent .shareWrapper {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+.eventPostPage .contentBlock {
+    width: 100%;
+}
+
+.eventDetailsWrapper {
+    float: right;
+    width: 28%;
+    padding-left: 40px;
+}
+
+.eventDetails section {
+    margin-top: 20px;
+}
+
+.mapContainer iframe {
+    width: 100%;
+    border: none;
+}
+
+/*ALSO EFFECTS MAP ON CONTACT PAGE*/
+.eventKeyItem, .eventImageItem {
+    margin-top: 10px;
+}
+
+    .eventImageItem img {
+        width: 100%;
+    }
+
+.itemColumn {
+    width: 55%;
+}
+
+    .itemColumn:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.quantityColumn, .priceColumn, .enquiryColumn, .removeColumn, .spacingColumn {
+    width: 20%;
+    text-align: center;
+}
+
+.itemThumb {
+    float: left;
+    margin-right: 10px;
+}
+
+.itemName, .itemDescription {
+    margin: 0;
+}
+
+.quantity {
+    width: 50px;
+}
+
+.eventBooking {
+    margin-top: 20px;
+}
+
+.eventContent .associatedAppeal {
+    padding: 20px;
+    border: 1px solid gainsboro;
+}
+
+    .eventContent .associatedAppeal .appealTitle {
+        display: block;
+    }
+
+/*
+Appeals
+*/
+#topCurrent {
+    margin-top: 20px;
+}
+
+
+.tabbedListing .listWrapper {
+    float: left;
+    width: 72%;
+}
+
+
+.appealListingWidgetsWrapper {
+    float: left;
+    width: 28%;
+}
+
+.listedAppeal {
+    margin: 0 2.5% 20px 2.5%;
+    width: 28%;
+    float: left;
+}
+
+    .listedAppeal:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .listedAppeal .readMore {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+.listedTopFundraiser:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.listedTopFundraiser .fundraiserProfilePic {
+    width: 60px;
+}
+
+.donorDetails {
+    float: left;
+}
+
+.donorsList h3, .donorsList h4, .donorsList .deliveryAmount span, .deliveryAmount .donorsList span, .donorsList .promoCode label, .promoCode .donorsList label, .fundraiserDetails h3, .fundraiserDetails p {
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+.donorsList {
+    margin-bottom: 20px;
+    padding-bottom: 0;
+}
+
+    .donorsList:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.donorProfilePic {
+    width: 60px;
+}
+
+.donorsList span {
+    display: block;
+    float: left;
+    width: 100px;
+    margin-right: 20px;
+}
+
+.donorsList li {
+    width: 200px;
+    display: block;
+    float: left;
+    clear: none;
+    margin-right: 20px;
+}
+
+.listedTopFundraiser {
+    margin-top: 1rem;
+}
+
+.fundraiserSearchResults {
+    margin-top: 20px;
+}
+
+    .fundraiserSearchResults:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.appealInteractionsWrapper:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.appealActions:after, .appealInteractions:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.appealPostPage .contentBlock {
+    width: 100%;
+    float: none;
+}
+
+    .appealPostPage .contentBlock:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.appealContent {
+    float: left;
+    width: 72%;
+}
+
+.supportedAppeal {
+    float: right;
+    margin-top: 50px;
+}
+
+#totaliserActions .buttonReadMore {
+    display: none;
+    cursor: pointer;
+}
+
+#totaliserActions .buttonDonate {
+    float: right;
+    margin: 20px 0 20px 20px;
+}
+
+#totaliserActions .buttonFundraise {
+    float: left;
+    margin: 20px 0;
+}
+
+.commentAddImage {
+    padding: 0.25rem 1rem !important;
+    background-color: orange !important;
+    color: #303030 !important;
+    text-align: center !important;
+    height: inherit !important;
+    line-height: inherit !important;
+    width: inherit !important;
+    float: left;
+    margin: 6px 0;
+}
+
+/*
+Fundraisers
+*/
+
+.listedFundraiser {
+    margin: 0 2.5% 20px 2.5%;
+    width: 28%;
+    float: left;
+}
+
+    .listedFundraiser:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .listedFundraiser .readMore {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+.fundraiserContent:after, .fundraiserPictureWrapper:after, .shareWrapper:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.fundraiserContent .fundraiserProfilePic {
+    width: 220px;
+}
+
+.fundraiserPostPage .contentBlock {
+    width: 100%;
+    float: none;
+}
+
+    .fundraiserPostPage .contentBlock:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.fundraiserContent {
+    float: left;
+    width: 72%;
+}
+
+.fundraiserDetails p {
+    margin-top: 0;
+}
+
+.fundraiserName {
+    display: block;
+    text-align: right;
+}
+
+    .fundraiserName:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.fundraiserPictureWrapper .dashInstruction {
+    display: block;
+}
+
+.fundraiserPictureWrapper img {
+    float: right;
+}
+
+.inMemContent {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.inMemPostPage article {
+    width: 640px;
+    margin: 0 auto;
+}
+
+.inMemPostPage .carouselSlide {
+    max-height: inherit;
+    overflow: auto;
+}
+
+.inMemContent .carouselSlide img {
+    width: 100%;
+}
+
+.inAidOf img {
+    width: 100%;
+}
+
+.serviceDetails {
+    width: 100%;
+    padding: 8px;
+    background-color: whitesmoke;
+}
+
+.serviceLabel {
+    font-weight: bold;
+}
+
+    .serviceLabel:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.inAidOfTitle, .amountRaised {
+    font-weight: bold;
+}
+
+.findAMemorial, .inMemContent .appealActions {
+    margin-bottom: 20px;
+}
+
+.inMemContent {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+    .inMemContent h1, .inMemContent h2, .inMemContent h3, .inMemContent h4, .inMemContent legend, .inMemContent h2, .inMemContent .eventContent .associatedAppeal .appealTitle, .eventContent .associatedAppeal .inMemContent .appealTitle {
+        font-weight: normal;
+        text-align: center;
+    }
+
+
+.inMemoryCreateLocationDetails, .inMemoryModerateComments {
+    background-color: #f3f3f3;
+    padding: 0 20px 20px 20px;
+}
+
+span#rememberingName, span#rememberingName2, span#rememberingName3, span#rememberingName4 {
+    display: inline-block;
+}
+
+.inMemTotaliser .targetWrapper {
+    width: 60%;
+    float: left;
+    text-align: right;
+    margin: 0;
+}
+
+.inMemTotaliser .raisedWrapper {
+    width: 60%;
+    float: left;
+    text-align: right;
+    margin: 0;
+}
+
+.inMemTotaliser img {
+    width: 100%;
+}
+
+.listedInMemory, .listedPost.listedInMemory:first-child {
+    width: 31%;
+    float: left;
+    margin: 2% 1%;
+}
+
+    .listedInMemory .postFooterWrapper {
+        display: none;
+    }
+
+    .listedInMemory h2, .listedInMemory .eventContent .associatedAppeal .appealTitle, .eventContent .associatedAppeal .listedInMemory .appealTitle {
+        font-size: 2rem;
+    }
+
+.life {
+    color: silver;
+    display: block;
+    margin-top: 8px;
+    font-size: 1.6rem;
+}
+
+.editDetailsBtn, .saveDetailsBtn, .addRecipientsBtn, .sendRequestBtn {
+    margin-top: 10px;
+}
+
+.postContent.postCreateForm legend {
+    display: none;
+}
+
+.postContent.postCreateForm fieldset.registerForm legend, .postContent.postCreateForm fieldset.signInForm legend {
+    display: inherit;
+}
+
+.postContent.postCreateForm fieldset {
+    margin-top: 0;
+}
+
+    .postContent.postCreateForm fieldset.postCreateButtons, .postContent.postCreateForm fieldset.registerButtons {
+        margin-top: 20px;
+    }
+
+/*
+Find a fundraiser: Widget & tab
+*/
+.findAFundraiser .formQuestion, .findAMemorial .formQuestion {
+    width: 49%;
+    float: left;
+}
+
+.findAFundraiserEvent {
+    margin-left: 20px;
+}
+
+.findAFundraiserWidget h3 a {
+    display: block;
+}
+
+.fundraiserProfilePics li {
+    float: left;
+    margin-right: 0;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+    .fundraiserProfilePics li:nth-child(3n+1) {
+        margin-left: 0;
+    }
+
+.findAFundraiserWidget .fundraiserProfilePic {
+    margin-right: 0;
+    width: 73px;
+}
+
+.searchFundraisers {
+    clear: left;
+}
+
+.fundraiserSearchBtn, .findAFundraiserBtn {
+    margin-top: 10px;
+}
+
+/*
+Contact page
+*/
+.contactUsBody:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+
+.contactOfficeAddress {
+    margin-top: 20px;
+}
+
+.contactOfficeMap {
+    display: block;
+    margin-top: 10px;
+}
+
+.contactForm {
+    float: left;
+    margin-top: 20px;
+}
+
+.content.listContent.mapResultList {
+    width: 100%;
+    border-bottom: 1px solid grey;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+    .content.listContent.mapResultList:before {
+        content: "Results";
+        display: block;
+        padding-bottom: 8px;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        border-bottom: 1px solid grey;
+    }
+
+    .content.listContent.mapResultList .listingBanner {
+        width: 150px;
+        float: left;
+        margin-right: 20px;
+    }
+
+    .content.listContent.mapResultList .listedPostText {
+        font-size: 1.4rem;
+    }
+
+    .content.listContent.mapResultList .postFooterWrapper {
+        display: none;
+    }
+
+    .content.listContent.mapResultList h2, .content.listContent.mapResultList .eventContent .associatedAppeal .appealTitle, .eventContent .associatedAppeal .content.listContent.mapResultList .appealTitle {
+        font-size: 20px;
+        font-size: 2rem;
+    }
+
+    .content.listContent.mapResultList .listedPost:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+/*
+Shop styles
+*/
+.shopLandingPage .post:after, .shopListingWrapper:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.departments {
+    float: left;
+    width: 28%;
+    padding-right: 40px;
+}
+
+.hierarchyList li {
+    margin-top: 10px;
+}
+
+.hierarchyItem {
+    display: block;
+    padding: 10px;
+    background-color: ghostWhite;
+}
+
+.secondLevel, .thirdLevel {
+    padding-right: 20px;
+    margin: 0 0 20px 0;
+}
+
+.shopLandingContent {
+    float: left;
+    width: 62%;
+}
+
+.productListOrder {
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+    .productListOrder:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .productListOrder li {
+        float: left;
+        margin-left: 10px;
+        padding-left: 10px;
+        border-left: 1px double gainsboro;
+    }
+
+        .productListOrder li:first-child {
+            margin-left: 0;
+            padding-left: 0;
+            border-left: none;
+        }
+
+    .productListOrder a.selected, .productListOrder a.selected:link, .productListOrder a.selected:visited {
+        color: #303030;
+    }
+
+.listedProduct:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.listedProduct .productBanner {
+    width: 24%;
+    float: left;
+}
+
+.listedProductText {
+    width: 76%;
+    float: left;
+    padding-left: 10px;
+}
+
+.starRating li {
+    display: inline-block;
+    font-family: 'Genericons';
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    width: 29px;
+    height: 30px;
+    font-size: 3rem;
+}
+
+    .starRating li:before {
+        display: block;
+    }
+
+    .starRating li:hover {
+        text-decoration: none;
+        zoom: 1;
+        filter: alpha(opacity=75);
+        opacity: 0.75;
+    }
+
+    .starRating li:before {
+        content: "\f408";
+        /*star*/
+        padding: 1px 1px 0px 0px;
+    }
+
+    .starRating li.active:before {
+        color: goldenRod;
+    }
+
+.productPostPage article {
+    margin-top: 20px;
+}
+
+    .productPostPage article:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.productBannerWrapper {
+    width: 38%;
+    float: left;
+    padding-right: 20px;
+}
+
+.productBannerList li {
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+    .productBannerList li:nth-child(3n+1) {
+        margin-left: 0;
+    }
+
+.productPurchase:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.formQuestion.productQuantity {
+    float: left;
+    width: 38%;
+    margin-top: 0;
+}
+
+.productActions {
+    float: left;
+    width: 62%;
+    padding-left: 20px;
+    padding-top: 33px;
+    padding-top: 3.3rem;
+    text-align: left;
+}
+
+.productDescription {
+    margin-top: 20px;
+}
+
+.productText .productFooter .addToBasket {
+    display: none;
+}
+
+.productReviews {
+    margin-top: 40px;
+}
+
+.productOut {
+    color: goldenRod;
+}
+
+/*
+Search results
+*/
+
+.searchPageContainer {
+    float: none;
+}
+
+    .searchPageContainer:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .searchPageContainer input {
+        float: left;
+        width: 80%;
+        margin-right: 10px;
+    }
+
+    .searchPageContainer button, .searchPageContainer #totaliserActions .buttonDonate, #totaliserActions .searchPageContainer .buttonDonate, .searchPageContainer #totaliserActions .buttonFundraise, #totaliserActions .searchPageContainer .buttonFundraise, .searchPageContainer .commentAddImage, .searchPageContainer .carouselButtons li, .carouselButtons .searchPageContainer li {
+        width: 17%;
+        padding: 9px 0;
+        margin-top: 4px;
+    }
+
+.numberSearchResults {
+    font-size: 24px;
+    font-size: 2.4rem;
+}
+
+    .numberSearchResults span {
+        font-weight: bold;
+    }
+
+.noSearchResults {
+    padding: 10px;
+    text-align: center;
+    border: 2px solid goldenRod;
+}
+
+.appliedFilters h3, .appliedFilters ul {
+    float: left;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+    .appliedFilters h3:after {
+        content: ":";
+    }
+
+.appliedFilters .filter {
+    display: block;
+    float: left;
+    margin-left: 10px;
+    padding: 2px 10px;
+    color: white;
+    line-height: 2;
+    background-color: #207A99;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -ms-border-radius: 20px 20px 20px 20px;
+    -o-border-radius: 20px 20px 20px 20px;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.filter .buttonIcon {
+    position: relative;
+    top: 5px;
+    margin-left: 10px;
+    line-height: 1.4;
+}
+
+.searchListingPage .listedPost {
+    float: none;
+    width: 100%;
+    height: inherit;
+    margin: 40px 0 0 0;
+    overflow: visible;
+}
+
+.searchListingPage .postFooter * {
+    display: none;
+}
+
+/*
+SITE MAP
+*/
+.siteMapPage .hierarchyList {
+    font-size: 24px;
+    font-size: 2.4rem;
+}
+
+.siteMapPage .secondLevel {
+    font-size: 18px;
+    font-size: 1.8rem;
+}
+
+.siteMapPage .thirdLevel {
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+/*Responsive Video*/
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .embed-container iframe, .embed-container object, .embed-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+.menuAdminContainer {
+    background-color: #333;
+    height: 32px;
+    color: white;
+}
+
+    .menuAdminContainer:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+ul#menuAdmin {
+    width: 1000px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0px;
+    text-align: right;
+}
+
+    ul#menuAdmin li {
+        display: inline-block;
+        text-align: left;
+    }
+
+        ul#menuAdmin li a {
+            display: block;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: white;
+            border-left: 1px dotted #666;
+            font-size: 14px;
+            font-size: 1.4rem;
+        }
+
+        ul#menuAdmin li:first-child a {
+            border-left: none;
+        }
+
+        ul#menuAdmin li a:hover {
+            background-color: #ccc;
+        }
+
+.listedFilters > li {
+    display: block;
+    background-color: red;
+    height: 20px;
+    overflow: hidden;
+    float: left;
+    margin-right: 20px;
+    width: auto;
+}
+
+    .listedFilters > li:hover {
+        height: auto;
+    }
+
+.listedFilters li li {
+    background-color: green;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.eventPostPage .postFeedWrapper {
+    display: none;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
+
+.contentBlockWrapper.appealActionsWrapper {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.content.appealActions {
+    padding: 0;
+}
+
+    .content.appealActions .donate {
+        margin-right: 8px;
+    }
+
+.quickGivingPanel {
+    display: block;
+    width: 100%;
+    background-color: gainsboro;
+    padding: 8px;
+}
+
+    .quickGivingPanel .selectDonationAmount span {
+        display: block;
+    }
+
+    .quickGivingPanel .formQuestion {
+        display: block;
+        float: left;
+        width: 22%;
+        margin-right: 2%;
+        height: 140px;
+        margin-bottom: 10px;
+    }
+
+        .quickGivingPanel .formQuestion.donationAmountOther {
+            height: auto;
+        }
+
+    .quickGivingPanel .donationAmount, .quickGivingPanel .selectDonationFrequency {
+        position: relative;
+        background-color: #f3f3f3;
+        padding: 10px;
+        margin-top: inherit;
+    }
+
+    .quickGivingPanel .formQuestion.selectDonationFrequency {
+        margin-right: 0;
+    }
+
+    .quickGivingPanel .donateBtn {
+        width: 40%;
+        display: block;
+        float: right;
+    }
+
+    .quickGivingPanel .donationAmount input[type=radio], .quickGivingPanel .donationFrequency input[type=radio] {
+        position: relative;
+        right: inherit;
+        top: inherit;
+        margin-right: inherit;
+    }
+
+    .quickGivingPanel .donationAmountFigure, .quickGivingPanel .formQuestion.donationFrequency .checkboxRadio {
+        font-size: inherit;
+        font-size: inherit;
+        display: inherit;
+        width: inherit;
+        vertical-align: inherit;
+        border-right: inherit;
+        padding-right: inherit;
+        text-align: inherit;
+    }
+
+    .quickGivingPanel .donationAmount #donationAmountOther {
+        width: 100%;
+        margin-left: inherit;
+        float: inherit;
+        height: 35px;
+        padding: 5px;
+    }
+
+    .quickGivingPanel img {
+        display: block;
+        width: 240px;
+    }
+
+.footerBox1 {
+    float: left;
+    margin-left: 20px;
+}
+
+.preloader {
+    display: block;
+    background: url("/BaseUI/v2_4/Images/preloader-w8-line-black.gif") no-repeat top left;
+    width: 220px;
+    height: 20px;
+}
+
+.page-loader {
+    padding: 50px;
+    min-height: 1054px;
+}
+
+.awaitingApproval {
+    opacity: 0.3;
+}
+
+.donationFrequency {
+    background-color: transparent;
+}
+
+    .donationFrequency:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.commentsList li {
+    padding-bottom: 8px;
+    border-bottom: 1px dotted silver;
+    margin-bottom: 8px;
+}
+
+    .commentsList li:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.commentDonationAmount {
+    /*display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 100px;
+	height: 100px; SUGGESTED STYLES FOR CIRCULAR DISPLAY*/
+    float: right;
+    margin-right: 10px;
+    padding: 8px;
+    text-align: center;
+    background-color: gainsboro;
+    -webkit-border-radius: 50% 50% 50% 50%;
+    -moz-border-radius: 50% 50% 50% 50%;
+    -ms-border-radius: 50% 50% 50% 50%;
+    -o-border-radius: 50% 50% 50% 50%;
+    border-radius: 50% 50% 50% 50%;
+}
+
+.commentDetails {
+    border: none;
+    padding: 0;
+}
+
+.commentHelpfulness {
+    display: none;
+}
+
+.homeFeature .quickGivingPanel .donationAmount, .homeFeature .quickGivingPanel .selectDonationFrequency {
+    width: 100%;
+}
+
+.post_collapseContent {
+    display: none;
+}
+
+.termsConditionsDetails {
+    background-color: gainsboro;
+    padding: 8px;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+.terms-and-conditions-wrapper fieldset#submit-button-wrapper {
+    text-align: right;
+}
+
+.terms-and-conditions-wrapper p {
+    margin-top: 8px;
+    padding-right: 8px;
+    text-align: right;
+}
+
+/*
+SUBSITES
+*/
+.subsite .headerText, .subsite .homeFeedsWrapper {
+    padding-top: 20px;
+}
+
+.menuSub {
+    border-bottom: 2px solid orange;
+}
+
+    .menuSub ul {
+        padding-bottom: 0;
+    }
+
+        .menuSub ul:after {
+            content: " ";
+            /* Older browser do not support empty content so input a space */
+            visibility: hidden;
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+        .menuSub ul li.level1 {
+            float: left;
+            margin-right: 1rem;
+        }
+
+            .menuSub ul li.level1 a {
+                display: inline-block;
+                -webkit-border-radius: 6px 6px 0 0;
+                -moz-border-radius: 6px 6px 0 0;
+                -ms-border-radius: 6px 6px 0 0;
+                -o-border-radius: 6px 6px 0 0;
+                border-radius: 6px 6px 0 0;
+                border: none;
+                padding: 0.25rem 1rem;
+                background-color: #f3f3f3;
+                color: #303030;
+            }
+
+                .menuSub ul li.level1 a:hover {
+                    background-color: #FFC55C;
+                }
+
+            .menuSub ul li.level1.active a {
+                background-color: orange;
+            }
+
+                .menuSub ul li.level1.active a:hover {
+                    background-color: #FFC55C;
+                }
+
+/*
+Temp 2.3 form builder classes -------------------------------------------------------------------------------------------------------------
+*/
+#outerDiv {
+    margin-bottom: 20px;
+}
+
+    #outerDiv:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.ui-dialog-titlebar {
+    background-color: #666666;
+    padding: 8px;
+    color: white;
+}
+
+.ui-dialog-titlebar-close {
+    display: none;
+}
+
+.formsValSummary {
+    background-color: white;
+    padding: 8px;
+    font-size: 16px;
+    font-size: 1.6rem;
+}
+
+    .formsValSummary ul, .formsValSummary ol {
+        list-style: square;
+        padding: 0;
+        margin-left: 20px;
+    }
+
+.ui-dialog-buttonpane {
+    background-color: white;
+    padding: 8px;
+}
+
+    .ui-dialog-buttonpane:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.ui-button-text-only {
+    float: right;
+}
+
+.ui-dialog {
+    border: 1px solid grey;
+    -moz-box-shadow: 0 0 50px #666;
+    -webkit-box-shadow: 0 0 50px #666;
+    box-shadow: 0px 0px 50px #666;
+}
+
+.buttonContainer {
+    clear: left;
+    margin-top: 20px;
+}
+
+    .buttonContainer:after {
+        content: " ";
+        /* Older browser do not support empty content so input a space */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+.customForm table {
+    margin: 0;
+}
+
+.customForm .checkboxspanOption label, .customForm .RadioOptionSpan label, .customForm #RadioOptionSpan label {
+    float: left;
+    width: 90%;
+}
+
+.customForm .formQuestion:after {
+    content: " ";
+    /* Older browser do not support empty content so input a space */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.cc-banner .cc-message a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.oneUp {
+    position: relative;
+    left: -150px;
+    top: -4px;
+    display: none;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border: none;
+    padding: 0.25rem 1rem;
+    color: white;
+    text-align: center;
+    background-color: #666666;
+}
+
+.postImageFloatLeft {
+    float: left;
+}
+
+.postImageFloatRight {
+    float: right;
+}
+
+.eventStart_Hours, .eventStart_Mins, .eventEnd_Hours, .eventEnd_Mins {
+    width: 60px;
+}
+
+#confirmationMsg {
+    display: block;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 30px;
+    font-weight: bold;
+    padding: 8px;
+    text-align: center;
+}
+
+#overlayContainer {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 65535;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+    #overlayContainer iframe {
+        overflow: hidden;
+        width: 100%;
+        padding: 20px;
+        margin: 20px 20px;
+        max-width: 1000px;
+        background-color: white;
+    }
+
+.popUpPage .postContent {
+    width: 100%;
+}
+
+.videoPopup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+}
+
+.videoPopUpWrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 800px;
+    height: 480px;
+    margin-left: -420px;
+    margin-top: -220px;
+    padding: 20px;
+    background-color: #fff;
+    z-index: 2;
+    overflow: inherit;
+}
+
+.videoBackground {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    background-color: #000;
+    z-index: 1;
+}
+
+.videoPopup .embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 100;
+    background: transparent;
+}
+
+.youtube-player {
+    position: relative;
+    padding-bottom: 56.23%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin: 5px;
+}
+
+    .youtube-player img {
+        bottom: 0;
+        display: block;
+        left: 0;
+        margin: auto;
+        max-width: 100%;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        height: auto;
+        cursor: pointer;
+        -webkit-transition: .4s all;
+        -moz-transition: .4s all;
+        transition: .4s all;
+    }
+
+        .youtube-player img:hover {
+            -webkit-filter: brightness(75%);
+        }
+
+    .youtube-player .play {
+        height: 100%;
+        width: 100%;
+        display: block;
+    }
+
+        .youtube-player .play:before {
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            z-index: 1;
+            font-family: "Genericons";
+            font-size: 80px;
+            content: '\f452';
+            top: 40%;
+            right: auto;
+            margin: 0;
+            left: 40%;
+            -webkit-font-smoothing: antialiased;
+            overflow: hidden;
+            display: block;
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            color: white;
+            -webkit-border-radius: 500px 500px 500px 500px;
+            -moz-border-radius: 500px 500px 500px 500px;
+            -ms-border-radius: 500px 500px 500px 500px;
+            -o-border-radius: 500px 500px 500px 500px;
+            border-radius: 500px 500px 500px 500px;
+        }
+
+@media screen and (max-width: 480px) {
+    .youtube-player .play:before {
+        width: 60px;
+        height: 60px;
+        font-size: 40px;
+        line-height: 60px;
+    }
+}
+
+.videoPopupClose {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    z-index: 99;
+    -webkit-border-radius: 500px 500px 500px 500px;
+    -moz-border-radius: 500px 500px 500px 500px;
+    -ms-border-radius: 500px 500px 500px 500px;
+    -o-border-radius: 500px 500px 500px 500px;
+    border-radius: 500px 500px 500px 500px;
+}
+
+    .videoPopupClose:hover {
+        background-color: red;
+        color: white;
+    }
+
+    .videoPopupClose:before {
+        font-family: 'Genericons';
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+        overflow: hidden;
+        display: block;
+        content: '\f405';
+        /*cross*/
+        font-weight: bold;
+        font-size: 32px;
+        margin-top: -4px;
+        margin-left: -2px;
+    }
+
+.showsVideo:before {
+    display: inline-block;
+    font-family: 'Genericons';
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    display: block;
+    content: '\f501';
+    /*arrow right*/
+    width: 120px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-border-radius: 500px 500px 500px 500px;
+    -moz-border-radius: 500px 500px 500px 500px;
+    -ms-border-radius: 500px 500px 500px 500px;
+    -o-border-radius: 500px 500px 500px 500px;
+    border-radius: 500px 500px 500px 500px;
+    font-size: 74px;
+    text-align: right;
+    color: white;
+    top: 38%;
+    left: 47%;
+}
+
+    .showsVideo:before:hover {
+        background-color: orange;
+    }
+
+.hiddenLeft {
+    position: absolute;
+    left: -1000px;
+    top: -1000px;
+}
+
+html.altStyle1 * {
+    background-color: white !important;
+    color: #333333 !important;
+}
+
+html.altStyle2 * {
+    background-color: #333333 !important;
+    color: white !important;
+}
+
+span.googleSearchWrapper {
+    background-color: gainsboro;
+    display: block;
+    padding: 8px;
+}
+
+    span.googleSearchWrapper:after {
+        content: " ";
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    span.googleSearchWrapper input[type="text"] {
+        width: 200px;
+    }
+
+    span.googleSearchWrapper input[type="text"] {
+        width: 200px;
+        font-size: 1.5rem;
+        padding: 2px;
+    }
+
+/*Category Filter Base Styling*/
+
+.combinedCategoryFilter .categoryFilterContent {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+    .combinedCategoryFilter .categoryFilterContent:after, .combinedCategoryFilter .categoryFilterContent:before {
+        content: " ";
+        display: table;
+    }
+
+    .combinedCategoryFilter .categoryFilterContent:after {
+        clear: both;
+    }
+
+.combinedCategoryFilter .groupedFilters {
+    margin-top: 20px;
+    float: left;
+    margin-right: 60px;
+}
+
+    .combinedCategoryFilter .groupedFilters select {
+        width: inherit;
+    }
+
+.combinedCategoryFilter .clearcombinedfilters {
+    display: block;
+    float: right;
+    margin-top: 16px;
+    margin-bottom: -16px;
+    font-size: 14px;
+}
+
+.yourPicture img {
+    width: 100px;
+}
+
+#covercosts {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    margin-right: 26px;
+    margin-top: 15px;
+}
+
+#CoverOurCostsContainer .donationAmountFigure {
+    width: auto;
+}
+
+/*
+Media Queries-------------------------------------------------------------------------------------------------------------
+*/
+/*
+Desk top -------------------------------------------------------------------------------------------------------------
+*/
+@media screen and (max-width: 1000px) {
+    .headerContent {
+        width: 100%;
+    }
+
+    .menuMain ul {
+        width: 100%;
+    }
+
+    .inMemContent {
+        width: 100%;
+    }
+
+    .carouselDetailWrapper, .bannerDetailWrapper {
+        display: block;
+        left: inherit;
+        width: inherit;
+        margin-left: inherit;
+        position: relative;
+        top: 10px;
+    }
+
+    .carouselSlide {
+        max-height: inherit;
+        overflow: inherit;
+    }
+
+    .carouselSlideDetail, .bannerSlideDetail {
+        position: relative;
+        top: inherit;
+        left: inherit;
+        width: inherit;
+        margin-top: -22px;
+    }
+
+        .carouselSlideDetail:after, .bannerSlideDetail:after {
+            content: " ";
+            /* Older browser do not support empty content so input a space */
+            visibility: hidden;
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+    ul#menuAdmin {
+        width: 100%;
+    }
+
+    .totaliserPanel {
+        width: 33%;
+        display: block;
+        float: right;
+        margin-top: 30px;
+    }
+
+        .totaliserPanel:after {
+            content: " ";
+            /* Older browser do not support empty content so input a space */
+            visibility: hidden;
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+    .totaliserGivingPanel {
+        display: block;
+        width: 65%;
+        float: left;
+    }
+
+        .totaliserGivingPanel:after {
+            content: " ";
+            /* Older browser do not support empty content so input a space */
+            visibility: hidden;
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+    .carousel ul {
+        margin-top: 20px;
+    }
+
+    .donationAmountFigure, .formQuestion.donationFrequency .checkboxRadio {
+        font-size: 30px;
+        font-size: 3rem;
+        width: 15%;
+        vertical-align: middle;
+        border: none;
+        text-align: left;
+    }
+
+    .supportedAppeal {
+        float: left;
+        margin-top: 0;
+        margin-left: 20px;
+    }
+
+    .donationForm .appealTotaliser {
+        width: 250px;
+        float: left;
+        margin-left: 20px;
+        margin-top: -50px;
+    }
+}
+
+/*
+Tablet  -------------------------------------------------------------------------------------------------------------
+*/
+@media screen and (max-width: 768px) {
+    .bannerSlideImage {
+        min-height: 354px;
+        height: 37vh;
+    }
+
+    .carouselSlideDetail, .bannerSlideDetail {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        left: 0;
+        margin-top: -20px;
+    }
+
+    .carousel .carouselButtons {
+        position: relative;
+        bottom: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .carouselButtons li {
+        float: left;
+        flex-grow: 1;
+        min-width: 25%;
+    }
+
+    .inMemContent {
+        width: 100%;
+    }
+
+    .carouselControls {
+        display: none;
+    }
+
+    a.menuMainAlt {
+        display: block;
+        color: #fff;
+        background-color: orange;
+    }
+
+        a.menuMainAlt:before {
+            content: '\f419';
+            display: inline-block;
+            -webkit-font-smoothing: antialiased;
+            font: normal 16px/1 'Genericons';
+            vertical-align: top;
+            padding-top: 4px;
+            margin-right: 4px;
+        }
+
+    .menuAdminContainer {
+        display: none;
+    }
+
+    .menuMain > ul > li.menuAdminAltItems {
+        display: block;
+    }
+
+    .menuMain {
+        clear: both;
+        min-width: inherit;
+        float: none;
+    }
+
+        .menuMain, .menuMain > ul ul {
+            overflow: hidden;
+            max-height: 0;
+            background-color: #f4f4f4;
+        }
+
+            .menuMain > li > ul.subMenu {
+                padding: 0px;
+                border: none;
+                -webkit-border-radius: 0px;
+                -moz-border-radius: 0px;
+                border-radius: 0px;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                -webkit-background-clip: padding-box;
+                -moz-background-clip: padding;
+                background-clip: padding-box;
+            }
+
+            .menuMain.active, .menuMain > ul ul.active {
+                max-height: 55em;
+            }
+
+            .menuMain ul {
+                display: inline;
+            }
+
+            .menuMain > ul {
+                border-top: 1px solid #808080;
+            }
+
+                .menuMain li, .menuMain > ul > li {
+                    display: block;
+                }
+
+                    .menuMain li a {
+                        color: #000;
+                        display: block;
+                        padding: 0.8em;
+                        border-bottom: 1px solid #808080;
+                        position: relative;
+                    }
+
+                    .menuMain li.hasSubmenu > a:after {
+                        content: '+';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        display: block;
+                        font-size: 1.5em;
+                        padding: 0em 0.5em;
+                    }
+
+                    .menuMain li.hasSubmenu > a.active:after {
+                        content: "-";
+                    }
+
+            .menuMain ul ul > li a {
+                background-color: gainsboro;
+                height: 40px;
+                padding: 8px 18px 8px 30px;
+            }
+
+            .menuMain ul ul, .menuMain ul ul ul {
+                display: inherit;
+                position: relative;
+                left: auto;
+                top: auto;
+                box-shadow: none;
+                border: none;
+            }
+
+    .homeFeature, .homeFeed {
+        width: 45%;
+    }
+
+        .homeFeature:nth-child(4n+1), .homeFeed:nth-child(4n+1) {
+            clear: none;
+        }
+
+        .homeFeature:nth-child(even), .homeFeed:nth-child(even) {
+            clear: left;
+        }
+
+    .post .headerContent li {
+        height: 430px;
+    }
+
+    .headerText, .contactUsIntro {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .postBody, .eventPostPage .postComments, .postAside, .eventDetailsWrapper, .contentBlock, .contactAddress, .contactForm {
+        width: 100%;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .listingWidgetBanner {
+        float: left;
+        width: 32%;
+        margin-right: 10px;
+    }
+
+    .listedEvent {
+        width: 100%;
+        height: inherit;
+    }
+
+    .mapContainer iframe {
+        display: none;
+    }
+
+    .itemColumn {
+        width: 38%;
+    }
+
+    .itemName {
+        font-size: 18px;
+        font-size: 1.8rem;
+    }
+
+    .quantityColumn input {
+        width: 42%;
+        padding: 8px 2px;
+    }
+
+    .eventPostPage .itemDescription {
+        display: none;
+    }
+
+    .staticImg {
+        width: 100%;
+    }
+
+    .hiddenLeft .staticImg {
+        width: inherit;
+    }
+
+    .productBannerWrapper {
+        width: 100%;
+    }
+
+    .productBannerList {
+        text-align: center;
+    }
+
+        .productBannerList li {
+            display: inline;
+        }
+
+    .productBanner {
+        margin-top: 10px;
+    }
+
+    .totaliserPanel {
+        width: 100%;
+        display: block;
+        float: none;
+    }
+
+    .totaliserGivingPanel {
+        display: block;
+        width: 100%;
+        float: none;
+    }
+
+    .listContent, .postContent {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+
+    .cc-cookies a.cc-cookie-accept, .cc-cookies a.cc-cookie-decline, .cc-cookies a.cc-cookie-reset {
+        display: block;
+        margin: 1em 0;
+    }
+}
+
+/*
+end of tablet -------------------------------------------------------------------------------------------------------------
+*/
+/*
+Phone -------------------------------------------------------------------------------------------------------------
+*/
+@media only screen and (max-width: 540px) {
+    .searchPageContainer {
+        display: block;
+    }
+
+    .headerFollowContainer {
+        display: none;
+    }
+
+    .mainCallToAction {
+        display: none;
+    }
+
+    .inMemContent {
+        width: 100%;
+    }
+
+    .bannerSlides {
+        min-height: 370px;
+        height: 38vh;
+    }
+
+    .bannerSlideImage {
+        min-height: 168px;
+        height: 25vh;
+    }
+
+    .homeFeature, .homeFeed, .homeIntro, .homeHeadlinesIntro, .homeFeedsIntro, .footerBox {
+        margin: 0 10px 20px 10px;
+        width: 96%;
+        float: none;
+    }
+
+    .footerAddress, .footerTwitter, .footerLinks {
+        margin: 0 0 20px 0;
+        width: 100%;
+        float: none;
+    }
+
+        .footerAddress:after, .footerTwitter:after, .footerLinks:after {
+            content: " ";
+            /* Older browser do not support empty content so input a space */
+            visibility: hidden;
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+    .post .headerContent li {
+        height: 304px;
+    }
+
+    .commentContentWrapper {
+        margin-left: 0;
+    }
+
+    .commentContent img, .commentContent iframe {
+        width: 100%;
+    }
+
+    .itemColumn {
+        width: 20%;
+    }
+
+    .eventPostPage .itemThumb {
+        display: none;
+    }
+
+    .eventPostPage .itemName {
+        font-size: 18px;
+        font-size: 1.8rem;
+    }
+
+    .formQuestion .checkboxRadio, .formQuestion .checkboxRadio span, .formQuestion span span {
+        padding-left: 0;
+        margin-right: 20px;
+    }
+
+    .donationGiftAid .checkboxRadio {
+        margin-left: 0;
+        padding-top: 68px;
+    }
+
+    .giftAidStatement {
+        float: right;
+        width: 80%;
+    }
+
+    .donationGiftAid input {
+        margin-left: 10px;
+        float: left;
+        margin-top: 20px;
+    }
+
+    .cardEndDate input {
+        width: 120px;
+    }
+
+    .supportedAppeal, .appealTotaliser {
+        display: none;
+    }
+
+    .postFields .formQuestion input[type="checkbox"] {
+        float: none;
+    }
+
+    .fundraiserSponsor .formQuestion {
+        width: 90%;
+        float: none;
+    }
+
+    .cc-cookies {
+        position: relative;
+        float: left;
+    }
+
+    .videoPopUpWrapper {
+        width: 100%;
+        left: 0;
+        top: 0;
+        margin-left: 0;
+        margin-top: 0;
+        position: inherit;
+    }
+
+    .videoPopupClose {
+        top: 0px;
+        right: 0px;
+    }
+
+    .quantityColumn {
+        width: 25%;
+    }
+
+    .priceColumn {
+        width: 15%;
+    }
+
+        .priceColumn .price {
+            font-size: 14px;
+            font-size: 1.4rem;
+        }
+}
+
+/*
+End of phone -------------------------------------------------------------------------------------------------------------
+*/
+/*
+Print -------------------------------------------------------------------------------------------------------------
+*/
+@media print {
+}
+
+/* RESETS */
+.reset-bg-color {
+    background-color: transparent !important;
+}
+
+.reset-padding {
+    padding: 0 !important;
+}
+
+/* Hide Recaptcha icon*/
+.grecaptcha-badge {
+    display: none;
+    visibility: collapse;
+}
+
+#cardEndDateYear, #cardEndDateMonth {
+    width: auto;
+}
+
+/* PROGRESS METER START */
+
+.progress-meter {
+    display: flex;
+    justify-content: center;
+    background-color: #F7F7F9;
+    border: 1px solid #ECEEEF;
+    padding: 20px 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.progress-meter__step {
+    width: 75px;
+    color: #707070;
+    margin: 0 15px;
+    position: relative;
+}
+
+    .progress-meter__step span {
+        display: block;
+        line-height: 1.1;
+    }
+
+    /* Circle */
+    .progress-meter__step:before {
+        content: '';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        margin: 0 auto 5px;
+        font-size: 14px;
+        box-sizing: border-box;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+.progress-meter__step--completed {
+    color: #008500;
+}
+
+    .progress-meter__step--completed:before {
+        background-color: #008500;
+        background-image: url('../Images/check.svg');
+    }
+
+.progress-meter__step--current {
+    font-weight: 700;
+    color: #008500;
+}
+
+    .progress-meter__step--current:before {
+        border: 2px solid #008500;
+        background-image: url('../Images/chevron-down.svg');
+        background-position: center top 10px; /* Slightly off vertical center */
+    }
+
+.progress-meter__step--todo:before {
+    border: 2px solid #707070;
+    background-image: url('../Images/chevron-right.svg');
+    background-position: left 10px center; /* Slightly off lateral center */
+}
+
+/* Connector */
+.progress-meter__step:after {
+    content: '';
+    width: 62px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #DFDFDF;
+    display: block;
+    position: absolute;
+    top: 14px;
+    left: 58px; /* Hard code this into position because we know the width of each step */
+}
+
+.progress-meter__step:last-child:after {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    .progress-meter {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+
+    .progress-meter__step {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0 0 10px;
+    }
+
+        .progress-meter__step span {
+            flex-grow: 1;
+        }
+
+        .progress-meter__step:before {
+            flex-grow: 0;
+            margin: 0 12px 0 0;
+        }
+
+        .progress-meter__step:after {
+            display: none;
+        }
+}
+
+/* PROGRESS METER END */
+
+.sandbox-payments-indicator {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-color: #FCEFDC;
+    padding: 25px 20px 15px;
+    text-align: center;
+    color: #F0AD4E;
+    border: 1px solid #F0AD4E;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+    .sandbox-payments-indicator div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 10px;
+        margin-bottom: 15px;
+        display: block;
+        width: 100%;
+        background-color: #eaa30b;
+        background-image: -webkit-repeating-linear-gradient(135deg, transparent, transparent 18px, rgba(255,255,255,0.25) 18px, rgba(255,255,255,0.25) 36px);
+        background-image: repeating-linear-gradient(-45deg, transparent, transparent 18px, rgba(255,255,255,0.25) 18px, rgba(255,255,255,0.25) 36px);
+    }
+
+/* Recaptcha v2 */
+.recaptcha-container {
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.6);
+}
+
+.recaptcha-content {
+    background-color: #fff;
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.recaptcha-intro {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.recaptcha-btn {
+    display: table;
+    margin: 0 auto;
+    width: 304px;
+}
+
+.feedback-notification {
+    display: block;
+    padding: 0.5em 0.75em;
+    margin-bottom: 0.75em;
+    font-size: 0.875em;
+    border-radius: 0.2em;
+    border: 1px solid #d8d8d8;
+    background: #fff;
+}
+
+    .feedback-notification a,
+    .feedback-notification a:link,
+    .feedback-notification a:visited {
+        color: inherit;
+    }
+
+.feedback-notification--danger {
+    color: #d9534f;
+    background: #f6d8d7;
+    border-color: #d9534f;
+}
+
+.feedback-notification--warning {
+    color: #f0ad4e;
+    background: #fdf4e7;
+    border-color: #f0ad4e;
+}
+
+.feedback-notification--success {
+    color: #5cb85c;
+    background: #e1f2e1;
+    border-color: #5cb85c;
+}
+
+.alert {
+    color: #dc3545;
+}
+
+    .alert.alert--required {
+        color: #757575;
+    }
+
+.footerBox .alert.alert--required {
+    display: none;
+}
+
+.footerBox .alert {
+    color: inherit;
+}
+
+.noSearchResults {
+    text-align: left;
+    border: 0;
+    background-color: #f8d7da;
+}
+
+    .noSearchResults.alert {
+        color: #721c24;
+    }
+
+.errorMessage {
+    color: #721c24;
+    background-color: #f8d7da;
+    padding: 10px;
+}
+
+/* Add in some custom focus-visible styles */
+a:not(.mainLogo):focus-visible, a:not(.mainLogo):focus-visible:before,
+button:focus-visible,
+button:focus-visible:before,
+.readMore:focus-visible,
+.readMore:focus-visible:before {
+    background-color: #fd0 !important;
+    color: #292b2c !important;
+    outline: none;
+}
+
+a:not(.mainLogo):focus-visible,
+button:focus-visible,
+.readMore:focus-visible {
+    -webkit-box-shadow: 0 4px #0b0c0c !important;
+    box-shadow: 0 4px #0b0c0c !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #fd0;
+}
+
+.highlighted {
+    outline: limegreen dotted thick;
+}
+
+.menuMain.menuMain--mobile:not(.active) {
+    visibility: hidden;
+}

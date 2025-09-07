@@ -1,0 +1,61 @@
+﻿#uploadImage.dropzone {
+    box-sizing: border-box;
+    width: 279px;
+    padding: 13px 13px;
+    border: 1px solid gainsboro;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#uploadImage .dz-message {
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin-top: 15px;
+}
+
+#uploadImage .dz-message button {
+    margin-right: 0;
+}
+
+#preview-container {
+    box-sizing: border-box;
+    border: 1px solid gainsboro;
+    height: 124px;
+    width: 124px;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+}
+
+#uploadImage .dz-preview {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+}
+
+#uploadImage .remove {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+#uploadImage .dz-details {
+    padding: 0;
+    opacity: 1;
+}
+
+#uploadImage .dz-details-img {
+    cursor: pointer;
+    position: relative;
+}
+
+@media (max-width: 540px) {
+    #uploadImage.dropzone,
+    #uploadImage #preview-container {
+        width: 100% !important;
+    }
+}
