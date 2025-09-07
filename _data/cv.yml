@@ -5,59 +5,62 @@
       value: Pearl Ayem
     - name: Social
       value: <a href="https://www.linkedin.com/in/pearl-ayem/">LinkedIn</a>, <a href="https://github.com/Pearl-Ayem">GitHub</a>
-    - name: Languages
-      value: English (Native Proficiency), Hindi (Native Proficiency)
+    # - name: Languages
+    #   value: English (Native Proficiency), Hindi (Native Proficiency)
+
+
+
 
 - title: Experience
   type: time_table
   contents:
-    - title: Senior Modeller - Climate Risk
+
+
+    - title: Lead Environmental Risk Modeller
+        institution: Risilience, United Kingdom
+        skills: April 2025 - Present
+        description:
+          - Lead development of asset-level climate and nature risk models that quantify and forecast physical and transition risks across industries.
+          - Design and implement agentic workflows for supply chain risk, reducing release cycles from 8 to 4 weeks.
+          - Oversee multidisciplinary teams (modellers, economists, data scientists, engineers) to deliver end-to-end SaaS risk products.
+          - Partner with Head of Product on roadmaps, digital twin development, and scaling analytics into market-ready platforms.
+          - Build geospatially resolved models using climate scenarios, hazard maps, DEMs, and supply chain data to generate actionable insights.
+          - Translate geospatial and climate science into financial risk metrics for insurers, underwriters, and corporates.
+          - Apply exposure mapping, portfolio stress-testing, and regulatory alignment to support insurance and asset management clients.
+
+
+    - title: Senior Climate Risk Modeller
       institution: Sillion, United Kingdom
-      skills: December 2023 - Present
-      # skills: Risk modelling, TCFD/ISSB, Transition planning
+      skills: December 2023 - March 2025
       description:
-        - Lead development of core climate risk models for FTSE100 and FTSE250 clients, integrating results into TPT, CSRD, and annual reports across SECR, TCFD/ISSB, CDP, and GRI frameworks.
-        - Provide scenario analyses, transition risk assessments, and double materiality insights.
-        - Manage and mentor junior analysts and consultants, aligning their work with strategic goals in climate risk and sustainability.
-        - Product Lead for a ESG research tool tracking ESG KPIs across 600+ companies.
-        - Present findings to C-suite stakeholders and boards, author executive reports, and trained in press and media.
-        - Build Python-based risk models that can be integrated into financial dashboards (Power BI, Tableau).
+        - Led development for climate risk models for FTSE100 clients, integrating outputs into TPT, CSRD, SECR, TCFD/ISSB, CDP, and GRI reports.
+        - Delivered transition risk assessments, scenario analysis, and double materiality evaluations for boards and executive committees.
+        - Product Lead for an ESG research tool tracking 600+ companies, integrating KPIs with climate and financial data.
+        - Embedded geospatial hazard and transition datasets into financial analytics software to map climate risks to business operations.
+        - Led design of backend infrastructure that integrated client data with climate risk models.
+        - Managed and mentored analysts/consultants, aligning work with climate risk, disclosure, and sustainability strategy.
+        - Expert in Scope 1,2,3 GHG emission models, global reporting standards, and jurisdictional policies.
 
 
     - title: Net-Zero Data Specialist
       institution: Bloomberg L.P (Secondedment with <a href="https://www.gfanzero.com/">GFANZ </a>, and <a href="https://www.nzdpu.com">NZDPU</a>)
       skills: July 2022 - December 2023
-      # skills: Skills- Climate Change Mitigation · Net Zero · Data Architecture · Data Modeling · Databases · Public Speaking
       description: 
-        - Led data modelling and engineering for the NZDPU, a free, open data platform for climate transition, directly collaborating with global leaders, such as <a href="https://www.bloomberg.org/press/president-emmanuel-macron-and-michael-r-bloomberg-deliver-proof-of-concept-for-groundbreaking-net-zero-data-public-utility-at-cop28/">President Emmanuel Macron</a>, and the governments of <a href="https://nzdpu.com/news-and-publications/93eb6a59-8581-4c85-b4e7-4ebc670b17f2?page=2">Switzerland</a> and <a href="https://www.responsible-investor.com/singapore-and-switzerland-sign-up-to-global-climate-data-project/">Singapore</a>, <a href="https://www.cdp.net/en/articles/media/cdp-and-nzdpu-collaborate-to-accelerate-access-to-core-climate-data">CDP</a>, and UN.
+
+        - Led data modelling and engineering for the Net-Zero Data Public Utility (NZDPU), a global open-data platform for climate transition.
+        - Collaborated directly with heads of state including <a href="https://www.ipe.com/news/cop28-proof-of-concept-launched-for-public-net-zero-data-portal/10070455.article"> Mark Carney</a> and <a href="https://www.climatedatasc.org/president-emmanuel-macron-and-michael-r-bloomberg-deliver-proof-of-concept-for-groundbreaking-net-zero-data-public-utility-at-cop28/">Emmanuel Macron</a>, UNFCC, and governments of Canada, UK, <a href="https://nzdpu.com/news-and-publications/93eb6a59-8581-4c85-b4e7-4ebc670b17f2?page=2">Switzerland</a> and <a href="https://www.mas.gov.sg/news/media-releases/2023/mas-and-sgx-group-to-collaborate-with-csdc">Singapore</a> to shape climate disclosure policy.
         - Published two high-impact reports for <a href="https://assets.bbhub.io/company/sites/63/2022/09/Recommendations-and-Guidance-on-Financial-Institution-Net-zero-Transition-Plans-November-2022.pdf">GFANZ</a> and <a href="https://assets.bbhub.io/company/sites/71/2022/11/request-for-proposal-2022.pdf">NZDPU</a>, with partners from ISSB, and IEA.
-        - Managed team of 40 analysts in data acquisition, transformation, and analysis for GFANZ's data launch at COP27.
-        - Supported CTO with RFP processes, vendor evaluation, and management of engineering contractors.
-        - Helped secure partnerships, including with CDP for 10,000+ companies to be hosted on the NZDPU platform.
-        - Built ETL pipelines for ingesting data across many providers, did API development, and wrote transformation scripts.
+        - Supported CTO with RFP processes, vendor evaluation, and management of engineering contractors  from Google to build the NZDPU Proof of Concept.
+        - Managed a 40-person analyst team for GFANZ's data launch at COP27, delivering insights used by President Macron and Michael Bloomberg.
+        - Helped secure partnerships, including with <a href="https://www.cdp.net/en/articles/media/cdp-and-nzdpu-collaborate-to-accelerate-access-to-core-climate-data">CDP</a> for 10,000+ companies to be hosted on the NZDPU platform.
+        - Built ETL pipelines, APIs, and data transformation scripts for climate and emissions data.
+        - Developed AI/ML/NLP modules for data collection, validation, and automated net-zero progress tracking.
+        - Designed models mapping data across regulatory frameworks (TCFD, CDP, GHGP, PCAF, EFRAG, SBTi), enabling cross-jurisdictional compliance.
         - Delivered briefs and insights on 700 climate KPIs for Bloomberg's CEO to present at COP27
-        - Expert in Scope 1,2,3 GHG emission models, global reporting standards, and jurisdictional policies.
-        - Experience of working with RCPs, SSPs and EU taxonomy.
-        - Create data models to map across regulatory frameworks such as TCFD, CDP, GHGP, PCAF, EFRAG, SBTi etc.
-        - Oversaw software developers working on transforming GFANZ's existing data infrastructure to cloud storage & computing.
-        - Developed AI/ML/NLP modules to create data collection and quality checks for net-zero tracking.
-
-
-    - title: Co-Organizer and DEI Expert
-      institution: Polar Impact
-      skills: October2021 - March 2023
-      # skills: Skills- Climate Change Mitigation · Net Zero · Data Architecture · Data Modeling · Databases · Public Speaking
-      description: 
-        - Co-run an NGO as a volunteer that supports BIPOC professionals in the polar research community.
-        - Helped write grant proposals that won a cumulative of £50,000 from National Science Foundation, UKRI and National Geographic.
-        - Organized COP26 speakers for climate justice talks.
-        - My work is used as <a href="https://twitter.com/PolarImpact/status/1463252358121631753?s=20">course curriculum</a> at the University of Cambridge's graduate-level MPhil classes.
-  
 
     - title: Climate Science Researcher
       institution: University of Cambridge, British Antarctic Survey
       skills: October 2021 - June 2022
-      # skills: Bid Writing · Marketing · Managerial Finance · Sustainability · Leadership
       description:
         - Conducted fully-funded research by the Scott Polar Research Institute, and the British Antarctic Survey on atmospheric drivers of Antarctic surface melt.
         - Experience with multi-dimensional, geospatial data, academic research, writing papers, and conference presentations.
@@ -72,7 +75,6 @@
     - title: Brand Manager, Sustainability
       institution: P.G.A. Hospitality
       skills: September 2018 - October 2021
-      # skills: Bid Writing · Marketing · Managerial Finance · Sustainability · Leadership
       description:
         - Worked as an independent contractor with the CEO to drive sustainable business development, and lead a team of 10.
         - Achieved significant growth; Increased revenue by 233%, raised 1.5 million CAD in investment, increased profits by 31%.
@@ -84,7 +86,6 @@
 
     - title: Teaching Assistant in Computer Science
       institution: University of British Columbia
-      # skills: Bid Writing · Product Management · Software Engineering · Leadership ·  Java · REST APIs · Unmanned Aerial Vehicles · C++ ·  App Development
       skills: December 2016 - June 2020
       description: 
         - Managed a team of 18 TAs as the Head Teaching Assistant of Computer Science
@@ -135,7 +136,6 @@
         - Encouraging interest in STEM, Teamwork, Leadership and Problem Solving
         - Mentor and Instructor for VEX Level 1, VEX Level 2, and VEX Competitive programs at Science World BC
 
-
 - title: Education
   type: time_table
   contents:
@@ -162,11 +162,69 @@
         - Helped UBC's Climate Data Computing course set up infrastructure to let students run  MODIS, GOES-16 and 17, and Landsat (7 & 8) data in AWS.
         - Carried out field work + data analysis on plankton and published results to the <a href="https://phytoplankton.eoas.ubc.ca/"> phytopedia project</a>.
         - Built, deployed, and used custom weather sensors to WMO standards.
-    
+
+- title: Volunteering
+  type: time_table
+  contents:
+
+    - title: Co-Organizer and DEI Expert
+      institution: Polar Impact
+      skills: October2021 - March 2023
+      description: 
+        - Co-run an NGO as a volunteer that supports BIPOC professionals in the polar research community.
+        - Helped write grant proposals that won a cumulative of £50,000 from National Science Foundation, UKRI and National Geographic.
+        - Organized COP26 speakers for climate justice talks.
+        - My work is used as <a href="https://twitter.com/PolarImpact/status/1463252358121631753?s=20">course curriculum</a> at the University of Cambridge's graduate-level MPhil classes.
+      
 
 - title: Certifications
   type: time_table
   contents:
+      - title: <a href="https://www.datacamp.com/statement-of-accomplishment/track/892b1b1a8227058843383439cb696ff0495525a6?raw=1">Data Engineer in Python</a>
+      institution: DataCamp
+      credential_id: 892b1b1a8227058843383439cb696ff0495525a6
+      year: Dec 2024
+
+    - title: <a href="https://www.datacamp.com/statement-of-accomplishment/course/ca311eb170f14ac811af2be3a6bb2ede4ecad023?raw=1">Software Engineering Principles in Python</a>
+      institution: DataCamp
+      credential_id: ca311eb170f14ac811af2be3a6bb2ede4ecad023
+      year: Dec 2024
+
+    - title: <a href="https://www.datacamp.com/statement-of-accomplishment/course/9a070610c2ec32f5605e1b5da71e03cafa330a6d?raw=1">Foundations of Git</a>
+      institution: DataCamp
+      credential_id: 9a070610c2ec32f5605e1b5da71e03cafa330a6d
+      year: Dec 2024
+
+    - title: <a href="https://www.datacamp.com/statement-of-accomplishment/course/f7d8743971ae70cf90538c14574bb629f3e92eb0?raw=1">Streamlined Data Ingestion with pandas</a>
+      institution: DataCamp
+      credential_id: f7d8743971ae70cf90538c14574bb629f3e92eb0
+      year: Dec 2024
+
+    - title: <a href="https://www.datacamp.com/statement-of-accomplishment/course/1ab24e2c8431e4d914ccaa471beec6a5b08f418c?raw=1">Understanding Cloud Computing</a>
+      institution: DataCamp
+      credential_id: 1ab24e2c8431e4d914ccaa471beec6a5b08f418c
+      year: Dec 2024
+
+    - title: <a href="https://www.datacamp.com/statement-of-accomplishment/course/daf11cbac467589cbcc8b59f2aaf3d24c02ade1a?raw=1">Data Design</a>
+      institution: DataCamp
+      credential_id: daf11cbac467589cbcc8b59f2aaf3d24c02ade1a
+      year: Dec 2024
+
+    - title: <a href="https://www.datacamp.com/statement-of-accomplishment/course/0fdaf85e114740e74707c7170e8d68284edc68d3?raw=1">Intermediate Importing Data in Python</a>
+      institution: DataCamp
+      credential_id: 0fdaf85e114740e74707c7170e8d68284edc68d3
+      year: Dec 2024
+
+    - title: <a href="https://www.datacamp.com/statement-of-accomplishment/course/5eee9ccda09d4b71d7780b454f2cb4cc7faf650f?raw=1">Intermediate SQL</a>
+      institution: DataCamp
+      credential_id: 5eee9ccda09d4b71d7780b454f2cb4cc7faf650f
+      year: Dec 2024
+
+    - title: <a href="https://www.datacamp.com/statement-of-accomplishment/course/a3b8059dbed4d8c1634e53171ec5fd91845294f3?raw=1">Introduction to Relational Databases in SQL</a>
+      institution: DataCamp
+      credential_id: a3b8059dbed4d8c1634e53171ec5fd91845294f3
+      year: Dec 2024
+      
     - title: <a href="https://portal.bloombergforeducation.com/certificates/JfxU6V85cRepMvTHqwHrWg59">Bloomberg Market Concepts</a>
       institution: Bloomberg
       credential_id: JfxU6V85cRepMvTHqwHrWg59
