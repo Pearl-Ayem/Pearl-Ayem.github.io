@@ -9,25 +9,20 @@
     #   value: English (Native Proficiency), Hindi (Native Proficiency)
 
 
-
-
 - title: Experience
   type: time_table
   contents:
-
-
     - title: Lead Environmental Risk Modeller
-        institution: Risilience, United Kingdom
-        skills: April 2025 - Present
-        description:
-          - Lead development of asset-level climate and nature risk models that quantify and forecast physical and transition risks across industries.
-          - Design and implement agentic workflows for supply chain risk, reducing release cycles from 8 to 4 weeks.
-          - Oversee multidisciplinary teams (modellers, economists, data scientists, engineers) to deliver end-to-end SaaS risk products.
-          - Partner with Head of Product on roadmaps, digital twin development, and scaling analytics into market-ready platforms.
-          - Build geospatially resolved models using climate scenarios, hazard maps, DEMs, and supply chain data to generate actionable insights.
-          - Translate geospatial and climate science into financial risk metrics for insurers, underwriters, and corporates.
-          - Apply exposure mapping, portfolio stress-testing, and regulatory alignment to support insurance and asset management clients.
-
+      institution: Risilience, United Kingdom
+      skills: April 2025 - Present
+      description:
+        - Lead development of asset-level climate and nature risk models that quantify and forecast physical and transition risks across industries.
+        - Design and implement agentic workflows for supply chain risk, reducing release cycles from 8 to 4 weeks.
+        - Oversee multidisciplinary teams (modellers, economists, data scientists, engineers) to deliver end-to-end SaaS risk products.
+        - Partner with Head of Product on roadmaps, digital twin development, and scaling analytics into market-ready platforms.
+        - Build geospatially resolved models using climate scenarios, hazard maps, DEMs, and supply chain data to generate actionable insights.
+        - Translate geospatial and climate science into financial risk metrics for insurers, underwriters, and corporates.
+        - Apply exposure mapping, portfolio stress-testing, and regulatory alignment to support insurance and asset management clients.
 
     - title: Senior Climate Risk Modeller
       institution: Sillion, United Kingdom
@@ -41,12 +36,10 @@
         - Managed and mentored analysts/consultants, aligning work with climate risk, disclosure, and sustainability strategy.
         - Expert in Scope 1,2,3 GHG emission models, global reporting standards, and jurisdictional policies.
 
-
     - title: Net-Zero Data Specialist
       institution: Bloomberg L.P (Secondedment with <a href="https://www.gfanzero.com/">GFANZ </a>, and <a href="https://www.nzdpu.com">NZDPU</a>)
       skills: July 2022 - December 2023
       description: 
-
         - Led data modelling and engineering for the Net-Zero Data Public Utility (NZDPU), a global open-data platform for climate transition.
         - Collaborated directly with heads of state including <a href="https://www.ipe.com/news/cop28-proof-of-concept-launched-for-public-net-zero-data-portal/10070455.article"> Mark Carney</a> and <a href="https://www.climatedatasc.org/president-emmanuel-macron-and-michael-r-bloomberg-deliver-proof-of-concept-for-groundbreaking-net-zero-data-public-utility-at-cop28/">Emmanuel Macron</a>, UNFCC, and governments of Canada, UK, <a href="https://nzdpu.com/news-and-publications/93eb6a59-8581-4c85-b4e7-4ebc670b17f2?page=2">Switzerland</a> and <a href="https://www.mas.gov.sg/news/media-releases/2023/mas-and-sgx-group-to-collaborate-with-csdc">Singapore</a> to shape climate disclosure policy.
         - Published two high-impact reports for <a href="https://assets.bbhub.io/company/sites/63/2022/09/Recommendations-and-Guidance-on-Financial-Institution-Net-zero-Transition-Plans-November-2022.pdf">GFANZ</a> and <a href="https://assets.bbhub.io/company/sites/71/2022/11/request-for-proposal-2022.pdf">NZDPU</a>, with partners from ISSB, and IEA.
@@ -71,7 +64,6 @@
         - Tech stack included xarray, pandas/geopandas, scipy, pyproj, netCDF, HDF5, Rasterio, GDAL, Shapely, sklearn, EOF, Fiona, plotly, cartopy, matplotlib etc.
         - Featured in media on Cambridge's <a href="https://www.caths.cam.ac.uk/polar-impact">website</a> and <a href="https://www.instagram.com/p/CWnS3Lwogyl/?utm_source=ig_web_copy_link">social media</a> for my work on diversity and climate research.
 
-
     - title: Brand Manager, Sustainability
       institution: P.G.A. Hospitality
       skills: September 2018 - October 2021
@@ -83,7 +75,6 @@
         - Wrote and won an <a href="https://www.tricitynews.com/local-news/beanery-wins-contract-for-new-burke-mountain-cafe-3986899">RFP</a> bid for a <a href="https://burkevillage.ca/2021/07/29/cafe-tenant-announced-for-burke-mountain-village-discovery-center/">new location</a>.
         - Got the business recognized for excellence, earning <a href="https://www.instagram.com/p/CVlkVIfM44V/?igshid=YmMyMTA2M2Y=">9 awards</a> and a position in Greater Vancouver's <a href="https://www.instagram.com/p/Bvr0az7hsSt/?igshid=YmMyMTA2M2Y=">Top 30 cafes</a>.
 
-
     - title: Teaching Assistant in Computer Science
       institution: University of British Columbia
       skills: December 2016 - June 2020
@@ -92,7 +83,6 @@
         - Ran lectures for ∼1000 students in Python, C++; created + graded course modules and labs
         - Helped pilot a <a href="https://pearl-ayem.github.io/projects/contrast_stretching/">new data science course</a>; created course modules in Climate Data Computing and taught about contrast stretching using open-source satellite imagery.
  
-
     - title: Research Assistant
       institution: University of British Columbia
       skills: December 2016 to May 2020
@@ -112,7 +102,6 @@
         - File Formats used - NetCDF, GRIB, TIFF, CSV, Excel, text, JSON, XML
         - Stats/ ML PCA, Edge detection, Self-Organizing Maps, CNNs, Empirical Orthogonal Function (EOF)
 
-
     - title: Geospatial Engineer
       institution: UAViation Aerial Solutions
       skills: July 2018 - September 2019
@@ -125,7 +114,6 @@
         - Point of contact for reesearch based operations, Geospatial analysis and post processing using pix4d, arcGIS and QGIS.
         - Used C++, Java, and Python to tackle photogrammetry and LiDAR flight mapping problems across Canada.
         - Completed 18 projects in a year with government bodies, natural resource sectors, academia and private industry combined.
-
 
     - title: Robotics Instructor
       institution: Science World British Columbia
@@ -166,7 +154,6 @@
 - title: Volunteering
   type: time_table
   contents:
-
     - title: Co-Organizer and DEI Expert
       institution: Polar Impact
       skills: October2021 - March 2023
@@ -176,11 +163,10 @@
         - Organized COP26 speakers for climate justice talks.
         - My work is used as <a href="https://twitter.com/PolarImpact/status/1463252358121631753?s=20">course curriculum</a> at the University of Cambridge's graduate-level MPhil classes.
       
-
 - title: Certifications
   type: time_table
   contents:
-      - title: <a href="https://www.datacamp.com/statement-of-accomplishment/track/892b1b1a8227058843383439cb696ff0495525a6?raw=1">Data Engineer in Python</a>
+    - title: <a href="https://www.datacamp.com/statement-of-accomplishment/track/892b1b1a8227058843383439cb696ff0495525a6?raw=1">Data Engineer in Python</a>
       institution: DataCamp
       credential_id: 892b1b1a8227058843383439cb696ff0495525a6
       year: Dec 2024
