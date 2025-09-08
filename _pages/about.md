@@ -13,7 +13,7 @@ profile:
     # <p>123 your address street</p>
     # <p>Your City, State 12345</p>
 
-news: true  # includes a list of news items
+news: false  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
@@ -27,4 +27,4 @@ My career has taken me from start-ups and scale-ups to global organizations—he
 
 Along the way, I’ve had the privilege to collaborate with scientists, engineers, and policymakers, all united by a drive to create solutions that scale.
 
-I hold degrees in Atmospheric Science and Data Science (Cambridge + UBC) and stay motivated by finding joy in the natural world—and optimism in tackling its biggest challenges 🌍.
+I hold a BSc in Atmospheric Science from the University of British Columbia, and MPhil in Atmospheric Physics from the University of Cambridge. I stay motivated by finding joy in the natural world, and find optimism in tackling its biggest climate challenges 🌍.

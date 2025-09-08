@@ -1,7 +1,8 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
-inline: true
+title: In conversation with the British Science Association
+date: 2025-05-09
+inline: false
 ---
 
 A simple inline announcement.
