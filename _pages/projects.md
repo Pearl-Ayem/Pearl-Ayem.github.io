@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Data Science Projects
+title: Personal Projects
 permalink: /projects/
 description: 
 nav: true
@@ -21,7 +21,7 @@ horizontal: false
     </div>
   </div>
   {%- else -%}
-  <div class="grid">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
     {%- for project in sorted_projects -%}
       {% include projects.liquid %}
     {%- endfor %}

@@ -56,6 +56,35 @@ layout: default
       {% include latest_posts.liquid %}
     {% endif %}
 
+    <!-- Featured & Press -->
+    {% if page.featured_press %}
+      <h2>
+        <a href="{{ '/press/' | relative_url }}" style="color: inherit">featured &amp; press</a>
+      </h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mb-4">
+        {% assign featured_items = site.press | where_exp: "item", "item.featured_order" | sort: "featured_order" %}
+        {% for item in featured_items %}
+          <div class="col">
+            <a href="{{ item.url | relative_url }}">
+              <div class="card h-100 hoverable">
+                {% if item.thumbnail %}
+                  {% include figure.liquid loading="lazy" path=item.thumbnail sizes="350px" alt=item.title class="card-img-top" %}
+                {% endif %}
+                <div class="card-body">
+                  <h5 class="card-title mb-1" style="font-size: 1rem;">{{ item.title }}</h5>
+                  {% if item.source %}
+                    <p class="card-subtitle text-muted small mb-0">
+                      {{ item.source | split: '—' | first | strip }}{% if item.date %} &middot; {{ item.date | date: "%b %Y" }}{% endif %}
+                    </p>
+                  {% endif %}
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>
