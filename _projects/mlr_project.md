@@ -57,7 +57,7 @@ plt.show()
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/mlr_1.png" title="MLR 1" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/mlr_1.png" title="MLR 1" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <br>
@@ -135,7 +135,7 @@ plt.show()
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/mlr_2.png" title="MLR 1" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/mlr_2.png" title="MLR 1" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <br>
@@ -159,7 +159,7 @@ plt.show()
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/mlr_3.png" title="MLR 3" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/mlr_3.png" title="MLR 3" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <br>
@@ -177,7 +177,7 @@ plt.show()
 ```
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/mlr_4.png" title="MLR 4" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/mlr_4.png" title="MLR 4" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <br>
@@ -258,7 +258,7 @@ plt.show()
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/mlr_5.png" title="MLR 5" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/mlr_5.png" title="MLR 5" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <br>
@@ -342,7 +342,7 @@ plt.show()
 ```
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/mlr_6.png" title="MLR 6" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/mlr_6.png" title="MLR 6" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <br>
@@ -425,7 +425,7 @@ plt.show()
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/mlr_7.png" title="MLR 7" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/mlr_7.png" title="MLR 7" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <br>
@@ -502,7 +502,7 @@ plt.show()
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/mlr_8.png" title="MLR 8" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/mlr_8.png" title="MLR 8" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <br>
@@ -515,7 +515,7 @@ plt.show()
 ```
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/mlr_9.png" title="MLR 9" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/mlr_9.png" title="MLR 9" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <br>

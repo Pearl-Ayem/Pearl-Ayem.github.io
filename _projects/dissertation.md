@@ -24,97 +24,97 @@ Regional shifts in climate are increasingly altering local scale microclimates a
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/1.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/1.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/2.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/2.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/3.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/3.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/4.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/4.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/5.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/5.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/6.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/6.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/7.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/7.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/8.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/8.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/9.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/9.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/10.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/10.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/11.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/11.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/12.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/12.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/13.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/13.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/14.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/14.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/15.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/15.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/16.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/16.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/17.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/17.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/18.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/18.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/diss_presentation/19.png" title="float histogram" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/diss_presentation/19.png" title="float histogram" class="img-fluid z-depth-1"%}
     </div>
 </div>
 

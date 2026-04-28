@@ -38,7 +38,7 @@ plt.plot(rain_rate);
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/hurricane_karl_rain_rate.png" title="hurricane_karl_rain_rate" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/hurricane_karl_rain_rate.png" title="hurricane_karl_rain_rate" class="img-fluid z-depth-1"%}
     </div>
 </div>
 
@@ -120,7 +120,7 @@ ax2.set(xlabel='distance (km)',ylabel='rain rate (mm/hour)')
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/hurricane_karl_reflectivity.png" title="hurricane_karl_reflectivity" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/hurricane_karl_reflectivity.png" title="hurricane_karl_reflectivity" class="img-fluid z-depth-1"%}
     </div>
 </div>
 
@@ -177,7 +177,7 @@ ax.set(xlabel='distance (km)',ylabel='height (km)',title='ECMWF temps in deg C')
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/hurricane_karl_ECMWF_temps.png" title="hurricane_karl_reflectivity" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/hurricane_karl_ECMWF_temps.png" title="hurricane_karl_reflectivity" class="img-fluid z-depth-1"%}
     </div>
 </div>
 
@@ -217,7 +217,7 @@ longwave_qr=storm_qr[1,:,:]
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/hurricane_karl_lw_sw.png" title="hurricane_karl_reflectivity" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/hurricane_karl_lw_sw.png" title="hurricane_karl_reflectivity" class="img-fluid z-depth-1"%}
     </div>
 </div>
 

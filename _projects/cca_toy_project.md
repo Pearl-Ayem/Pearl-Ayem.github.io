@@ -82,7 +82,7 @@ plt.show()
 <br>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/cca_1.png" title="CCA 1" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/cca_1.png" title="CCA 1" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <br>
@@ -107,7 +107,7 @@ cbar.set_label('time')
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/cca_2.png" title="CCA 2" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/cca_2.png" title="CCA 2" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <br>
@@ -172,7 +172,7 @@ G: <br>
 <br>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/cca_3.png" title="CCA 3" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/cca_3.png" title="CCA 3" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <br>
@@ -205,7 +205,7 @@ cbar.set_label('time')
 <br>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/cca_4.png" title="CCA 4" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/cca_4.png" title="CCA 4" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <br>
@@ -243,7 +243,7 @@ lowest correlation as predicted by the r value of 0.11. It does not follow any l
 <br>
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/cca_5.png" title="CCA 5" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/cca_5.png" title="CCA 5" class="img-fluid z-depth-1"%}
     </div>
 </div>
 <br>
@@ -283,7 +283,7 @@ fracVar_y = pca_y.explained_variance_ratio_
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets\img\cca_6.png" title="CCA 6" class="img-fluid z-depth-1" %}
+        {% include figure.liquid path="assets\img\cca_6.png" title="CCA 6" class="img-fluid z-depth-1" %}
     </div>
 </div>
 <div class="caption">

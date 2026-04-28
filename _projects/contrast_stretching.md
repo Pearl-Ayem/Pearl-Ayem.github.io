@@ -37,7 +37,7 @@ plt.hist(ch1.ravel());
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/cs_1_1.png" title="contrast stretching 1" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/cs_1_1.png" title="contrast stretching 1" class="img-fluid z-depth-1"%}
     </div>
 </div>
 
@@ -51,13 +51,13 @@ plt.imshow(img_eq[1000:4000,1500:5000],interpolation="nearest");
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/cs_1_2.png" title="contrast stretching 2" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/cs_1_2.png" title="contrast stretching 2" class="img-fluid z-depth-1"%}
     </div>
 </div>
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/cs_1_3.png" title="contrast stretching 3" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/cs_1_3.png" title="contrast stretching 3" class="img-fluid z-depth-1"%}
     </div>
 </div>
 
@@ -81,13 +81,13 @@ ax.set_extent([xmin,xmax,ymin,ymax],crs)
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/cs_1_4.png" title="contrast stretching 4" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/cs_1_4.png" title="contrast stretching 4" class="img-fluid z-depth-1"%}
     </div>
 </div>
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/cs_1_5.png" title="contrast stretching 5" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/cs_1_5.png" title="contrast stretching 5" class="img-fluid z-depth-1"%}
     </div>
 </div>
 
@@ -184,7 +184,7 @@ plt.show()
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/cs_1_6.png" title="contrast stretching vs hist" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/cs_1_6.png" title="contrast stretching vs hist" class="img-fluid z-depth-1"%}
     </div>
 </div>
 

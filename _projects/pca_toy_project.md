@@ -32,7 +32,7 @@ plt.savefig('1a')
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/pca_1.png" title="PCA 1" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/pca_1.png" title="PCA 1" class="img-fluid z-depth-1"%}
     </div>
 </div>
 
@@ -83,7 +83,7 @@ Using the plots below I decide which modes I want to keep to reconstruct the dat
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/pca_2.png" title="PCA 2" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/pca_2.png" title="PCA 2" class="img-fluid z-depth-1"%}
     </div>
 </div>
 
@@ -115,7 +115,7 @@ The first PC plot for Mode 1 shows the temporal variance explained by that mode.
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/pca_3.png" title="PCA 3" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/pca_3.png" title="PCA 3" class="img-fluid z-depth-1"%}
     </div>
 </div>
 
@@ -136,6 +136,6 @@ There are no defined clusters in this plot, and lowest spread or variance is in 
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.html path="assets/img/pca_4.png" title="PCA 4" class="img-fluid z-depth-1"%}
+        {% include figure.liquid path="assets/img/pca_4.png" title="PCA 4" class="img-fluid z-depth-1"%}
     </div>
 </div>
