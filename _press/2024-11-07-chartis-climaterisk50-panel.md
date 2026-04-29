@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "ClimateRisk50 Panel: Modelling Climate Risk for Banks"
+title: "Keynote: Advising Financial Institutions on Climate Risk"
 source: Chartis Research — ClimateRisk50 2024
 source_url: https://www.chartis-research.com/esg/7947265/climaterisk50-2024
 date: 2024-11-07

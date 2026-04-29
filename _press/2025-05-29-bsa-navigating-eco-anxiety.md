@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Navigating Eco-Anxiety in the Face of the Climate Crisis"
+title: "Eco-Anxiety and the Climate Professional"
 source: British Science Association
 source_url: https://www.britishscienceassociation.org/blog/tackling-eco-anxiety
 date: 2025-05-29

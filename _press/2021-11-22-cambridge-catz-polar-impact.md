@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Amplifying Diversity in Polar Exploration"
+title: "Co-Leading Polar Impact at Cambridge"
 source: St Catharine's College, University of Cambridge
 source_url: https://www.caths.cam.ac.uk/polar-impact
 date: 2021-11-22
@@ -34,6 +34,24 @@ I'd been following Polar Impact during my undergraduate years in Canada, where t
 One of the first projects I led at Polar Impact was a social media takeover during COP26. From 29 October to 15 November 2021, we handed over the network's accounts to different polar explorers and experts around the world so they could tell their own stories rather than have someone tell those stories for them.
 
 The thing that stayed with me from that project was how varied each person's path into polar research turned out to be. Polar science wasn't a career conversation I ever had with my family growing up in Mumbai or later in Vancouver, and that was true for almost everyone we featured. There isn't a standard route in.
+
+## Polar Impact in graduate teaching at Cambridge
+
+Two years after we started the network, Polar Impact's work was adopted into **MPhil-level teaching** at the **Scott Polar Research Institute** itself — one of the world's oldest international centres for polar research within a university. The diversity case studies, lived experiences, and frameworks we'd built were brought into graduate curriculum at the same institution where I was simultaneously doing my own MPhil. Having work I'd helped lead taught a floor away from where I sat is the kind of long-tail impact that's hard to engineer and easy to underestimate.
+
+<div class="card my-4 p-3 border" style="background-color: rgba(0,0,0,0.03); max-width: 600px;">
+  <div class="d-flex justify-content-between align-items-start mb-2">
+    <div>
+      <strong>Polar Impact</strong>
+      <span class="text-muted small d-block">@PolarImpact · Nov 2021</span>
+    </div>
+    <span class="text-muted" style="font-size: 1.4rem; line-height: 1; font-weight: 600;">𝕏</span>
+  </div>
+  <p class="mb-2" style="font-size: 1.05rem;">
+    2 yrs on from its creation and <a href="https://x.com/PolarImpact" target="_blank" rel="noopener">@PolarImpact</a> is included in MPhil lectures at <a href="https://x.com/scottpolar" target="_blank" rel="noopener">@scottpolar</a>, one of the world's oldest international centres for Polar Research within a university.
+  </p>
+  <a href="https://x.com/PolarImpact/status/1463252358121631753" target="_blank" rel="noopener" class="small text-muted text-decoration-none">View on X →</a>
+</div>
 
 ## From computer science to atmospheric science
 

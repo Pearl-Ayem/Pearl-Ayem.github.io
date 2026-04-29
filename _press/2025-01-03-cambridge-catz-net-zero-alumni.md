@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Net Zero by 2040: Alumni Series"
+title: "Cambridge Alumni on Net Zero by 2040"
 source: St Catharine's College, University of Cambridge
 source_url: https://www.caths.cam.ac.uk/net-zero-alumni-3
 date: 2025-01-03

@@ -3,8 +3,7 @@ layout: page
 title: Personal Projects
 permalink: /projects/
 description: 
-nav: true
-nav_order: 1
+nav: false
 display_categories: []  # Remove specific categories
 horizontal: false
 ---

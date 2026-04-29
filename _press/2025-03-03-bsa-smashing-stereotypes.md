@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Smashing Stereotypes: Pearl Ayem"
+title: "A Climate Scientist's Path Into Risk Modelling"
 source: British Science Week (British Science Association)
 source_url: https://www.britishscienceweek.org/smashing-stereotypes-pearl-ayem/
 date: 2025-03-03
