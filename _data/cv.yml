@@ -1,6 +1,6 @@
 cv:
   name: Pearl Ayem
-  label: Software & Climate Risk Lead
+  label: Climate Risk Lead
   email: pearlayem@gmail.com
   location: London, UK
   image: ""
@@ -26,12 +26,10 @@ cv:
         location: London, UK
         start_date: Mar 2025
         highlights:
-          - Team Lead for climate and nature risk across some of the world's biggest food, fashion, and entertainment brands, alongside global asset managers, underwriters and FTSE100 clients.
-          - Lead the planning and build for a full-company digital twin that assesses financial and climate risk due to drought, freeze, heatwave, water stress, agricultural yield and nature depletion.
-          - Product Lead for supply-chain and agricultural risk models spanning 65 agricultural crops, fed by CMIP6 ensembles with bias correction, satellite data and academic sources.
-          - Designing and delivering a first-of-a-kind water balance model for use by clients including Nestlé, Mondelez, Primark, Inditex and Barry Callebaut to quantify water stress across global supply chains.
-          - 'Lead the company''s applied AI initiatives in agricultural risk: built agentic workflows with LangSmith and LangGraph that cut model release cycles from 8 weeks to 4; trialling Gemini Enterprise (Vertex AI, NotebookLM, BigQuery) for internal research and client-facing analytics.'
-          - Write production code that powers digital twins, what-if analyses and bespoke client engagements; partner with Head of Product on roadmap, releases and client feedback.
+          - Team Lead for climate and nature risk across leading global brands in food, fashion and entertainment, alongside major asset managers, underwriters and FTSE100 clients.
+          - Lead the planning and delivery of climate, nature and supply-chain risk models that quantify physical and transition risk in financial terms across multiple sectors.
+          - Lead the firm's applied AI work — building agentic workflows that have materially shortened model release cycles, and trialling enterprise LLM tooling for internal research and client-facing analytics.
+          - Write production code that powers scenario analyses and bespoke client engagements; partner with Head of Product on roadmap and releases.
           - Manage a cross-functional team of modellers, economists, data scientists and engineers.
 
       - position: Senior Climate Risk Modeller
