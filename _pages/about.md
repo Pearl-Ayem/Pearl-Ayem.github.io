@@ -20,6 +20,7 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 Hi, I'm Pearl 🌿 
+
 A climate scientist by training, a stubborn optimist by temperament, and an engineer by trade. I grew up in rainy Vanouver, Canada, ended up in the UK, and along the way got convinced that climate, policy, people, and business are the same story told four ways.
 
 These days I lead climate and nature risk modelling at a climate tech firm, where I build the models that FTSE100 boards use to figure out what their next few decades look like, and lead the applied AI work making those models faster and sharper. My current favourite project is a first of a kind water balance model that quantifies water stress across the supply chains of some of the world's biggest food, fashion, and entertainment brands. It's the kind of work I love most: deeply technical, genuinely useful, and quietly consequential.

@@ -35,7 +35,7 @@ The piece's middle section profiled my work as a co-organiser of **Polar Impact*
 
 > *"Polar research certainly wasn't a career choice that I was aware of during my early years in India or growing up in Canada — but I'm proud of the journey I've made to St Catharine's. I'm inspired by how Polar Impact connects minorities and allies in our niche field. By sharing real-world experiences, we can begin to challenge the stereotype of polar exploration being exclusively the domain of white men. We're expanding our activities into scholarships, training and workshops to support talented researchers from under-represented backgrounds."*
 
-The Wheel pointed readers to the longer Polar Impact feature published earlier on the College website — included separately on this site as [Co-Leading Polar Impact at Cambridge]({% link _press/2021-11-22-cambridge-catz-polar-impact.md %}).
+The Wheel pointed readers to the longer Polar Impact feature published earlier on the College website — included separately on this site as [A Scott Polar Scholar on Diversity in Polar Research]({% link _press/2021-11-22-cambridge-catz-polar-impact.md %}).
 
 ## On the same page: the science underneath
 
