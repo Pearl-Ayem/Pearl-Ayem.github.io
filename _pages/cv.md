@@ -4,7 +4,7 @@ permalink: /cv/
 title: Curriculum Vitae
 nav: true
 nav_order: 2
-cv_pdf: /assets/pdf/Pearl_Ayem_CV_Sep_2025.pdf
+cv_pdf: /assets/pdf/Pearl_Ayem_CV.pdf
 ---
 
 # Summary:
