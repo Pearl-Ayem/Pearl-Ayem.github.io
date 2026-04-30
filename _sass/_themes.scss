@@ -6,7 +6,7 @@
 
 :root {
   color-scheme: light;
-  --global-bg-color: #f5f7ee;            // warm pale-sage page background
+  --global-bg-color: #f4f0e3;            // warm cream page background
   --global-code-bg-color: #{v.$code-bg-color-light};
   --global-text-color: #{v.$black-color};
   --global-text-color-light: #{v.$olive-color};
@@ -304,6 +304,20 @@ article blockquote {
   display: inline-block;
 }
 
+// About page name (Pearl Ayem) — two-tone
+.post-title .name-first {
+  color: var(--accent-olive);
+  font-weight: 700;
+}
+.post-title .name-middle {
+  color: var(--accent-olive);
+  font-weight: 700;
+}
+.post-title .name-last {
+  color: var(--accent-forest);
+  font-weight: 700;
+}
+
 // H2 inside articles — dim-grey text with solid sage left border
 article h2 {
   color: var(--accent-olive);
@@ -383,9 +397,6 @@ article h5 {
   color: var(--accent-forest);
 }
 .btn-email:hover {
-  background-color: var(--accent-peach);
-  color: var(--accent-forest);
-  opacity: 0.85;
   transform: translateY(-1px);
   text-decoration: none;
 }
@@ -394,9 +405,97 @@ article h5 {
   color: white;
 }
 .btn-linkedin:hover {
-  background-color: #0a66c2;
-  color: white;
-  opacity: 0.85;
   transform: translateY(-1px);
   text-decoration: none;
+}
+
+// -----------------------------------------------------------------------------
+// Bolder hover states (Tania-Rascia-style colour swap on buttons)
+// -----------------------------------------------------------------------------
+.btn-email:hover {
+  background-color: var(--accent-forest);
+  color: var(--accent-peach);
+  opacity: 1;
+}
+.btn-linkedin:hover {
+  background-color: white;
+  color: #0a66c2;
+  box-shadow: inset 0 0 0 2px #0a66c2;
+  opacity: 1;
+}
+
+// -----------------------------------------------------------------------------
+// Navigation bar — coloured links, peach hover background, forest active state
+// -----------------------------------------------------------------------------
+.navbar .navbar-nav .nav-item .nav-link {
+  color: var(--accent-forest);
+  font-weight: 500;
+  border-radius: 0.4rem;
+  padding: 0.4rem 0.85rem !important;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.navbar .navbar-nav .nav-item .nav-link:hover {
+  background-color: var(--accent-peach);
+  color: var(--accent-forest);
+}
+.navbar .navbar-nav .nav-item.active > .nav-link {
+  color: var(--accent-forest);
+  background-color: var(--accent-pale-sage);
+  font-weight: 700;
+}
+.navbar .navbar-nav .nav-item.active > .nav-link:hover {
+  background-color: var(--accent-peach);
+}
+
+// -----------------------------------------------------------------------------
+// CV section headings (Contact Information, Professional Summary, etc.)
+// — coloured forest text with peach left border, slight peach-text tint
+// -----------------------------------------------------------------------------
+.cv .card-title {
+  color: var(--accent-forest);
+  border-left: 4px solid var(--accent-peach);
+  padding-left: 0.85rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.01em;
+}
+.cv .card .table-cv .badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+// Section row titles inside CV (job titles, degree types) — use peach
+.cv h6.title.font-weight-bold {
+  color: var(--accent-forest);
+}
+// Company / institution lines — olive
+.cv h6.title + h6 {
+  color: var(--accent-olive);
+}
+
+// -----------------------------------------------------------------------------
+// Body link hover — colour swap from forest to peach background
+// -----------------------------------------------------------------------------
+article a:not(.btn-email):not(.btn-linkedin):not(.btn):hover {
+  color: var(--accent-forest);
+  background-color: var(--accent-peach);
+  text-decoration: none;
+  border-radius: 0.15rem;
+  padding: 0 0.15rem;
+}
+
+// -----------------------------------------------------------------------------
+// Monospace font — JetBrains Mono everywhere monospace is used
+// -----------------------------------------------------------------------------
+code,
+kbd,
+samp,
+pre,
+.highlight,
+.highlighter-rouge,
+tt {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Menlo, Monaco, Consolas, monospace !important;
+  font-feature-settings: "liga" 1, "calt" 1; // ligatures
+}
+.cv .badge {
+  font-family: 'JetBrains Mono', monospace;
 }
