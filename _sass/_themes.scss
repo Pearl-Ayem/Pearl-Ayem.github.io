@@ -248,45 +248,10 @@ html[data-theme-setting="light"] {
   border-radius: 0.5rem;
 }
 
-// Big hero band — used at the top of the home page
-.hero-band {
-  background: linear-gradient(
-    135deg,
-    var(--accent-peach) 0%,
-    var(--accent-pale-sage) 50%,
-    var(--accent-sage) 100%
-  );
-  padding: 1.5rem 1.75rem;
-  border-radius: 0.75rem;
-  margin: 1rem 0 2rem 0;
-  color: var(--accent-forest);
-  border: 1px solid rgba(63, 71, 57, 0.15);
-  box-shadow: 0 1px 3px rgba(63, 71, 57, 0.08);
-}
-.hero-band .hero-eyebrow {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-weight: 600;
-  opacity: 0.85;
-  margin-bottom: 0.4rem;
-}
-.hero-band .hero-tagline {
-  font-size: 1.15rem;
-  font-weight: 500;
-  margin: 0;
-  line-height: 1.4;
-}
-
-// Slim banner strip — between sections
+// Slim banner strip — between sections (solid peach)
 .accent-banner {
-  background: linear-gradient(
-    90deg,
-    var(--accent-peach) 0%,
-    var(--accent-pale-sage) 60%,
-    var(--accent-sage) 100%
-  );
-  padding: 0.75rem 1.1rem;
+  background-color: var(--accent-peach);
+  padding: 0.85rem 1.1rem;
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
@@ -295,18 +260,12 @@ html[data-theme-setting="light"] {
   font-weight: 500;
   font-size: 0.98rem;
   letter-spacing: 0.02em;
-  border: 1px solid rgba(63, 71, 57, 0.12);
 }
 
-// Coloured strip at the top of detail pages (press, thesis, etc.)
+// Solid charcoal strip at the top of detail pages
 .page-hero-strip {
   height: 6px;
-  background: linear-gradient(
-    90deg,
-    var(--accent-peach) 0%,
-    var(--accent-sage) 50%,
-    var(--accent-forest) 100%
-  );
+  background-color: var(--accent-forest);
   border-radius: 3px;
   margin-bottom: 1.5rem;
 }
@@ -337,40 +296,107 @@ article blockquote {
   margin-left: 0;
 }
 
-// Page H1 titles — coloured forest with a sage underline accent
+// Page H1 titles — solid charcoal with peach underline
 .post-title {
   color: var(--accent-forest);
-  border-bottom: 3px solid var(--accent-sage);
+  border-bottom: 4px solid var(--accent-peach);
   padding-bottom: 0.5rem;
   display: inline-block;
 }
 
-// H2 inside articles — soft forest with peach decorative left border
+// H2 inside articles — dim-grey text with solid sage left border
 article h2 {
-  color: var(--accent-forest);
-  border-left: 4px solid var(--accent-peach);
+  color: var(--accent-olive);
+  border-left: 4px solid var(--accent-sage);
   padding-left: 0.85rem;
   margin-top: 2rem;
 }
 
-// H3 inside articles — coloured but no border (lighter visual)
+// H3 inside articles — solid forest, no decoration (visual hierarchy via colour weight)
 article h3 {
+  color: var(--accent-forest);
+  font-weight: 600;
+}
+
+// H4+ — olive grey, lighter weight
+article h4,
+article h5 {
   color: var(--accent-olive);
 }
 
-// Press / project cards — sage border + warm hover state
+// Press / project cards — sage border, peach hover (no shadow gradient)
 .card.hoverable {
   border: 1px solid var(--accent-sage);
-  transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: border-color 0.15s ease, transform 0.15s ease;
 }
 .card.hoverable:hover {
   border-color: var(--accent-peach);
-  box-shadow: 0 4px 12px rgba(63, 71, 57, 0.15);
+  border-width: 2px;
   transform: translateY(-2px);
 }
 
-// Profile picture: sage frame + soft shadow on the home page
+// Profile picture: sage frame
 .profile img {
   border: 3px solid var(--accent-sage);
-  box-shadow: 0 4px 12px rgba(63, 71, 57, 0.12);
+}
+
+// -----------------------------------------------------------------------------
+// Social media icons on the About page — each gets its own solid colour
+// (jekyll-socials renders each as a Font Awesome icon inside .contact-icons)
+// -----------------------------------------------------------------------------
+.contact-icons .fa-envelope,
+.contact-icons .fa-envelope-square {
+  color: var(--accent-peach);
+}
+.contact-icons .fa-linkedin,
+.contact-icons .fa-linkedin-in {
+  color: #0a66c2;  // LinkedIn brand blue
+}
+.contact-icons .fa-github,
+.contact-icons .fa-github-square {
+  color: var(--accent-forest);
+}
+.contact-icons .fa-file-pdf {
+  color: #b94f4f;  // muted PDF red
+}
+// Hover lift for any social icon
+.contact-icons a:hover i {
+  opacity: 0.75;
+}
+
+// -----------------------------------------------------------------------------
+// Custom contact buttons — used on the thesis page (Email / LinkedIn)
+// -----------------------------------------------------------------------------
+.btn-email,
+.btn-linkedin,
+.btn-website {
+  display: inline-block;
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.btn-email {
+  background-color: var(--accent-peach);
+  color: var(--accent-forest);
+}
+.btn-email:hover {
+  background-color: var(--accent-peach);
+  color: var(--accent-forest);
+  opacity: 0.85;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+.btn-linkedin {
+  background-color: #0a66c2;  // LinkedIn brand blue
+  color: white;
+}
+.btn-linkedin:hover {
+  background-color: #0a66c2;
+  color: white;
+  opacity: 0.85;
+  transform: translateY(-1px);
+  text-decoration: none;
 }

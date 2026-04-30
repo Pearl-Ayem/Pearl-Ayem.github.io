@@ -286,8 +286,8 @@ A few things that didn't fit in 17,000 words and one year:
 The full thesis isn't published as a public download here. If you'd like the **full 105-page paper** or the **5-minute summary presentation** — whether you're a researcher, a prospective collaborator, a student working on the GVIIS or Antarctic ice shelves more broadly, or just curious — get in touch and I'll send them over.
 
 <div class="d-flex flex-wrap gap-2 mt-3">
-  <a class="btn btn-primary" href="mailto:pearlayem@gmail.com?subject=Request%20for%20MPhil%20thesis%20%E2%80%94%20George%20VI%20Ice%20Shelf">📧 Email me</a>
-  <a class="btn btn-outline-primary" href="https://www.linkedin.com/in/pearl-ayem/" target="_blank" rel="noopener">💼 Reach out on LinkedIn</a>
+  <a class="btn-email" href="mailto:pearlayem@gmail.com?subject=Request%20for%20MPhil%20thesis%20%E2%80%94%20George%20VI%20Ice%20Shelf">📧 Email me</a>
+  <a class="btn-linkedin" href="https://www.linkedin.com/in/pearl-ayem/" target="_blank" rel="noopener">💼 Reach out on LinkedIn</a>
 </div>
 
 <p class="text-muted small mt-3">
