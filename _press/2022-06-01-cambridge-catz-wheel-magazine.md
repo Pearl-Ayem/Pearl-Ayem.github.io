@@ -20,7 +20,7 @@ excerpt: A profile in the 2022 edition of The Wheel, St Catharine's College's an
     %}
   </div>
   <div class="col-md-8">
-    <p class="text-muted mb-2">
+    <p class="text-muted mb-2 eyebrow">
       <strong>{{ page.source }}</strong> &middot; {{ page.date | date: "%Y" }}
     </p>
     <p>

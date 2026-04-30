@@ -32,6 +32,16 @@ $grey-900: #212529;
 $white-color: #ffffff !default;
 $black-color: #000000 !default;
 
+// -----------------------------------------------------------------------------
+// Earth-tone palette (Pearl's site theme — Apr 2026)
+//   peach, pale sage, sage, olive, deep forest
+// -----------------------------------------------------------------------------
+$peach-color: #f1bf98 !default;       // warm accent
+$pale-sage-color: #e1f4cb !default;   // very light tint
+$sage-color: #bacba9 !default;        // mid-sage
+$olive-color: #717568 !default;       // muted text / borders
+$forest-color: #3f4739 !default;      // primary accent
+
 // Theme colors
 
 $code-bg-color-light: rgba($purple-color, 0.05);

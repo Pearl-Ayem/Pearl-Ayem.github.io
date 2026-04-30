@@ -100,7 +100,7 @@ The closing argument is the simplest one. No single person can fix this. The goo
 - 🔗 **Read the full piece:** [britishscienceassociation.org → Tackling eco-anxiety]({{ page.source_url }})
 {% if page.archived_pdf %}- 📄 **Archived copy:** [download PDF]({{ page.archived_pdf | relative_url }}){% endif %}
 
-<div class="alert alert-light border mt-4 small" style="background-color: rgba(0,0,0,0.03);">
+<div class="accent-card-peach mt-4 p-3 small">
   <strong>If you’re struggling.</strong>
   Whether your anxiety is climate-related or otherwise, you don’t have to deal with it alone. The
   <a href="https://www.samaritans.org" target="_blank" rel="noopener">Samaritans</a> (call 116 123 in the UK, free, 24/7)

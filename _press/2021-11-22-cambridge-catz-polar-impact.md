@@ -55,7 +55,7 @@ A natural extension of being one of very few women of colour at SPRI was getting
 
 The work expanded beyond peer support. **I went on to teach MPhil-level lectures at the Scott Polar Research Institute on diversity in polar academic circles** — taking the case studies, lived experiences, and frameworks Polar Impact had developed and turning them into a curriculum unit for graduate students at the same institute where I had just done my own MPhil. Having work I'd helped lead become teaching content a floor away from where I'd sat as a student is the kind of long-tail impact that's still hard to believe.
 
-<div class="card my-4 p-3 border" style="background-color: rgba(0,0,0,0.03); max-width: 600px;">
+<div class="card accent-card-sage my-4 p-3 border-0" style="max-width: 600px;">
   <div class="d-flex justify-content-between align-items-start mb-2">
     <div>
       <strong>Polar Impact</strong>

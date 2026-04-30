@@ -10,16 +10,23 @@
   --global-code-bg-color: #{v.$code-bg-color-light};
   --global-text-color: #{v.$black-color};
   --global-text-color-light: #{v.$grey-color};
-  --global-theme-color: #{v.$cyan-color};
-  --global-hover-color: #{v.$cyan-color};
+  --global-theme-color: #{v.$forest-color};
+  --global-hover-color: #{v.$forest-color};
   --global-hover-text-color: #{v.$white-color};
-  --global-footer-bg-color: #{v.$grey-color-dark};
-  --global-footer-text-color: #{v.$grey-color-light};
-  --global-footer-link-color: #{v.$white-color};
-  --global-distill-app-color: #{v.$grey-color};
-  --global-divider-color: rgba(0, 0, 0, 0.1);
+  --global-footer-bg-color: #{v.$forest-color};
+  --global-footer-text-color: #{v.$pale-sage-color};
+  --global-footer-link-color: #{v.$peach-color};
+  --global-distill-app-color: #{v.$olive-color};
+  --global-divider-color: #{v.$sage-color};
   --global-card-bg-color: #{v.$white-color};
-  --global-highlight-color: #{v.$red-color-dark};
+  --global-highlight-color: #{v.$forest-color};
+
+  // Custom palette tokens (peach, pale sage, sage, olive, forest)
+  --accent-peach: #{v.$peach-color};
+  --accent-pale-sage: #{v.$pale-sage-color};
+  --accent-sage: #{v.$sage-color};
+  --accent-olive: #{v.$olive-color};
+  --accent-forest: #{v.$forest-color};
   --global-back-to-top-bg-color: rgba(
     #{color.channel(v.$black-color, "red", v.$space: rgb)},
     #{color.channel(v.$black-color, "green", v.$space: rgb)},
@@ -80,15 +87,22 @@ html[data-theme="dark"] {
   --global-code-bg-color: #{v.$code-bg-color-dark};
   --global-text-color: #{v.$grey-color-light};
   --global-text-color-light: #{v.$grey-color};
-  --global-theme-color: #{v.$cyan-color};
-  --global-hover-color: #{v.$cyan-color};
-  --global-hover-text-color: #{v.$white-color};
-  --global-footer-bg-color: #{v.$grey-color-light};
-  --global-footer-text-color: #{v.$grey-color-dark};
-  --global-footer-link-color: #{v.$black-color};
-  --global-distill-app-color: #{v.$grey-color-light};
-  --global-divider-color: #424246;
+  --global-theme-color: #{v.$sage-color};
+  --global-hover-color: #{v.$peach-color};
+  --global-hover-text-color: #{v.$forest-color};
+  --global-footer-bg-color: #{v.$forest-color};
+  --global-footer-text-color: #{v.$pale-sage-color};
+  --global-footer-link-color: #{v.$peach-color};
+  --global-distill-app-color: #{v.$sage-color};
+  --global-divider-color: #{v.$olive-color};
   --global-card-bg-color: #{v.$grey-900};
+
+  // Custom palette tokens (same names as light mode for cross-mode reuse)
+  --accent-peach: #{v.$peach-color};
+  --accent-pale-sage: #{v.$pale-sage-color};
+  --accent-sage: #{v.$sage-color};
+  --accent-olive: #{v.$olive-color};
+  --accent-forest: #{v.$forest-color};
   --global-back-to-top-bg-color: rgba(
     #{color.channel(v.$white-color, "red", v.$space: rgb)},
     #{color.channel(v.$white-color, "green", v.$space: rgb)},
@@ -205,4 +219,78 @@ html[data-theme-setting="light"] {
 
 #light-toggle:hover .fa-half-sun-moon::after {
   color: var(--global-theme-color);
+}
+
+/* ----------------------------------------------------------------------------
+ * Earth-tone accent utilities
+ * Used across the site: thesis "at-a-glance" card, page TOC, press cards,
+ * X-post embeds, mental-health alert footer, hero banners, etc.
+ * -------------------------------------------------------------------------- */
+
+// Sage-tinted card (calm neutral; replaces rgba(0,0,0,0.03) usage)
+.accent-card-sage {
+  background-color: rgba(186, 203, 169, 0.18);  // sage @ ~18% alpha
+  border: 1px solid rgba(63, 71, 57, 0.08);
+  border-radius: 0.5rem;
+}
+
+// Peach-tinted card (warm; for support / wellbeing / human callouts)
+.accent-card-peach {
+  background-color: rgba(241, 191, 152, 0.22);  // peach @ ~22% alpha
+  border: 1px solid rgba(241, 191, 152, 0.5);
+  border-radius: 0.5rem;
+}
+
+// Pale-sage tinted card (very subtle; for "info" callouts on a busy page)
+.accent-card-pale {
+  background-color: rgba(225, 244, 203, 0.45);  // pale sage @ 45% alpha
+  border: 1px solid rgba(186, 203, 169, 0.4);
+  border-radius: 0.5rem;
+}
+
+// Slim banner strip — useful between sections on the home page
+.accent-banner {
+  background: linear-gradient(
+    90deg,
+    rgba(241, 191, 152, 0.35) 0%,
+    rgba(186, 203, 169, 0.35) 60%,
+    rgba(225, 244, 203, 0.35) 100%
+  );
+  padding: 0.6rem 1rem;
+  border-radius: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--accent-forest);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+// Eyebrow text — small uppercase label above section headings
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-olive);
+  margin-bottom: 0.4rem;
+}
+
+// CV date badges — al-folio uses .badge.danger-color-dark (red).
+// Override to use the forest accent so the timeline reads as part of the theme.
+.badge.danger-color-dark {
+  background-color: var(--accent-forest) !important;
+  color: var(--accent-pale-sage) !important;
+}
+
+// Blockquote: subtle sage left border (only inside articles, so it
+// doesn't override anything in nav/footer)
+article blockquote {
+  border-left: 4px solid var(--accent-sage);
+  padding-left: 1rem;
+  background-color: rgba(225, 244, 203, 0.25);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0 0.25rem 0.25rem 0;
 }

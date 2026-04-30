@@ -18,7 +18,7 @@ nav_order: 3
     </p>
   </div>
   <div class="col-md-5">
-    <div class="card p-3" style="background-color: rgba(0,0,0,0.03);">
+    <div class="card accent-card-sage p-3 border-0">
       <h6 class="text-uppercase text-muted mb-2" style="letter-spacing: 0.05em;">At a glance</h6>
       <table class="table table-sm table-borderless mb-0 small">
         <tr><td class="pe-2"><strong>Degree</strong></td><td>MPhil in Polar Studies</td></tr>
@@ -34,7 +34,7 @@ nav_order: 3
 </div>
 
 
-<div class="card p-3 my-4" style="background-color: rgba(0,0,0,0.03);">
+<div class="card accent-card-sage p-3 my-4 border-0">
   <h6 class="text-uppercase text-muted mb-3" style="letter-spacing: 0.05em;">📑 On this page</h6>
   <div class="row small">
     <div class="col-md-6">
