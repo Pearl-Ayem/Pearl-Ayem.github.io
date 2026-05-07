@@ -4,7 +4,7 @@ title: MPhil Thesis
 permalink: /thesis/
 description: Atmospheric Drivers of Surface Melt on the George VI Ice Shelf, Antarctica.
 nav: true
-nav_order: 3
+nav_order: 4
 ---
 
 <div class="row align-items-start g-4 mb-5">
