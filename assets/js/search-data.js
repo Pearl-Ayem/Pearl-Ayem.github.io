@@ -102,6 +102,11 @@ ninja.data = [{
           description: "Skills- sklearn, scipy, seaborn, PCA, statistics",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pca_toy_project/";
+            },},{id: "projects-planetary-scale-crop-water-balance-engine",
+          title: 'Planetary-scale crop water balance engine',
+          description: "Skills - BigQuery, Python, JavaScript UDFs, CMIP6, Penman-Monteith, FAO-56, pipeline architecture, cloud cost optimisation",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/water_balance_engine/";
             },},{
         id: 'social-email',
         title: 'email',
