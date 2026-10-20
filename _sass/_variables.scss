@@ -33,14 +33,19 @@ $white-color: #ffffff !default;
 $black-color: #000000 !default;
 
 // -----------------------------------------------------------------------------
-// Earth-tone palette (Pearl's site theme — Apr 2026)
-//   peach, pale sage, sage, olive, deep forest
+// "Brighter earth" palette (Pearl's site theme — Oct 2026)
+//   Variable names are kept from the earlier earth-tone palette:
+//   peach = apricot accent, pale sage = light tint, sage = leaf green,
+//   olive = muted text, forest = primary green.
 // -----------------------------------------------------------------------------
-$peach-color: #f1bf98 !default;       // warm accent
-$pale-sage-color: #e1f4cb !default;   // very light tint
-$sage-color: #bacba9 !default;        // mid-sage
-$olive-color: #717568 !default;       // muted text / borders
-$forest-color: #3f4739 !default;      // primary accent
+$peach-color: #f28c55 !default;       // bright apricot accent (decorative: rules, underlines, borders)
+$peach-soft-color: #fbc8a3 !default;  // soft apricot for backgrounds behind text (5.3:1 with forest)
+$pale-sage-color: #eaf6dc !default;   // fresh pale green tint
+$sage-color: #a9cf8f !default;        // leaf green
+$olive-color: #6b705c !default;       // olive grey, muted text
+$forest-color: #2d5a3d !default;      // rich forest green, primary
+$link-color: #b5532a !default;        // burnt orange links (4.7:1 on the background)
+$link-color-dark: #f5a77c !default;   // light apricot links for dark mode
 
 // Theme colors
 

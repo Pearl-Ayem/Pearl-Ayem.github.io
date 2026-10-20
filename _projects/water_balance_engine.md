@@ -1,0 +1,604 @@
+---
+layout: page
+title: Planetary-scale crop water balance engine
+description: Skills - BigQuery, Python, JavaScript UDFs, CMIP6, Penman-Monteith, FAO-56, pipeline architecture, cloud cost optimisation
+img: assets/img/water_balance_engine.png
+importance: 0
+category: work
+---
+
+{% raw %}
+
+<style>
+  .wb {
+    --wb-water: #4a86a8;
+    --wb-water-soft: rgba(74, 134, 168, 0.18);
+    --wb-sun: #e0a458;
+    --wb-soil: #8a6a4f;
+    --wb-card: var(--global-card-bg-color);
+    --wb-text: var(--global-text-color);
+    --wb-muted: var(--global-text-color-light);
+    --wb-accent: var(--global-theme-color);
+    --wb-line: var(--global-divider-color);
+    color: var(--wb-text);
+  }
+  .wb section { margin: 3.2rem 0; }
+  .wb h2 { margin-top: 0; }
+  .wb .wb-kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; color: var(--wb-muted); margin-bottom: 0.3rem; }
+  .wb .wb-lede { font-size: 1.15rem; line-height: 1.65; }
+  .wb .wb-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+  .wb .wb-badges li { background: var(--accent-pale-sage); color: var(--accent-forest); border-radius: 999px; padding: 0.3rem 0.8rem; font-size: 0.85rem; font-weight: 600; }
+  .wb .wb-note { font-size: 0.85rem; color: var(--wb-muted); font-style: italic; }
+
+  .wb .wb-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+  .wb .wb-stat { background: var(--wb-card); border-radius: 14px; padding: 1.2rem 1rem; border-top: 4px solid var(--wb-accent); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06); }
+  .wb .wb-stat .num { font-size: 2rem; font-weight: 700; line-height: 1.1; color: var(--wb-accent); font-variant-numeric: tabular-nums; }
+  .wb .wb-stat .lbl { font-size: 0.85rem; color: var(--wb-muted); margin-top: 0.35rem; }
+
+  .wb .wb-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 2rem; align-items: center; }
+  @media (max-width: 760px) { .wb .wb-split { grid-template-columns: 1fr; } }
+  .wb .wb-card { background: var(--wb-card); border-radius: 14px; padding: 1.25rem; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06); }
+  .wb svg text { fill: var(--wb-text); font-family: inherit; }
+  .wb svg .muted { fill: var(--wb-muted); }
+
+  /* Soil column animation */
+  .wb .drop { animation: wb-fall 1.8s linear infinite; }
+  .wb .drop:nth-child(2) { animation-delay: 0.45s; }
+  .wb .drop:nth-child(3) { animation-delay: 0.9s; }
+  .wb .drop:nth-child(4) { animation-delay: 1.35s; }
+  @keyframes wb-fall { 0% { transform: translateY(-20px); opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { transform: translateY(85px); opacity: 0; } }
+  .wb .vapour { animation: wb-rise 2.4s ease-in infinite; }
+  .wb .vapour:nth-child(2) { animation-delay: 0.8s; }
+  .wb .vapour:nth-child(3) { animation-delay: 1.6s; }
+  @keyframes wb-rise { 0% { transform: translateY(20px); opacity: 0; } 30% { opacity: 0.9; } 100% { transform: translateY(-55px); opacity: 0; } }
+  .wb .water-level { animation: wb-tide 9s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom; }
+  @keyframes wb-tide { 0%, 100% { transform: scaleY(0.82); } 30% { transform: scaleY(1.08); } 65% { transform: scaleY(0.38); } }
+  .wb .seep { animation: wb-seep 2.2s linear infinite; }
+  .wb .seep:nth-child(2) { animation-delay: 1.1s; }
+  @keyframes wb-seep { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(40px); opacity: 0; } }
+  .wb .sun-rays { animation: wb-spin 24s linear infinite; transform-box: fill-box; transform-origin: center; }
+  @keyframes wb-spin { to { transform: rotate(360deg); } }
+
+  /* Interactive model */
+  .wb .wb-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.9rem 1.4rem; margin-bottom: 1rem; }
+  .wb .wb-controls label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.2rem; }
+  .wb .wb-controls input[type="range"] { width: 100%; accent-color: var(--wb-accent); }
+  .wb .wb-controls select { width: 100%; padding: 0.3rem; border-radius: 8px; border: 1px solid var(--wb-line); background: var(--wb-card); color: var(--wb-text); }
+  .wb .wb-check { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; }
+  .wb .wb-outputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.7rem; margin-top: 1rem; }
+  .wb .wb-out { background: var(--wb-water-soft); border-radius: 10px; padding: 0.6rem 0.8rem; }
+  .wb .wb-out b { display: block; font-size: 1.35rem; font-variant-numeric: tabular-nums; }
+  .wb .wb-out span { font-size: 0.78rem; color: var(--wb-muted); }
+  .wb .wb-legend { display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.8rem; color: var(--wb-muted); margin-top: 0.5rem; }
+  .wb .wb-legend i { display: inline-block; width: 14px; height: 4px; border-radius: 2px; vertical-align: middle; margin-right: 0.35rem; }
+  .wb .wb-chart-wrap { overflow-x: auto; }
+
+  /* Equations */
+  .wb .wb-eq { background: var(--wb-card); border-radius: 14px; padding: 1rem 1.25rem; overflow-x: auto; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06); border-left: 4px solid var(--wb-sun); }
+  .wb .wb-terms { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; margin-top: 1rem; }
+  .wb .wb-term { background: var(--wb-card); border-radius: 12px; padding: 0.8rem 1rem; border: 1px solid var(--wb-line); }
+  .wb .wb-term .sym { font-size: 1.15rem; color: var(--wb-accent); font-weight: 700; }
+  .wb .wb-term p { margin: 0.3rem 0 0; font-size: 0.88rem; }
+  .wb details { background: var(--wb-card); border-radius: 12px; padding: 0.8rem 1.1rem; margin-top: 0.8rem; border: 1px solid var(--wb-line); }
+  .wb details summary { cursor: pointer; font-weight: 600; }
+  .wb .mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; }
+
+  /* Pipeline flow */
+  .wb .flow { stroke-dasharray: 6 8; animation: wb-flow 1.4s linear infinite; }
+  @keyframes wb-flow { to { stroke-dashoffset: -28; } }
+  .wb .node rect { fill: var(--wb-card); stroke: var(--wb-line); stroke-width: 1.5; }
+  .wb .node.core rect { stroke: var(--wb-accent); stroke-width: 2.5; }
+  .wb .node.out rect { fill: var(--accent-pale-sage); stroke: var(--wb-accent); }
+  .wb .node.out text { fill: var(--accent-forest); }
+
+  /* Bars */
+  .wb .wb-bars { display: grid; gap: 1.3rem; }
+  .wb .wb-bar-row .t { font-weight: 600; margin-bottom: 0.35rem; font-size: 0.95rem; }
+  .wb .wb-bar { display: grid; grid-template-columns: 7.5rem 1fr; align-items: center; gap: 0.6rem; margin: 0.25rem 0; font-size: 0.85rem; }
+  .wb .wb-bar .track { background: var(--wb-water-soft); border-radius: 6px; height: 26px; position: relative; }
+  .wb .wb-bar .fill { height: 100%; width: 0; border-radius: 6px; transition: width 1.6s cubic-bezier(0.2, 0.8, 0.2, 1); display: flex; align-items: center; padding-left: 0.5rem; font-weight: 700; font-size: 0.8rem; white-space: nowrap; }
+  .wb .wb-bar .fill.before { background: var(--accent-peach-soft); color: var(--accent-forest); }
+  .wb .wb-bar .fill.after { background: var(--wb-accent); color: var(--global-bg-color); }
+  .wb .wb-bar .fill.tiny { color: var(--wb-text); padding-left: 0; text-indent: calc(100% + 0.5rem); }
+
+  /* Decisions */
+  .wb .wb-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+  .wb .wb-decision { background: var(--wb-card); border-radius: 14px; padding: 1.1rem 1.2rem; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06); }
+  .wb .wb-decision .n { display: inline-flex; width: 1.9rem; height: 1.9rem; border-radius: 50%; background: var(--wb-accent); color: var(--global-bg-color); align-items: center; justify-content: center; font-weight: 700; margin-bottom: 0.5rem; }
+  .wb .wb-decision h4 { font-size: 1.02rem; margin: 0 0 0.4rem; }
+  .wb .wb-decision p { font-size: 0.9rem; margin: 0; }
+  .wb .wb-decision .impact { margin-top: 0.6rem; font-size: 0.82rem; font-weight: 700; color: var(--wb-accent); }
+
+  /* Timeline */
+  .wb .wb-timeline { position: relative; padding-left: 1.8rem; }
+  .wb .wb-timeline::before { content: ""; position: absolute; left: 0.45rem; top: 0.3rem; bottom: 0.3rem; width: 3px; background: var(--wb-line); border-radius: 2px; }
+  .wb .wb-phase { position: relative; margin-bottom: 1.3rem; }
+  .wb .wb-phase::before { content: ""; position: absolute; left: -1.62rem; top: 0.3rem; width: 0.9rem; height: 0.9rem; border-radius: 50%; background: var(--wb-accent); box-shadow: 0 0 0 4px var(--global-bg-color); }
+  .wb .wb-phase h4 { margin: 0 0 0.2rem; font-size: 1rem; }
+  .wb .wb-phase p { margin: 0; font-size: 0.9rem; }
+
+  .wb .wb-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .wb .wb-chips span { border: 1px solid var(--wb-line); border-radius: 999px; padding: 0.25rem 0.75rem; font-size: 0.85rem; }
+
+  /* Reveal on scroll */
+  .wb .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .wb .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .wb *, .wb *::before { animation: none !important; transition: none !important; }
+    .wb .reveal { opacity: 1; transform: none; }
+  }
+</style>
+
+<div class="wb">
+
+<section>
+  <p class="wb-lede">
+    A daily soil water balance model for the world's farmland. It tells companies how water stress will affect the crops in their supply chains, every year to 2070, under every major emissions pathway. I researched the science, designed the model and built the cloud pipeline that runs it, end to end. Then I redesigned how it moves and stores data, <strong>cutting cloud storage costs by 94%</strong> and a full global run <strong>from days to about 14 hours</strong>.
+  </p>
+  <ul class="wb-badges">
+    <li>Built solo, science to production</li>
+    <li>~4 months of development</li>
+    <li>BigQuery · Python · JavaScript</li>
+    <li>FAO-56 · SWAT · CMIP6</li>
+  </ul>
+</section>
+
+<section class="reveal">
+  <div class="wb-stats">
+    <div class="wb-stat"><div class="num" data-count="920000" data-format="k">0</div><div class="lbl">farmland locations at ~9&nbsp;km resolution</div></div>
+    <div class="wb-stat"><div class="num" data-count="570" data-suffix=" bn">0</div><div class="lbl">rows of daily climate data processed</div></div>
+    <div class="wb-stat"><div class="num" data-count="634" data-suffix=" TB">0</div><div class="lbl">of intermediate storage eliminated</div></div>
+    <div class="wb-stat"><div class="num" data-count="94" data-suffix="%">0</div><div class="lbl">lower monthly storage cost</div></div>
+    <div class="wb-stat"><div class="num" data-count="14" data-prefix="~" data-suffix=" h">0</div><div class="lbl">for a full global run, down from days</div></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <p class="wb-kicker">The science</p>
+  <h2>Every field is a bucket</h2>
+  <div class="wb-split">
+    <div>
+      <p>The model tracks how much water sits in the root zone of each crop, every day, at every location. Rain fills the bucket. The sun, wind and dry air pull water out through the soil and leaves. Anything the soil cannot hold runs off the surface or drains below the roots, at a rate limited by the tightest soil layer the roots have reached.</p>
+      <p>As the crop grows, its roots reach deeper and the bucket gets bigger. When the bucket runs low, the plant closes its pores to save water and stops growing. Counting those days, for every crop, location, year and climate future, is what turns weather into supply-chain risk.</p>
+      <p>The daily recurrence, following FAO-56 and the land phase of the SWAT hydrology model:</p>
+      <p>\[ SM_t = SM_{t-1} + P_t - \text{Runoff}_t - \text{Drainage}_t - ET_{a,t} \]</p>
+    </div>
+    <div class="wb-card" aria-hidden="true">
+      <svg viewBox="0 0 360 330" width="100%">
+        <g class="sun-rays">
+          <circle cx="300" cy="45" r="22" fill="var(--wb-sun)"></circle>
+          <g stroke="var(--wb-sun)" stroke-width="3" stroke-linecap="round">
+            <line x1="300" y1="8" x2="300" y2="16"></line><line x1="300" y1="74" x2="300" y2="82"></line>
+            <line x1="263" y1="45" x2="271" y2="45"></line><line x1="329" y1="45" x2="337" y2="45"></line>
+            <line x1="274" y1="19" x2="280" y2="25"></line><line x1="320" y1="65" x2="326" y2="71"></line>
+            <line x1="274" y1="71" x2="280" y2="65"></line><line x1="320" y1="25" x2="326" y2="19"></line>
+          </g>
+        </g>
+        <ellipse cx="85" cy="40" rx="45" ry="17" fill="var(--wb-line)"></ellipse>
+        <ellipse cx="115" cy="32" rx="32" ry="15" fill="var(--wb-line)"></ellipse>
+        <g fill="var(--wb-water)">
+          <path class="drop" d="M70 62 q4 7 0 10 q-4 -3 0 -10z"></path>
+          <path class="drop" d="M95 60 q4 7 0 10 q-4 -3 0 -10z"></path>
+          <path class="drop" d="M120 64 q4 7 0 10 q-4 -3 0 -10z"></path>
+          <path class="drop" d="M82 66 q4 7 0 10 q-4 -3 0 -10z"></path>
+        </g>
+        <g stroke="var(--wb-sun)" stroke-width="2.5" fill="none" stroke-linecap="round">
+          <path class="vapour" d="M215 140 q-6 -8 0 -16 q6 -8 0 -16"></path>
+          <path class="vapour" d="M240 140 q-6 -8 0 -16 q6 -8 0 -16"></path>
+          <path class="vapour" d="M265 140 q-6 -8 0 -16 q6 -8 0 -16"></path>
+        </g>
+        <g fill="var(--wb-accent)">
+          <path d="M240 150 q-18 -30 -2 -48 q10 22 2 48z"></path>
+          <path d="M240 150 q16 -28 34 -30 q-10 22 -34 30z"></path>
+          <path d="M240 150 q-20 -12 -40 -6 q16 16 40 6z"></path>
+        </g>
+        <rect x="40" y="150" width="280" height="150" rx="8" fill="var(--wb-soil)" opacity="0.28"></rect>
+        <rect class="water-level" x="40" y="190" width="280" height="110" rx="6" fill="var(--wb-water)" opacity="0.45"></rect>
+        <g stroke="var(--wb-accent)" stroke-width="2" fill="none" stroke-linecap="round">
+          <path d="M240 150 v70 M240 175 l-18 26 M240 190 l16 30 M240 210 l-10 30"></path>
+        </g>
+        <line x1="40" y1="185" x2="320" y2="185" stroke="var(--wb-accent)" stroke-dasharray="5 5" stroke-width="1.5"></line>
+        <line x1="40" y1="245" x2="320" y2="245" stroke="var(--wb-sun)" stroke-dasharray="5 5" stroke-width="1.5"></line>
+        <text x="48" y="180" font-size="11">Field capacity (TAW)</text>
+        <text x="48" y="240" font-size="11">Stress threshold</text>
+        <text x="48" y="292" font-size="11" class="muted">Wilting point</text>
+        <g fill="var(--wb-water)">
+          <circle class="seep" cx="150" cy="300" r="3"></circle>
+          <circle class="seep" cx="185" cy="300" r="3"></circle>
+        </g>
+        <text x="20" y="25" font-size="12" font-weight="700">Rain (P)</text>
+        <text x="200" y="98" font-size="12" font-weight="700">Evapotranspiration (ETa)</text>
+        <text x="200" y="325" font-size="12" font-weight="700">Drainage (Ksat-limited)</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <p class="wb-kicker">Try it</p>
+  <h2>Run a season yourself</h2>
+  <p>This is a deliberately tiny version of the engine: one crop, one field, one 180-day season, using the same daily equations. The real model runs this loop about 3.4 million times per climate scenario, for 56 years each.</p>
+  <div class="wb-card">
+    <div class="wb-controls">
+      <div><label for="wb-rain">Rainfall <span id="wb-rain-v"></span></label><input type="range" id="wb-rain" min="0.2" max="2" step="0.05" value="1"></div>
+      <div><label for="wb-heat">Atmospheric demand (heat, wind, dry air) <span id="wb-heat-v"></span></label><input type="range" id="wb-heat" min="0.6" max="1.6" step="0.05" value="1"></div>
+      <div><label for="wb-soil">Soil type</label>
+        <select id="wb-soil">
+          <option value="sand">Sandy: holds little, drains fast</option>
+          <option value="loam" selected>Loam: balanced</option>
+          <option value="clay">Clay: holds a lot, drains slowly</option>
+        </select>
+      </div>
+      <div><span class="wb-check"><input type="checkbox" id="wb-irr"> <label for="wb-irr" style="margin:0">Irrigate when stressed</label></span></div>
+    </div>
+    <div class="wb-chart-wrap"><svg id="wb-chart" viewBox="0 0 680 280" width="100%" style="min-width:520px" role="img" aria-label="Soil moisture through the season"></svg></div>
+    <div class="wb-legend">
+      <span><i style="background:var(--wb-water)"></i>Soil moisture</span>
+      <span><i style="background:var(--wb-accent)"></i>Field capacity (grows with roots)</span>
+      <span><i style="background:var(--wb-sun)"></i>Stress threshold</span>
+      <span><i style="background:#c0504d"></i>Zero-growth line</span>
+      <span><i style="background:var(--wb-line)"></i>Daily rain</span>
+    </div>
+    <div class="wb-outputs">
+      <div class="wb-out"><b id="o-viable">-</b><span>viable growing days</span></div>
+      <div class="wb-out"><b id="o-yield">-</b><span>attained yield fraction</span></div>
+      <div class="wb-out"><b id="o-eta">-</b><span>water demand met (ETa / ETc)</span></div>
+      <div class="wb-out"><b id="o-loss">-</b><span>lost to runoff and drainage</span></div>
+      <div class="wb-out"><b id="o-irr">-</b><span>irrigation applied</span></div>
+    </div>
+    <p class="wb-note" style="margin-top:0.8rem">Illustrative: synthetic weather and generic crop and soil parameters, not real data.</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <p class="wb-kicker">The atmosphere</p>
+  <h2>How thirsty is the air?</h2>
+  <p>The pull of the atmosphere on a field is the reference evapotranspiration, \(ET_o\): the water a standard, well-watered grass surface would lose in a day. I implemented the FAO-56 Penman-Monteith equation from first principles over seven daily CMIP6 climate variables and satellite elevation, for every location and every day to 2070: over 570 billion calculations.</p>
+  <div class="wb-eq">
+    \[ ET_o = \frac{0.408\,\Delta\,(R_n - G) + \gamma\,\dfrac{900}{T_{mean} + 273}\,u_2\,(e_s - e_a)}{\Delta + \gamma\,(1 + 0.34\,u_2)} \]
+  </div>
+  <div class="wb-terms">
+    <div class="wb-term"><span class="sym">\(R_n\)</span><p>Net radiation: incoming sunlight minus reflection (albedo 0.23) minus heat radiated back from the surface.</p></div>
+    <div class="wb-term"><span class="sym">\(e_s - e_a\)</span><p>Vapour pressure deficit, the drying power of the air, from daily temperature extremes and humidity.</p></div>
+    <div class="wb-term"><span class="sym">\(u_2\)</span><p>Wind speed at 2&nbsp;m, converted from the 10&nbsp;m climate model output with a logarithmic wind profile.</p></div>
+    <div class="wb-term"><span class="sym">\(\gamma\)</span><p>Psychrometric constant, which depends on air pressure and therefore on each location's altitude.</p></div>
+    <div class="wb-term"><span class="sym">\(\Delta\)</span><p>Slope of the saturation vapour pressure curve: how fast the air's capacity for water rises with temperature.</p></div>
+  </div>
+
+  <details>
+    <summary>Radiation: from climate model output to energy available for evaporation</summary>
+    <p>CMIP6 reports downwelling shortwave and longwave radiation in W/m², converted to MJ/m²/day (× 0.0864):</p>
+    \[ R_{ns} = (1 - 0.23)\times 0.0864\, R_{sds} \qquad R_{nl} = 0.0864\,R_{lds} - \varepsilon\,\sigma\,(T_{mean}+273.15)^4 \qquad R_n = R_{ns} - R_{nl} \]
+    <p>Soil heat flux \(G\) is taken as zero at a daily time step, as FAO-56 recommends: daytime heating is balanced by night-time cooling.</p>
+  </details>
+  <details>
+    <summary>Altitude: air pressure and the psychrometric constant</summary>
+    \[ P = 101.3\left[\frac{293 - 0.0065\,z}{293}\right]^{5.26} \qquad \lambda = 2.501 - 0.002361\,T_{mean} \qquad \gamma = \frac{c_p\,P}{\epsilon\,\lambda} = \frac{0.001013\,P}{0.622\,\lambda} \]
+    <p>Elevation \(z\) comes from SRTM satellite data at each 5-arcminute location, so mountain farms correctly lose water differently from lowland ones.</p>
+  </details>
+  <details>
+    <summary>Wind: 10&nbsp;m to crop height</summary>
+    \[ u_2 = u_{10}\,\frac{\ln\!\left(\frac{2.0 - 0.08}{0.01476}\right)}{\ln\!\left(\frac{10.0 - 0.08}{0.01476}\right)} = 0.748\,u_{10} \]
+  </details>
+  <details>
+    <summary>Humidity: the Tetens equation, and why not Clausius-Clapeyron</summary>
+    \[ e^\circ(T) = 0.6108\,\exp\!\left(\frac{17.27\,T}{T + 237.3}\right) \qquad e_s = \frac{e^\circ(T_{max}) + e^\circ(T_{min})}{2} \qquad e_a = e_s\,\frac{RH}{100} \]
+    <p>The integrated Clausius-Clapeyron equation treats latent heat as constant. Tetens' empirically fitted constants absorb its temperature dependence, so it is more accurate across the −40 to 50&nbsp;°C range of real farmland, and it is the FAO-56 standard.</p>
+  </details>
+</section>
+
+<section class="reveal">
+  <p class="wb-kicker">The soil and the crop</p>
+  <h2>From soil texture to a living root zone</h2>
+  <div class="wb-split">
+    <div>
+      <p><strong>Soil physics.</strong> From SoilGrids, I took water content at field capacity and wilting point, sand, clay, bulk density and gravel across six depth layers down to 2&nbsp;m. Each layer's drainage rate comes from the Cosby et al. (1984) pedotransfer function, corrected for impermeable gravel:</p>
+      <p>\[ K_{sat,i} = 24 \times 25.4 \times 10^{\,-0.6 + 1.26\,\text{sand}_i - 0.64\,\text{clay}_i}\,(1 - \text{gravel}_i) \]</p>
+      <p>On any day, drainage out of the root zone is limited by the slowest layer the roots have reached.</p>
+    </div>
+    <div>
+      <p><strong>Crop biology.</strong> Each crop moves through four growth stages. Its water use (the crop coefficient \(K_c\)) and rooting depth \(Z_r\) are interpolated day by day, from latitude-adjusted planting dates, so the bucket grows as the roots do:</p>
+      <p>\[ ET_c = K_c\,ET_o \qquad TAW_t = \sum_{\text{layers reached}} AWC \]</p>
+      <p>Below the stress threshold, water uptake falls in proportion to what remains, \(ET_a = K_s\,K_c\,ET_o\). A day counts as <em>viable</em> only if temperature, moisture and waterlogging are all within the crop's limits.</p>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <p class="wb-kicker">The data</p>
+  <h2>Six global datasets, one grid</h2>
+  <p>Each source came with its own resolution, units and conventions. I harmonised them onto a single 5-arcminute global grid (about 9&nbsp;km), masked to the ~920,000 cells where the target crops are actually grown.</p>
+  <div class="wb-card wb-chart-wrap" aria-hidden="true">
+    <svg viewBox="0 0 760 340" width="100%" style="min-width:600px">
+      <g stroke="var(--wb-water)" stroke-width="2.5" fill="none">
+        <path class="flow" d="M200 35 C 260 35, 260 135, 315 135"></path>
+        <path class="flow" d="M200 90 C 260 90, 260 150, 315 150"></path>
+        <path class="flow" d="M200 145 C 260 145, 280 165, 315 170"></path>
+        <path class="flow" d="M200 200 C 270 200, 270 190, 315 190"></path>
+        <path class="flow" d="M200 255 C 270 255, 280 210, 315 210"></path>
+        <path class="flow" d="M200 310 C 280 310, 290 230, 315 230"></path>
+        <path class="flow" d="M475 180 L 530 180"></path>
+      </g>
+      <g class="node"><rect x="10" y="15" width="190" height="40" rx="9"></rect><text x="22" y="34" font-size="12" font-weight="700">NASA CMIP6 climate</text><text x="22" y="48" font-size="10" class="muted">7 variables, daily, 7 models × 4 SSPs</text></g>
+      <g class="node"><rect x="10" y="70" width="190" height="40" rx="9"></rect><text x="22" y="89" font-size="12" font-weight="700">SRTM elevation</text><text x="22" y="103" font-size="10" class="muted">air pressure for Penman-Monteith</text></g>
+      <g class="node"><rect x="10" y="125" width="190" height="40" rx="9"></rect><text x="22" y="144" font-size="12" font-weight="700">EarthStat crops</text><text x="22" y="158" font-size="10" class="muted">where each crop is grown</text></g>
+      <g class="node"><rect x="10" y="180" width="190" height="40" rx="9"></rect><text x="22" y="199" font-size="12" font-weight="700">SoilGrids</text><text x="22" y="213" font-size="10" class="muted">6 layers of soil hydraulics</text></g>
+      <g class="node"><rect x="10" y="235" width="190" height="40" rx="9"></rect><text x="22" y="254" font-size="12" font-weight="700">FAO crop parameters</text><text x="22" y="268" font-size="10" class="muted">Kc, rooting depth, growth stages</text></g>
+      <g class="node"><rect x="10" y="290" width="190" height="40" rx="9"></rect><text x="22" y="309" font-size="12" font-weight="700">WRI Aqueduct</text><text x="22" y="323" font-size="10" class="muted">regional water stress to 2080</text></g>
+      <g class="node core"><rect x="315" y="110" width="160" height="140" rx="12"></rect>
+        <text x="330" y="140" font-size="13" font-weight="700">Simulation engine</text>
+        <text x="330" y="164" font-size="11">Penman-Monteith ETo</text>
+        <text x="330" y="184" font-size="11">Daily soil water loop</text>
+        <text x="330" y="204" font-size="11">Rainfed and irrigated</text>
+        <text x="330" y="224" font-size="11" class="muted">in-memory, BigQuery</text></g>
+      <g class="node out"><rect x="530" y="120" width="220" height="120" rx="12"></rect>
+        <text x="545" y="148" font-size="13" font-weight="700">Annual risk metrics</text>
+        <text x="545" y="171" font-size="11">Viable and zero-growth days</text>
+        <text x="545" y="190" font-size="11">Attained yield fraction</text>
+        <text x="545" y="209" font-size="11">Irrigation deficit, heat days</text>
+        <text x="545" y="228" font-size="11">1.1 billion rows</text></g>
+    </svg>
+  </div>
+</section>
+
+<section class="reveal">
+  <p class="wb-kicker">The engineering problem</p>
+  <h2>A trillion-row explosion</h2>
+  <p>Expanding every location into the crops grown there turns 19 billion rows of weather per scenario into 69 billion rows of daily soil moisture. My first working version stored every stage: across all 35 scenario runs, that was <strong>2.1 trillion rows and 634 TB</strong> written to disk, costing over $14,000 a month just to keep, and then read back again to compute annual results. An earlier design, which updated tables in hundreds of sequential passes, would have scanned more than 18 PB.</p>
+  <div class="wb-card wb-bars" id="wb-bars">
+    <div class="wb-bar-row">
+      <div class="t">Data stored</div>
+      <div class="wb-bar"><span>Earlier design</span><div class="track"><div class="fill before" data-w="100">680 TB</div></div></div>
+      <div class="wb-bar"><span>Final</span><div class="track"><div class="fill after" data-w="6.7">46 TB</div></div></div>
+    </div>
+    <div class="wb-bar-row">
+      <div class="t">Monthly storage cost</div>
+      <div class="wb-bar"><span>Earlier design</span><div class="track"><div class="fill before" data-w="100">$14,236</div></div></div>
+      <div class="wb-bar"><span>Final</span><div class="track"><div class="fill after" data-w="6">$854</div></div></div>
+    </div>
+    <div class="wb-bar-row">
+      <div class="t">First-year total cost</div>
+      <div class="wb-bar"><span>Earlier design</span><div class="track"><div class="fill before" data-w="100">$172,502</div></div></div>
+      <div class="wb-bar"><span>Final</span><div class="track"><div class="fill after" data-w="6.2">$10,614</div></div></div>
+    </div>
+    <div class="wb-bar-row">
+      <div class="t">Data scanned per run of all crops</div>
+      <div class="wb-bar"><span>Crop by crop</span><div class="track"><div class="fill before" data-w="100">~580 TB</div></div></div>
+      <div class="wb-bar"><span>All crops at once</span><div class="track"><div class="fill after" data-w="11">~64 TB</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <p class="wb-kicker">How</p>
+  <h2>Seven engineering decisions</h2>
+  <div class="wb-grid">
+    <div class="wb-decision"><div class="n">1</div><h4>Stream daily straight into annual</h4><p>Soil moisture is a recurrence, so the simulation walks through time anyway. I rewrote it as a JavaScript UDF inside BigQuery that keeps running annual totals and emits one row per year. The daily tables are never written.</p><div class="impact">634 TB never stored</div></div>
+    <div class="wb-decision"><div class="n">2</div><h4>Keep one layer on purpose</h4><p>Computing evapotranspiration inline too would have cut first-year cost from ~$10,600 to under $400. I kept those tables: they don't depend on the crop, so new crops run in under an hour without re-reading the climate archive, and modellers can audit intermediate values.</p><div class="impact">Reusability over the last dollar</div></div>
+    <div class="wb-decision"><div class="n">3</div><h4>Read the weather once</h4><p>Running crops one at a time re-scanned the same global weather for each crop. Joining every crop in a region to a single read of its weather removed the repetition.</p><div class="impact">−89% data scanned</div></div>
+    <div class="wb-decision"><div class="n">4</div><h4>Design for the memory ceiling</h4><p>Nested per-location objects blew BigQuery's 512 MB worker limit over dense breadbaskets like the US Midwest. Passing one series at a time as flat, primitive arrays let millions of series run in parallel.</p><div class="impact">&gt;512 MB → &lt;2 MB per worker</div></div>
+    <div class="wb-decision"><div class="n">5</div><h4>Batch the planet by geography</h4><p>A single global query spilled 62 TB to disk and failed. Geohash batches sized to fit in memory, with tables clustered by location first, so each regional query skips over 95% of storage.</p><div class="impact">0 bytes spilled</div></div>
+    <div class="wb-decision"><div class="n">6</div><h4>Scope it scientifically</h4><p>Seven CMIP6 models chosen to span the full range of climate sensitivity (cold to warm, wet to dry) instead of all 31, and the globe masked to land where target crops actually grow.</p><div class="impact">−77% runs, −55% locations</div></div>
+    <div class="wb-decision"><div class="n">7</div><h4>Make long runs safe</h4><p>Python orchestration with checkpoints, resume, exponential backoff and write-quota-aware concurrency; idempotent slice replacement so years can be extended or corrected without rebuilding; free dry runs that price every query first; billion-row audit queries.</p><div class="impact">Restartable, auditable, idempotent</div></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <p class="wb-kicker">Results</p>
+  <h2>Before and after</h2>
+  <div class="wb-chart-wrap">
+    <table class="table">
+      <thead><tr><th></th><th style="text-align:right">Earlier designs</th><th style="text-align:right">Final architecture</th></tr></thead>
+      <tbody>
+        <tr><td>Data stored</td><td style="text-align:right">680 TB</td><td style="text-align:right">46 TB</td></tr>
+        <tr><td>Monthly storage cost</td><td style="text-align:right">$14,236</td><td style="text-align:right">$854</td></tr>
+        <tr><td>One-off compute, all 35 runs</td><td style="text-align:right">$1,664</td><td style="text-align:right">$367</td></tr>
+        <tr><td>First-year total cost</td><td style="text-align:right">$172,502</td><td style="text-align:right">$10,614</td></tr>
+        <tr><td>Worker memory</td><td style="text-align:right">&gt; 512 MB (crashing)</td><td style="text-align:right">&lt; 2 MB</td></tr>
+        <tr><td>Shuffle spill to disk</td><td style="text-align:right">62 TB</td><td style="text-align:right">0</td></tr>
+        <tr><td>Full global run</td><td style="text-align:right">Days (original multi-pass design)</td><td style="text-align:right">~14 hours on 4 workers</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="reveal">
+  <p class="wb-kicker">Four months, one engineer</p>
+  <h2>How it came together</h2>
+  <div class="wb-timeline">
+    <div class="wb-phase"><h4>Research and methodology</h4><p>Built the scientific basis from FAO-56 crop water guidelines, the SWAT land-phase water balance and Cosby soil hydraulics; defined growth stages, stress zones and the viable-day index.</p></div>
+    <div class="wb-phase"><h4>Data foundations</h4><p>Ingested and harmonised crop maps, six soil layers, elevation, crop parameters and water stress onto one global grid; built latitude-adjusted growing seasons for each crop and location.</p></div>
+    <div class="wb-phase"><h4>Atmospheric engine</h4><p>Implemented Penman-Monteith over daily CMIP6 projections for 7 models, 4 scenarios and a historical baseline, with reference lookups so new models onboard without code changes.</p></div>
+    <div class="wb-phase"><h4>Simulation engine</h4><p>Wrote the daily rainfed and irrigated soil water loop, then solved memory, shuffle and quota failures to run it at planetary scale.</p></div>
+    <div class="wb-phase"><h4>Optimisation and validation</h4><p>Re-architected to stream daily results into annual totals, cut storage costs by 94%, and validated the 1.1 billion-row output with audit queries, provenance logs and documented column metadata.</p></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <p class="wb-kicker">Stack</p>
+  <div class="wb-chips">
+    <span>Google BigQuery</span><span>SQL</span><span>JavaScript UDFs</span><span>Python</span><span>Clustering and geohash batching</span><span>NASA NEX-GDDP-CMIP6</span><span>SoilGrids</span><span>EarthStat</span><span>SRTM</span><span>WRI Aqueduct</span><span>FAO-56</span><span>SWAT</span><span>Cosby pedotransfer functions</span>
+  </div>
+  <p class="wb-note" style="margin-top:1.2rem">This page describes the science and architecture at a high level. It contains no proprietary code, client data or company-specific detail.</p>
+</section>
+
+</div>
+
+<script>
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var root = document.querySelector(".wb");
+    if (!root) return;
+
+    // Count-up stats
+    function fmt(el, v) {
+      var f = el.getAttribute("data-format");
+      var s = f === "k" ? Math.round(v).toLocaleString("en-GB") : String(Math.round(v));
+      el.textContent = (el.getAttribute("data-prefix") || "") + s + (el.getAttribute("data-suffix") || "");
+    }
+    function countUp(el) {
+      var target = parseFloat(el.getAttribute("data-count"));
+      if (reduce) return fmt(el, target);
+      var start = null, dur = 1600;
+      function step(ts) {
+        if (!start) start = ts;
+        var p = Math.min(1, (ts - start) / dur), e = 1 - Math.pow(1 - p, 3);
+        fmt(el, target * e);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    function growBars(box) {
+      box.querySelectorAll(".fill").forEach(function (f) {
+        var w = parseFloat(f.getAttribute("data-w"));
+        f.style.width = w + "%";
+        if (w < 15) f.classList.add("tiny");
+      });
+    }
+
+    function seen(el) {
+      el.classList.add("in");
+      el.querySelectorAll("[data-count]").forEach(countUp);
+      var bars = el.querySelector("#wb-bars");
+      if (bars) growBars(bars);
+    }
+    var sections = root.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window && !reduce) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { seen(en.target); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.15 });
+      sections.forEach(function (s) { io.observe(s); });
+    } else {
+      sections.forEach(seen);
+    }
+
+    // Toy soil water balance model (illustrative parameters)
+    var NS = "http://www.w3.org/2000/svg";
+    var SOILS = {
+      sand: { awc: 70, ksat: 300 },
+      loam: { awc: 160, ksat: 40 },
+      clay: { awc: 190, ksat: 6 }
+    };
+    var DAYS = 180;
+    function rng(seed) {
+      return function () {
+        seed |= 0; seed = (seed + 0x6d2b79f5) | 0;
+        var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+    var r = rng(11), baseRain = [];
+    for (var d = 0; d < DAYS; d++) {
+      var wet = 0.32 - 0.14 * Math.sin(Math.PI * d / DAYS);
+      baseRain.push(r() < wet ? -Math.log(1 - r()) * 20 : 0);
+    }
+    function kcAt(d) {
+      if (d < 30) return 0.4;
+      if (d < 70) return 0.4 + (1.15 - 0.4) * (d - 30) / 40;
+      if (d < 140) return 1.15;
+      return 1.15 + (0.6 - 1.15) * (d - 140) / 40;
+    }
+    function zrAt(d) {
+      if (d < 30) return 0.3;
+      if (d < 70) return 0.3 + 0.9 * (d - 30) / 40;
+      return 1.2;
+    }
+
+    function simulate(rainMult, heat, soil, irrigate) {
+      var s = SOILS[soil], sm = 0.6 * s.awc * zrAt(0), out = [];
+      var viable = 0, eta = 0, etc = 0, loss = 0, irr = 0;
+      for (var d = 0; d < DAYS; d++) {
+        var taw = s.awc * zrAt(d), sat = taw * 1.4, thr = 0.5 * taw, zero = 0.5 * thr;
+        var p = baseRain[d] * rainMult;
+        var et0 = heat * (3 + 2.5 * Math.sin(Math.PI * d / DAYS));
+        var kc = kcAt(d);
+        sm += p;
+        var runoff = Math.max(0, sm - sat); sm -= runoff;
+        var drain = Math.min(s.ksat, Math.max(0, sm - taw)); sm -= drain;
+        if (irrigate && sm < thr) { irr += taw - sm; sm = taw; }
+        var ks = sm >= thr ? 1 : sm / thr;
+        var a = Math.min(sm, ks * kc * et0);
+        sm = Math.max(0, sm - a);
+        eta += a; etc += kc * et0; loss += runoff + drain;
+        if (sm >= zero && sm <= taw) viable++;
+        out.push({ sm: sm, taw: taw, thr: thr, zero: zero, p: p });
+      }
+      return { series: out, viable: viable, ratio: eta / etc, loss: loss, irr: irr };
+    }
+
+    var chart = document.getElementById("wb-chart");
+    function el(tag, attrs) {
+      var n = document.createElementNS(NS, tag);
+      for (var k in attrs) n.setAttribute(k, attrs[k]);
+      return n;
+    }
+    function draw(res) {
+      while (chart.firstChild) chart.removeChild(chart.firstChild);
+      var W = 680, H = 280, L = 44, R = 10, T = 14, B = 30;
+      var ymax = 0, rmax = 0;
+      res.series.forEach(function (o) { ymax = Math.max(ymax, o.taw * 1.15, o.sm); rmax = Math.max(rmax, o.p); });
+      var x = function (i) { return L + (W - L - R) * i / (DAYS - 1); };
+      var y = function (v) { return H - B - (H - B - T) * v / ymax; };
+      res.series.forEach(function (o, i) {
+        if (o.p > 0) chart.appendChild(el("rect", { x: x(i) - 1, y: T, width: 2.4, height: 46 * o.p / Math.max(rmax, 1), fill: "var(--wb-line)" }));
+      });
+      for (var g = 0; g <= 4; g++) {
+        var v = ymax * g / 4;
+        chart.appendChild(el("line", { x1: L, x2: W - R, y1: y(v), y2: y(v), stroke: "var(--wb-line)", "stroke-width": 0.6, opacity: 0.6 }));
+        var t = el("text", { x: L - 6, y: y(v) + 4, "font-size": 10, "text-anchor": "end", class: "muted" });
+        t.textContent = Math.round(v);
+        chart.appendChild(t);
+      }
+      [0, 30, 60, 90, 120, 150, 179].forEach(function (dd) {
+        var t = el("text", { x: x(dd), y: H - 10, "font-size": 10, "text-anchor": "middle", class: "muted" });
+        t.textContent = "day " + (dd + 1);
+        chart.appendChild(t);
+      });
+      var yl = el("text", { x: 10, y: T + 4, "font-size": 10, class: "muted" });
+      yl.textContent = "mm";
+      chart.appendChild(yl);
+      function path(key) {
+        return res.series.map(function (o, i) { return (i ? "L" : "M") + x(i).toFixed(1) + " " + y(o[key]).toFixed(1); }).join(" ");
+      }
+      var area = path("sm") + " L" + x(DAYS - 1) + " " + y(0) + " L" + x(0) + " " + y(0) + " Z";
+      chart.appendChild(el("path", { d: area, fill: "var(--wb-water-soft)" }));
+      chart.appendChild(el("path", { d: path("taw"), fill: "none", stroke: "var(--wb-accent)", "stroke-width": 2 }));
+      chart.appendChild(el("path", { d: path("thr"), fill: "none", stroke: "var(--wb-sun)", "stroke-width": 2, "stroke-dasharray": "5 4" }));
+      chart.appendChild(el("path", { d: path("zero"), fill: "none", stroke: "#c0504d", "stroke-width": 1.5, "stroke-dasharray": "2 4" }));
+      var line = el("path", { d: path("sm"), fill: "none", stroke: "var(--wb-water)", "stroke-width": 2.5 });
+      chart.appendChild(line);
+      if (!reduce && line.getTotalLength) {
+        var len = line.getTotalLength();
+        line.style.strokeDasharray = len;
+        line.style.strokeDashoffset = len;
+        line.getBoundingClientRect();
+        line.style.transition = "stroke-dashoffset 1.2s ease-out";
+        line.style.strokeDashoffset = 0;
+      }
+    }
+    function run() {
+      var rain = parseFloat(document.getElementById("wb-rain").value);
+      var heat = parseFloat(document.getElementById("wb-heat").value);
+      var soil = document.getElementById("wb-soil").value;
+      var irr = document.getElementById("wb-irr").checked;
+      document.getElementById("wb-rain-v").textContent = "× " + rain.toFixed(2);
+      document.getElementById("wb-heat-v").textContent = "× " + heat.toFixed(2);
+      var res = simulate(rain, heat, soil, irr);
+      draw(res);
+      document.getElementById("o-viable").textContent = res.viable + " / " + DAYS;
+      document.getElementById("o-yield").textContent = (res.viable / DAYS).toFixed(2);
+      document.getElementById("o-eta").textContent = Math.round(res.ratio * 100) + "%";
+      document.getElementById("o-loss").textContent = Math.round(res.loss) + " mm";
+      document.getElementById("o-irr").textContent = Math.round(res.irr) + " mm";
+    }
+    ["wb-rain", "wb-heat", "wb-soil", "wb-irr"].forEach(function (id) {
+      document.getElementById(id).addEventListener("input", run);
+    });
+    run();
+  })();
+</script>
+
+{% endraw %}

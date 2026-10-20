@@ -1,10 +1,9 @@
 window.MathJax = {
   tex: {
     tags: "ams",
-    inlineMath: [
-      ["$", "$"],
-      ["\\(", "\\)"],
-    ],
+    // Single "$" is not a delimiter, so dollar amounts in text render as-is.
+    // Use $$...$$ in Markdown (Kramdown turns inline $$ into \(...\)).
+    inlineMath: [["\\(", "\\)"]],
   },
   options: {
     renderActions: {

@@ -1,17 +1,23 @@
 cv:
   name: Pearl Ayem
-  label: Climate Risk Lead
+  label: Climate & Nature Risk Lead
   email: pearlayem@gmail.com
   location: London, UK
   image: ""
   summary: >-
-    Working at the intersection of climate science, software, and risk, I write
-    production code for the climate, nature and supply-chain models that FTSE100
-    boards use to plan their next decade, lead applied AI work in agricultural
-    risk, and have helped design data platforms launched at COP28 by heads of
-    state. Most of my career has been spent moving between technical, scientific,
-    policy and commercial worlds, and it's the kind of work I love most: deeply
-    technical, genuinely useful, silently impactful.
+    Climate and nature risk leader, data engineer and atmospheric scientist who
+    turns physical science into financial risk for boards, investors and
+    governments. Leads a cross-functional team quantifying physical, transition
+    and supply-chain risk for FTSE 100 companies, asset managers, insurers and
+    global brands, as well as the firm's applied AI programme. Has advised the
+    C-suites of food, apparel, luxury, retail and construction companies with
+    combined annual revenue of over $200 billion. At Bloomberg, on secondment to
+    GFANZ, designed the data model for the Net-Zero Data Public Utility,
+    launched at COP28, and wrote speech content and figures delivered by Mark
+    Carney and Michael Bloomberg. Started out in Western Canada with LiDAR drone
+    mapping and atmospheric fieldwork, then won a full scholarship to Cambridge.
+    A hands-on engineer, architected a BigQuery pipeline over hundreds of
+    terabytes of climate data and cut its cloud storage costs by 94%.
 
   social_networks:
     - network: LinkedIn
@@ -25,108 +31,138 @@ cv:
         company: Risilience
         location: London, UK
         start_date: Mar 2025
+        summary: Climate and nature risk analytics for FTSE 100 companies, asset managers, insurers and global consumer brands.
         highlights:
-          - Team Lead for climate and nature risk across leading global brands in food, fashion and entertainment, alongside major asset managers, underwriters and FTSE100 clients.
-          - Lead the planning and delivery of climate, nature and supply-chain risk models that quantify physical and transition risk in financial terms across multiple sectors.
-          - Lead the firm's applied AI work — building agentic workflows that have materially shortened model release cycles, and trialling enterprise LLM tooling for internal research and client-facing analytics.
-          - Write production code that powers scenario analyses and bespoke client engagements; partner with Head of Product on roadmap and releases.
-          - Manage a cross-functional team of modellers, economists, data scientists and engineers.
+          - Lead cross-functional team of modellers, economists, data scientists and engineers delivering climate and nature risk analytics to FTSE 100 companies, asset managers, insurers and global consumer brands.
+          - Own the planning and delivery of climate, nature and supply-chain risk models that quantify physical and transition risk in financial terms across multiple sectors.
+          - Lead the planning and build of a company-wide digital twin that assesses financial and climate risk from drought, freeze, heatwave, water stress, agricultural yield loss and nature depletion.
+          - Lead for supply-chain and agricultural risk models spanning 30+ crops, fed by bias-corrected CMIP6 ensembles, satellite data and academic sources.
+          - Architected and built a first-of-its-kind global crop water balance engine on Google BigQuery, simulating daily soil moisture for 10 commodity crops across ~1.5 million locations at ~9 km resolution, under different models and future scenarios. It processes 570+ billion rows of daily climate data into a 1.1 billion-row output that quantifies water stress across the supply chains of major food, fashion and entertainment brands ([case study](/projects/water_balance_engine/)).'
+          - Re-architected data-enineering pipeline to stream daily simulations directly into annual results, eliminating 634 TB (2.1 trillion rows) of intermediate tables. This cut cloud storage costs by 94% (from ~$14,000 to under $900 a month) and first-year pipeline cost from $172K to under $11K.
+          - Cut the full global run of 35 climate scenarios from days to ~14 hours on 4 parallel workers (~45 minutes per scenario). The legacy multi-pass design scanned over 18 PB of data; replacing it cut compute costs by over 99%.
+          - Resolved production scaling failures in BigQuery, including JavaScript UDF memory exhaustion, 62 TB shuffle spills and DML quota limits, through memory-efficient UDF design (from over 512 MB to under 2 MB per worker), hierarchical geospatial batching, table re-clustering and fault-tolerant, resumable Python orchestration.
+          - Onboarded and harmonised varied datasets (NASA NEX-GDDP-CMIP6, EarthStat, SoilGrids, SRTM elevation, WRI Aqueduct) onto a common global grid to onboard future data without code changes.
+          - Own data quality at billion-row scale, with audit queries that isolate anomalies by scenario and region, idempotent slice replacement, and provenance logging for every run.
+          - Researched and selected CMIP6 ensemble spanning the full range of climate sensitivity, cutting simulation runs by 77% while preserving scientific coverage.
+          - Part of firm's AI upgrades team, building agentic workflows with LangGraph and LangSmith that halved model release cycles (from 8 weeks to 4), and trialling enterprise LLM tooling (Gemini, Vertex AI, NotebookLM) for research and client analytics.
 
       - position: Senior Climate Risk Modeller
         company: Sillion
         location: London, UK
         start_date: Dec 2023
         end_date: Feb 2025
+        summary: Climate risk and sustainability advisory for FTSE 100 and FTSE 250 companies and asset managers.
         highlights:
-          - Led development of climate risk models for FTSE100 / FTSE250 clients, integrating results into TPT and CSRD reporting and into annual reports across SECR, TCFD/ISSB, CDP and GRI frameworks.
-          - Built systems to quantify earnings-at-risk under multiple scenarios; provided scenario analyses, transition risk assessments and double materiality insights.
-          - Built the firm's first transition-planning dashboard combining economic and climate models, supporting client reporting under TPT, CSRD and CSDDD.
-          - Product Lead for an ESG research tool tracking KPIs across 600+ companies; integrated outputs into Power BI, Tableau and Excel workflows.
-          - Drove business growth and recurring contracts via professional networks and strategic partnerships; presented to C-suite, boards and press; trained in press and media handling.
-          - Built Python-based risk models that integrated directly into financial dashboards.
-          - Managed and mentored junior analysts and consultants, aligning their work with strategic goals in climate risk and sustainability.
-          - Featured by the British Science Association as part of their Smashing Stereotypes 2025 campaign for my work in STEM and climate.
-          - 'Featured by St Catharine''s College, Cambridge in their Net Zero by 2040 alumni series (Jan 2025).'
+          - Led climate risk engagements for FTSE 100 and FTSE 250 clients, delivering scenario analysis, earnings-at-risk, transition risk and double materiality assessments.
+          - Built Python risk models quantifying earnings-at-risk under multiple climate scenarios, integrated directly into clients' financial dashboards.
+          - Integrated results into clients' TCFD/ISSB, CSRD, TPT, SECR, CDP and GRI disclosures and annual reports, and advised on alignment with Canada's CSSB standards (CSDS 1 and 2).
+          - Built the firm's first transition-planning dashboard, combining economic and climate models to support reporting under TPT, CSRD and CSDDD.
+          - Product Lead for an ESG research tool tracking KPIs across 600+ companies, integrated into Power BI, Tableau and Excel workflows.
+          - Sold climate risk models to asset managers and FTSE corporates, personally closing around two contracts a year, the largest worth £820K and several in the £150K–200K range; supported RFPs and sales on around six a year.
+          - Presented to C-suites, boards and press (media-trained); built recurring business through partnerships and professional networks.
+          - Managed and mentored junior analysts and consultants.
 
       - position: Net-Zero Data Lead
-        company: 'Bloomberg L.P. (secondment with GFANZ & Climate Data Utility)'
+        company: 'Bloomberg L.P. (secondment to GFANZ and the Net-Zero Data Public Utility)'
         location: London, UK
         start_date: Jun 2022
         end_date: Nov 2023
+        summary: 'On secondment to the Glasgow Financial Alliance for Net Zero (GFANZ), building the [Net-Zero Data Public Utility](https://climatedatautility.org/home), a free global climate-transition data platform now hosted by the UNFCCC as the Climate Data Utility.'
         highlights:
-          - Led data modelling and engineering for the Climate Data Utility (formerly the NZDPU), a free climate-transition data platform.
-          - Worked for GFANZ to build a climate report model with key stakeholders including Mark Carney (UN Special Envoy at the time).
-          - Worked with President Emmanuel Macron, the governments of Switzerland and Singapore, CDP, UNFCCC, and other global organisations.
-          - Managed a team of 40 analysts for GFANZ's data launch at COP27.
-          - Built ETL pipelines and APIs ingesting data across hundreds of providers; wrote transformation scripts and data acquisition workflows.
-          - Co-authored two reports for GFANZ and NZDPU with partners from ISSB and IEA.
-          - Helped secure the CDP partnership bringing 10,000+ companies onto the platform.
-          - Supported the CTO on RFP processes, vendor evaluation and management of engineering contractors; helped author the NZDPU RFP.
-          - Delivered briefs on 700 climate KPIs used in Michael Bloomberg's keynote address for COP27.
-          - Subject-matter expert on Scope 1, 2 and 3 GHG emission models, global reporting standards and jurisdictional policies.
+          - 'Designed the complete data model for the Net-Zero Data Public Utility, [launched at COP28 by President Emmanuel Macron and Michael Bloomberg](https://www.climatedatasc.org/president-emmanuel-macron-and-michael-r-bloomberg-deliver-proof-of-concept-for-groundbreaking-net-zero-data-public-utility-at-cop28/).'
+          - 'Wrote speech content and figures delivered by [Mark Carney](https://www.linkedin.com/posts/mark-carney-5b9744205_nzdpu-undefined-activity-7244797832501587969-LtQG) (then UN Special Envoy for Climate Action and Finance, now Prime Minister of Canada) and Michael Bloomberg.'
+          - Wrote the COP28 launch briefing and built the user guides and demos shown at the COP28 booths.
+          - Oversaw the work of Google's engineers, the platform's external technical partner, through to launch.
+          - 'Ran vendor interviews and evaluation with the CTO and the head of the project, helped author the [NZDPU request for proposal](https://assets.bbhub.io/company/sites/71/2022/11/request-for-proposal-2022.pdf), and cleaned and prepared the platform''s data.'
+          - 'Built a climate reporting model for GFANZ and worked with stakeholders including President Macron''s office, the governments of [Switzerland and Singapore](https://www.responsible-investor.com/singapore-and-switzerland-sign-up-to-global-climate-data-project/), CDP and the UNFCCC, supporting the [Climate Data Steering Committee''s recommendations](https://www.climatedatasc.org/climate-data-steering-committee-proposes-recommendations-for-the-development-of-first-ever-publicly-accessible-climate-data-utility/) and the [GFANZ Principals Group statement of support](https://www.gfanzero.com/press/gfanz-principals-group-issues-nzdpu-statement-of-support/).'
+          - 'Helped secure the [CDP partnership](https://www.cdp.net/en/articles/media/cdp-and-nzdpu-collaborate-to-accelerate-access-to-core-climate-data) that brought 10,000+ companies'' climate data onto the platform.'
+          - 'Managed a team of 40 analysts for GFANZ''s [COP27 data launch](https://www.gfanzero.com/press/gfanz-launches-critical-resources-for-financial-institutions-to-convert-their-net-zero-ambition-into-action/), and prepared briefs on 700 climate KPIs for [Michael Bloomberg''s COP27 keynote](https://a-teaminsight.com/blog/cop27-announcements-highlight-critical-role-of-esg-data/).'
+          - 'Co-authored [GFANZ''s guidance on financial institution net-zero transition plans](https://assets.bbhub.io/company/sites/63/2022/09/Recommendations-and-Guidance-on-Financial-Institution-Net-zero-Transition-Plans-November-2022.pdf) and the [NZDPU development report](https://assets.bbhub.io/company/sites/71/2022/11/development-of-the-net-zero-data-public-utility-november-2022.pdf) with partners from the ISSB and IEA.'
+          - Sold climate data and analytics to asset managers and commodities trading firms.
+          - Built ETL pipelines and APIs ingesting data from hundreds of providers; subject-matter expert on Scope 1, 2 and 3 emissions, reporting standards and jurisdictional policy, including Canada's OSFI Guideline B-15 and CSA climate disclosure rules.
 
       - position: Climate Science Researcher
         company: University of Cambridge & British Antarctic Survey
         location: Cambridge, UK
         start_date: Oct 2021
         end_date: Jun 2022
+        summary: 'MPhil research at the Scott Polar Research Institute, funded by the Scott Polar Scholarship ([thesis](/thesis/)).'
         highlights:
-          - Fully-funded research at the Scott Polar Research Institute on atmospheric drivers of Antarctic surface melt.
-          - Analysed 1.7 billion geospatial data points across CMIP5 GCMs, RCMs and in-situ observations from NOAA and Copernicus (ESA).
-          - Developed a Convolutional Neural Network and ran EOF analysis to identify seasonal melt patterns; published findings and presented at conferences.
-          - 'Tech stack: Python, xarray, pandas/geopandas, scipy, pyproj, netCDF, HDF5, rasterio, GDAL, Shapely, sklearn, EOF, fiona, plotly, cartopy, matplotlib.'
-          - Featured on Cambridge's official channels; my work is used as course material in MPhil-level teaching.
-          - Supervised by Dr Amélie Kirchgaessner (British Antarctic Survey) and Professor Ian Willis (Scott Polar Research Institute).
+          - Investigated the atmospheric drivers of surface melt on the George VI Ice Shelf, Antarctica, over 32 years.
+          - Analysed 1.7 billion geospatial data points across CMIP5 global and regional climate models and NOAA and Copernicus observations; built a convolutional neural network and EOF analysis to identify seasonal melt patterns.
+          - 'Presented findings at conferences; the work is now [used as teaching material](https://twitter.com/PolarImpact/status/1463252358121631753) on Cambridge''s MPhil programme, and was [featured on Cambridge''s channels](https://www.caths.cam.ac.uk/polar-impact).'
+          - Supervised by Professor Ian Willis (Scott Polar Research Institute) and Dr Amélie Kirchgaessner (British Antarctic Survey).
+          - 'Tech stack: Python, xarray, pandas, geopandas, scipy, scikit-learn, eofs, pyproj, netCDF, HDF5, rasterio, GDAL, Shapely, fiona, cartopy, matplotlib, plotly.'
 
       - position: Brand Manager, Sustainability
         company: P.G.A. Hospitality
         location: Vancouver, Canada
         start_date: Sep 2018
         end_date: Oct 2021
+        summary: Sustainable business development for a Vancouver hospitality group.
         highlights:
-          - Worked as an independent contractor with the CEO to drive sustainable business development; led a team of 10.
-          - 'Achieved significant growth: increased revenue by 233%, raised CAD 1.5M in investment, increased profits by 31%.'
-          - Proactively secured contracts with local, sustainable suppliers to mitigate supply chain challenges during the pandemic.
-          - Developed business plans, marketing materials and seasonal menus.
-          - Wrote and won an RFP bid for a new location.
-          - Earned 9 awards and a position in Greater Vancouver's Top 30 cafes.
-
-      - position: Lead Teaching Assistant, Computer Science
-        company: University of British Columbia
-        location: Vancouver, Canada
-        start_date: Dec 2016
-        end_date: Jun 2020
-        highlights:
-          - Managed a team of 18 TAs as Head Teaching Assistant of Computer Science.
-          - Ran labs and lectures for 1,000 students in Python and C++; created and graded course modules and labs; awarded Best TA three years running.
-          - Helped pilot a new data science course; authored modules on Climate Data Computing and contrast stretching using open-source satellite imagery.
-
-      - position: Research Assistant, Atmospheric Science
-        company: University of British Columbia
-        location: Vancouver, Canada
-        start_date: Dec 2016
-        end_date: May 2020
-        highlights:
-          - Worked across multiple research labs in the Earth, Ocean and Atmospheric Sciences department.
-          - Studied glacial katabatic winds and cloud-street formation over Greenland using MODIS, GOES-16/17 and Landsat 7/8 imagery and ECMWF reanalysis data.
-          - Built ETL pipelines on AWS EC2/S3; ran GOES data via Jupyter notebooks on EC2 instances pulling from NOAA's S3 bucket.
-          - Applied PCA, Sobel edge detection, Self-Organizing Maps and CNNs to mesoscale convection problems and melt-season streamflow detection across Canada.
-          - 'Conducted eddy-covariance measurements during the Buckley Bay wildfires; tested diffused-radiation fertilization against NASA AOD data (contributed to McKendry et al., 2019).'
-          - Collected, identified and analysed phytoplankton in the Burrard Inlet; studied distribution, chlorophyll levels and carbon-sink role.
-          - Constructed and set up weather sensors to study blue carbon and the urban heat island effect; trained on calibrating and maintaining meteorological field instruments to WMO standards.
+          - Contracted to the CEO to lead sustainable business development; managed a team of 10.
+          - Grew revenue by 233% and profits by 31%, and raised CAD 1.5M in investment.
+          - Secured contracts with local, sustainable suppliers to keep operations running through pandemic supply-chain disruption.
+          - Wrote and won an RFP bid for a new location; developed business plans, marketing materials and seasonal menus.
+          - The business earned 9 awards and a place in Greater Vancouver's Top 30 cafés.
 
       - position: Geospatial Engineer
         company: UAViation Aerial Solutions
         location: Vancouver, Canada
         start_date: Jul 2018
         end_date: Sep 2019
+        summary: LiDAR drone mapping and flight-automation software; the company was later acquired by Volatus Aerospace.
         highlights:
-          - Team Lead for the software team responsible for flight-automation app development.
-          - Project Lead on LiDAR drone mapping operations and GIS post-processing across BC, Alberta and Yukon.
-          - 'CEO''s right hand in client meetings; my work contributed to a successful exit (acquired by Volatus Aerospace).'
-          - 'Worked with Android Studio, REST APIs, Google Maps API and DJI''s UX SDK; used Pix4D, ArcGIS and QGIS for geospatial post-processing.'
-          - Used C++, Java and Python to tackle photogrammetry and LiDAR flight-mapping problems.
-          - Delivered 18 projects in 12 months for government, search-and-rescue, BC Wildfire Services, natural resource sectors, academia and private industry.
+          - Project Lead for LiDAR drone mapping operations and GIS post-processing across British Columbia, Alberta and Yukon.
+          - Delivered 18 projects in 12 months for government, BC Wildfire Service, search-and-rescue, natural resource, academic and private-sector clients.
+          - Team Lead for the software team building the company's flight-automation app (Android Studio, REST APIs, Google Maps API, DJI UX SDK).
+          - Solved photogrammetry and LiDAR flight-mapping problems in C++, Java and Python; post-processed with Pix4D, ArcGIS and QGIS.
+          - Supported the CEO in client meetings; my work contributed to the company's acquisition by Volatus Aerospace.
+
+      - position: Research Assistant, Atmospheric Science
+        company: University of British Columbia
+        location: Vancouver, Canada
+        start_date: Dec 2016
+        end_date: May 2020
+        summary: Fieldwork and remote sensing across the Earth, Ocean and Atmospheric Sciences department's research labs.
+        highlights:
+          - Built, installed and calibrated weather and carbon flux stations to WMO standards to study blue carbon, bog carbon flux and the urban heat island effect in Vancouver.
+          - Took eddy-covariance measurements during the Buckley Bay wildfires and tested diffuse-radiation fertilisation against NASA aerosol data (contributed to McKendry et al., 2019).
+          - Sampled and analysed phytoplankton in Burrard Inlet to assess its role as a carbon sink.
+          - 'Studied glacial katabatic winds and [cloud-street formation](/projects/cloud_streets_clustering/) over Greenland using MODIS, GOES-16/17 and Landsat 7/8 imagery and ECMWF reanalysis, with PCA, Sobel edge detection, Self-Organizing Maps and CNNs.'
+          - Built ETL pipelines on AWS EC2 and S3, processing GOES satellite data from NOAA's public archive.
+
+      - position: Lead Teaching Assistant, Computer Science
+        company: University of British Columbia
+        location: Vancouver, Canada
+        start_date: Dec 2016
+        end_date: Jun 2020
+        summary: Head Teaching Assistant for Computer Science.
+        highlights:
+          - Managed 18 TAs and taught Python and C++ labs and lectures to 1,000 students; Best TA award three years running.
+          - 'Helped pilot a new data science course, writing modules on climate data computing and [contrast stretching](/projects/contrast_stretching/) of satellite imagery.'
+
+    'Board Memberships':
+      - position: 'Board Member, Revenue Generation'
+        company: Compassionate Eye Foundation
+        location: Remote
+        start_date: Aug 2024
+        end_date: Feb 2026
+        summary: A global charity funding grassroots projects aligned with the UN Sustainable Development Goals.
+        highlights:
+          - Board member responsible for revenue generation strategy.
+          - Identified and applied for grants, trusts and major funding; built relationships with donors, corporate sponsors and stakeholders.
+
+      - position: 'Co-Organiser & DEI Lead'
+        company: Polar Impact
+        location: Cambridge, UK
+        start_date: Oct 2021
+        end_date: Mar 2023
+        summary: 'An [NGO supporting BIPOC professionals](https://www.caths.cam.ac.uk/polar-impact) in the polar research community.'
+        highlights:
+          - Co-wrote grant proposals that won £50,000 from the National Science Foundation, UKRI and National Geographic.
+          - Organised climate justice speaker panels at COP26.
 
     Education:
       - studyType: MPhil in Polar Studies (Atmospheric Physics)
@@ -136,7 +172,7 @@ cv:
         end_date: 2022
         highlights:
           - 'Scott Polar Scholarship: full scholarship awarded to the top applicant.'
-          - 'Dissertation: investigating atmospheric drivers of surface melt on the George VI Ice Shelf, Antarctica, over 32 years; analysed up to 1,734,576,480 geospatial data points; built a CNN and EOF analysis to predict clustered weather patterns influencing melt.'
+          - 'Dissertation: [atmospheric drivers of surface melt on the George VI Ice Shelf, Antarctica](/thesis/), over 32 years, using machine learning on 1.7 billion geospatial data points.'
 
       - studyType: BSc in Atmospheric Science
         institution: University of British Columbia
@@ -144,109 +180,133 @@ cv:
         start_date: 2015
         end_date: 2020
         highlights:
-          - Graduated top of class.
-          - 'Dean''s Honour Roll (2017, 2018, 2019, 2020).'
-          - Ministry of Education and BC Excellence Scholarships (top 10% of students starting post-secondary education in British Columbia).
-          - 'Undergraduate thesis (score 93%): significance of glacial katabatic winds on cloud formation over Greenland, using MODIS, Landsat 7/8 and GOES-16/17 imagery, image clustering, PCA, Sobel edge detection, neural networks and Self-Organizing Maps. Supervised by Dr Ian McKendry.'
-
-    Volunteer:
-      - position: 'Board Member, Revenue Generation'
-        company: Compassionate Eye Foundation
-        location: Remote
-        start_date: Aug 2024
-        end_date: Feb 2026
-        highlights:
-          - Serve on the board of a global charity to develop and deliver a revenue generation strategy aligned with CEF's long-term vision.
-          - Help build strategy to deliver projects supporting the UN Sustainable Development Goals and improve standard and cost of living at a grassroots level.
-          - Research, identify and apply for grants, trusts and major funding opportunities.
-          - Build and maintain relationships with key donors, corporate sponsors and stakeholders.
-          - Explore new revenue streams; work closely with communications and project teams to support funding applications.
-
-      - position: 'Co-Organiser & DEI Lead'
-        company: Polar Impact
-        location: Cambridge, UK
-        start_date: Oct 2021
-        end_date: Mar 2023
-        highlights:
-          - Co-ran an NGO supporting BIPOC professionals in the polar research community.
-          - Helped write grant proposals that won a cumulative £50,000 from the National Science Foundation, UKRI and National Geographic.
-          - Organised COP26 climate-justice speaker panels.
-          - 'Featured in St Catharine''s College alumni publications for this work.'
+          - Graduated top of class; Dean's Honour Roll four consecutive years (2017 to 2020).
+          - Ministry of Education and BC Excellence Scholarships.
+          - 'Undergraduate thesis (93%): the effect of glacial katabatic winds on cloud formation over Greenland, using satellite imagery and machine learning. Supervised by Dr Ian McKendry.'
 
     Skills:
-      - name: Software Engineering
+      - name: Leadership
+        keywords:
+          - Cross-functional team leadership (modellers, economists, data scientists, engineers)
+          - Board and C-suite advisory
+          - Government and multilateral stakeholder engagement
+          - Product strategy and roadmap
+          - Business development and RFPs
+          - Media-trained spokesperson
+      - name: Risk & Disclosure
+        keywords:
+          - Physical, transition and supply-chain risk
+          - Scenario analysis
+          - Earnings-at-risk
+          - Double materiality
+          - Transition planning
+          - TCFD
+          - ISSB (IFRS S1/S2)
+          - OSFI Guideline B-15
+          - CSSB (CSDS 1 and 2)
+          - CSA climate disclosure
+          - TNFD
+          - CSRD
+          - CSDDD
+          - TPT
+          - SECR
+          - GRI
+          - CDP
+      - name: Climate Modelling
+        keywords:
+          - CMIP5/CMIP6 (incl. NASA NEX-GDDP-CMIP6)
+          - Ensemble design
+          - Penman-Monteith evapotranspiration
+          - Crop water balance and soil moisture modelling
+          - Bias correction
+          - Downscaling
+          - RCP and SSP scenarios
+          - Scope 1/2/3 accounting
+      - name: Applied AI
+        keywords:
+          - Agentic workflows
+          - LangGraph
+          - LangSmith
+          - Gemini (Vertex AI, NotebookLM)
+          - CNNs
+          - PCA
+          - EOFs
+      - name: Data Engineering & Cloud
+        keywords:
+          - Google BigQuery (clustering, partitioning, JavaScript UDFs, query optimisation)
+          - Google Cloud Platform
+          - AWS (EC2, S3)
+          - Pipeline architecture (hundreds of TB, billions of rows)
+          - Vendor data sourcing, onboarding and evaluation
+          - Data quality and validation at billion-row scale
+          - Cloud cost optimisation
+          - Data modelling
+          - ETL/ELT
+          - Fault-tolerant orchestration
+      - name: Software
         keywords:
           - Python
           - SQL
+          - JavaScript
           - C++
           - Git
           - CI/CD
           - Docker
           - REST APIs
-          - testing
-      - name: Cloud & Data
-        keywords:
-          - Google Cloud (BigQuery)
-          - AWS (EC2, S3)
+          - Testing
           - Power BI
           - Tableau
-      - name: Applied AI
+      - name: Geospatial & Fieldwork
         keywords:
-          - LangSmith
-          - LangGraph
-          - agentic workflows
-          - Gemini (Vertex AI, NotebookLM)
-          - CNNs
-          - PCA
-          - EOFs
-      - name: Climate Modelling
-        keywords:
-          - CMIP5/CMIP6
-          - bias correction
-          - downscaling
-          - RCP & SSP scenarios
-          - Scope 1/2/3 accounting
-      - name: Geospatial
-        keywords:
+          - LiDAR and drone mapping
+          - Photogrammetry
+          - WMO-standard instrumentation
+          - Eddy covariance
+          - Satellite imagery (MODIS, GOES, Landsat, Copernicus)
           - xarray
           - geopandas
-          - rasterio
           - GDAL
-          - netCDF/GRIB/HDF5
-          - satellite imagery (MODIS, GOES, Landsat, Copernicus)
           - Google Earth Engine
-      - name: Risk & Disclosure
-        keywords:
-          - Physical, transition and supply-chain risk
-          - earnings-at-risk
-          - double materiality
-          - TPT
-          - CSRD
-          - CSDDD
-          - TCFD/ISSB
-          - TNFD
-          - SECR
-          - GRI
-          - CDP
-      - name: Leadership
-        keywords:
-          - Team Lead managing modellers, scientists and engineers
-          - product strategy
-          - trusted advisor to C-suite, boards and government stakeholders
+          - ArcGIS
+          - QGIS
+
+    Publications:
+      - title: 'Recommendations and Guidance on Financial Institution Net-Zero Transition Plans (co-author)'
+        publisher: GFANZ
+        date: 2022-11
+        url: https://assets.bbhub.io/company/sites/63/2022/09/Recommendations-and-Guidance-on-Financial-Institution-Net-zero-Transition-Plans-November-2022.pdf
+      - title: 'Development of the Net-Zero Data Public Utility (co-author)'
+        publisher: NZDPU / Bloomberg
+        date: 2022-11
+        url: https://assets.bbhub.io/company/sites/71/2022/11/development-of-the-net-zero-data-public-utility-november-2022.pdf
+      - title: 'Request for Proposal: Net-Zero Data Public Utility (contributor)'
+        publisher: NZDPU / Bloomberg
+        date: 2022-11
+        url: https://assets.bbhub.io/company/sites/71/2022/11/request-for-proposal-2022.pdf
+
+    'Speaking & Media':
+      - bullet: 'Featured in the British Science Association''s [Smashing Stereotypes 2025](/press/2025-03-03-bsa-smashing-stereotypes/) campaign for work in STEM and climate.'
+      - bullet: 'Invited guest blog for the British Science Association: [Tackling Eco-Anxiety](/press/2025-05-29-bsa-navigating-eco-anxiety/) (2025).'
+      - bullet: 'Featured in St Catharine''s College, Cambridge''s [Net Zero by 2040 alumni series](/press/2025-01-03-cambridge-catz-net-zero-alumni/) (2025) and [Amplifying Diversity in Polar Exploration](/press/2021-11-22-cambridge-catz-polar-impact/) (2021).'
+      - bullet: 'Wrote speech content and figures delivered by Mark Carney and Michael Bloomberg, including the KPI briefs behind [Bloomberg''s COP27 keynote](https://a-teaminsight.com/blog/cop27-announcements-highlight-critical-role-of-esg-data/).'
+      - bullet: 'Built the launch briefing and booth demos for the [Net-Zero Data Public Utility at COP28](https://www.climatedatasc.org/president-emmanuel-macron-and-michael-r-bloomberg-deliver-proof-of-concept-for-groundbreaking-net-zero-data-public-utility-at-cop28/).'
+      - bullet: Organised climate justice speaker panels at COP26.
+      - bullet: Presented Antarctic surface melt research at academic conferences.
+      - bullet: Regularly present climate risk findings to C-suites, boards and press; media-trained.
 
     Awards:
       - title: Scott Polar Scholarship
         date: 2021
         awarder: University of Cambridge
         summary: Full scholarship awarded to the top applicant for the MPhil in Polar Studies at the Scott Polar Research Institute.
-      - title: 'Dean''s Honour Roll (4 consecutive years)'
-        date: 2020
-        awarder: University of British Columbia
-        summary: Awarded for scoring above 85% — 2017, 2018, 2019, 2020.
       - title: 'Best Teaching Assistant Award (3 consecutive years)'
         date: 2020
         awarder: University of British Columbia
         summary: Awarded 2018, 2019, 2020.
+      - title: 'Dean''s Honour Roll (4 consecutive years)'
+        date: 2020
+        awarder: University of British Columbia
+        summary: Awarded for scoring above 85% — 2017, 2018, 2019, 2020.
       - title: Ministry of Education Scholarship
         date: 2016
         awarder: Government of Canada
@@ -261,6 +321,7 @@ cv:
       - title: Bronze Medal — Canadian National Science Fair
         date: 2015
         awarder: Youth Science Canada
+        summary: Hybrid photovoltaic-thermoelectric solar cell with 19% higher efficiency than conventional cells; top project in the Innovation category from over 900 projects nationwide.
       - title: Gold Medal — Vancouver Provincial Science Fair
         date: 2015
         awarder: Greater Vancouver Regional Science Fair
@@ -275,54 +336,40 @@ cv:
         awarder: Centre for Education in Mathematics and Computing
 
     Projects:
+      - name: Planetary-scale crop water balance engine
+        url: /projects/water_balance_engine/
+        summary: Built solo over ~4 months, from scientific methodology (FAO-56, SWAT, Cosby soil hydraulics) to production. Daily soil water balance model for ~920,000 farmland locations under 7 CMIP6 models and 4 emissions scenarios to 2070, combining CMIP6 climate, EarthStat crops, SoilGrids soils and SRTM elevation with Penman-Monteith evapotranspiration. Re-architected on BigQuery to cut storage from 680 TB to 46 TB, cloud storage costs by 94%, and a full global run from days to ~14 hours.
       - name: MPhil Dissertation — University of Cambridge
         url: /thesis/
         summary: Investigating atmospheric drivers of surface melt on the George VI Ice Shelf (GVIIS) in Antarctica over 32 years. Analysed up to 1.73 billion geospatial data points; built a Convolutional Neural Network and conducted EOF analysis to predict clustered weather patterns influencing melt.
-        highlights:
-          - 'Tech stack: Python, xarray, rasterio, GDAL, geopandas, fiona, shapely, pyproj, scipy, sklearn, eofs, cartopy, matplotlib.'
-          - Supervised by Professor Ian Willis (Scott Polar Research Institute) and Dr Amélie Kirchgaessner (British Antarctic Survey).
-      - name: Undergraduate Thesis — University of British Columbia
-        summary: Studied the significance of glacial katabatic winds on cloud formation over Greenland. Used MODIS, Landsat 7/8 and GOES-16/17 imagery, image clustering, Principal Component Analysis (PCA), Sobel edge detection, a custom neural network, and Self-Organizing Maps to detect mesoscale cellular convection. Final score 93%. Supervised by Dr Ian McKendry.
+      - name: Cloud Streets Clustering — University of British Columbia
+        url: /projects/cloud_streets_clustering/
+        summary: Studied the significance of glacial katabatic winds on cloud formation over Greenland (undergraduate thesis, 93%). Used MODIS, Landsat 7/8 and GOES-16/17 imagery, image clustering, PCA, Sobel edge detection, a custom neural network and Self-Organizing Maps to detect mesoscale cellular convection. Supervised by Dr Ian McKendry.
       - name: Plant Productivity During the Buckley Bay Wildfires
         summary: 'Modelled plant productivity during the Buckley Bay wildfires using NASA Aerosol Optical Depth data to test diffused-radiation fertilisation (contributed to McKendry et al., 2019). Used to study the carbon cycle during wildfire events across British Columbia.'
       - name: AWS-Hosted GOES Cloud Computing Pipeline
-        summary: Built ETL pipelines on AWS EC2 servers and virtual platforms to ingest GOES data via Jupyter notebooks pulling from NOAA's S3 bucket. Produced true and pseudo-colour imagery, climate animations, and maps of rain rate, radiances and reflection for deep convective storms.
+        summary: Built ETL pipelines on AWS EC2 servers to ingest GOES data via Jupyter notebooks pulling from NOAA's S3 bucket. Produced true and pseudo-colour imagery, climate animations, and maps of rain rate, radiances and reflection for deep convective storms.
       - name: Carbon Flux Weather Stations, Vancouver
         summary: Constructed and set up weather stations to detect carbon flux from bogs in Vancouver using eddy covariance methods. Trained on operating, calibrating and maintaining meteorological field instruments to WMO standards.
       - name: Hybrid Photovoltaic-Thermoelectric Solar Cell
         summary: Invented a hybrid photovoltaic and thermoelectric solar cell that produced electricity at 19% higher efficiency than conventional cells. Excess heat from the photovoltaic cell was absorbed by the heating side of a Peltier tile, while the cooling side was passively cooled by a thermosiphon to reduce hot spots. Selected as the top project in the Innovation category from over 900 projects nationwide at the Canadian National Science and Engineering Fair.
 
-    Publications:
-      - title: 'Smashing Stereotypes 2025 — British Science Association profile'
-        publisher: British Science Association
-        date: 2025-03
-        url: /press/2025-03-03-bsa-smashing-stereotypes/
-        summary: Profile feature on my work in STEM and climate as part of the BSA's annual Smashing Stereotypes campaign.
-      - title: 'Tackling Eco-Anxiety — invited guest blog'
-        publisher: British Science Association (Mental Health Awareness Month)
-        date: 2025-05
-        url: /press/2025-05-29-bsa-navigating-eco-anxiety/
-        summary: Invited authored guest blog for the BSA on eco-anxiety and sustaining climate work.
-      - title: Net Zero by 2040 Alumni Series
-        publisher: 'St Catharine''s College, University of Cambridge'
-        date: 2025-01
-        url: /press/2025-01-03-cambridge-catz-net-zero-alumni/
-        summary: Featured in the third instalment of the College's alumni series on net zero strategy and climate careers.
-      - title: Amplifying Diversity in Polar Exploration
-        publisher: 'St Catharine''s College, University of Cambridge'
-        date: 2021-11
-        url: /press/2021-11-22-cambridge-catz-polar-impact/
-        summary: Profile on co-organising Polar Impact and on doing polar science from a less typical background.
-      - title: 'Recommendations and Guidance on Financial Institution Net-Zero Transition Plans (co-author)'
-        publisher: GFANZ
-        date: 2022-11
-        url: https://assets.bbhub.io/company/sites/63/2022/09/Recommendations-and-Guidance-on-Financial-Institution-Net-zero-Transition-Plans-November-2022.pdf
-      - title: 'Development of the Net-Zero Data Public Utility (co-author)'
-        publisher: NZDPU / Bloomberg
-        date: 2022-11
-        url: https://assets.bbhub.io/company/sites/71/2022/11/request-for-proposal-2022.pdf
+    'Finance & Climate Certificates':
+      - name: Bloomberg Market Concepts
+        issuer: Bloomberg
+        date: 2023-11
+        url: https://portal.bloombergforeducation.com/certificates/JfxU6V85cRepMvTHqwHrWg59
 
-    Certificates:
+      - name: Corporate Finance Foundations
+        issuer: LinkedIn
+        date: 2022-12
+        url: https://www.linkedin.com/learning/certificates/69fc1b04d303fc90285fb676e3580c4cb9fd445d6615b84a40279c2859207a41
+
+      - name: Carbon Literacy Certificate
+        issuer: The Carbon Literacy Project
+        date: 2021-12
+
+    'Technical Certificates':
       - name: Data Engineer in Python
         issuer: DataCamp
         date: 2024-12
@@ -368,11 +415,6 @@ cv:
         date: 2024-12
         url: https://www.datacamp.com/statement-of-accomplishment/course/a3b8059dbed4d8c1634e53171ec5fd91845294f3?raw=1
 
-      - name: Bloomberg Market Concepts
-        issuer: Bloomberg
-        date: 2023-11
-        url: https://portal.bloombergforeducation.com/certificates/JfxU6V85cRepMvTHqwHrWg59
-
       - name: Python Data Science Toolbox (Part 2)
         issuer: DataCamp
         date: 2023-08
@@ -383,11 +425,6 @@ cv:
         date: 2023-06
         url: https://www.datacamp.com/statement-of-accomplishment/course/9391f44c433b6f73a210b992193af3867e14e952?raw=1
 
-      - name: Corporate Finance Foundations
-        issuer: LinkedIn
-        date: 2022-12
-        url: https://www.linkedin.com/learning/certificates/69fc1b04d303fc90285fb676e3580c4cb9fd445d6615b84a40279c2859207a41
-
       - name: Intermediate Python
         issuer: DataCamp
         date: 2022-12
@@ -397,7 +434,3 @@ cv:
         issuer: DataCamp
         date: 2022-12
         url: https://www.datacamp.com/statement-of-accomplishment/course/3856945532c0155e8feeed0a1592d601a82da4cf
-
-      - name: Carbon Literacy Certificate
-        issuer: The Carbon Literacy Project
-        date: 2021-12

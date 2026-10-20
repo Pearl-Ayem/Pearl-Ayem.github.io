@@ -38,6 +38,10 @@ layout: default
   </header>
 
   <article>
+    {% assign cv_intro = content | strip %}
+    {% if cv_intro != '' %}
+      <div class="cv-intro">{{ content }}</div>
+    {% endif %}
     <div class="cv">
       {% comment %} Determine which CV format to render {% endcomment %}
       {% assign render_rendercv = false %}
@@ -151,7 +155,10 @@ layout: default
           <div class="card mt-3 p-3">
             <h3 class="card-title font-weight-medium">{{ section_title }}</h3>
             <div>
-              {% if section_title == 'Education' %}
+              {% if section_title == 'Board Memberships' %}
+                {% assign entries = section_entries %}
+                {% include cv/experience.liquid %}
+              {% elsif section_title == 'Education' %}
                 {% assign entries = section_entries %}
                 {% include cv/education.liquid %}
               {% elsif section_title == 'Awards' or section_title == 'Honors and Awards' %}
@@ -169,7 +176,7 @@ layout: default
               {% elsif section_title == 'Interests' or section_title == 'Academic Interests' %}
                 {% assign entries = section_entries %}
                 {% include cv/interests.liquid %}
-              {% elsif section_title == 'Certificates' %}
+              {% elsif section_title contains 'Certificates' %}
                 {% assign entries = section_entries %}
                 {% include cv/certificates.liquid %}
               {% elsif section_title == 'Projects' or section_title == 'Open Source Projects' %}

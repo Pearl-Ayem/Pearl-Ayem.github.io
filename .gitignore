@@ -13,3 +13,18 @@ assets/rendercv/rendercv_output/*.typ
 Gemfile.lock
 node_modules/
 vendor
+
+# Claude session memory
+MEMORY.md
+memory.md
+AGENTS.md
+ANALYTICS.md
+CLAUDE.md
+CUSTOMIZE.md
+CONTRIBUTING.md
+
+# Private work documents (never publish)
+work_docs/
+
+# Private CV sources (contain confidential details)
+*.tex
