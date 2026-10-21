@@ -31,7 +31,7 @@ social: true # includes social icons at the bottom of the page
 
 <section class="sc-section sc-reveal">
   <div class="sc-stats">
-    <div class="sc-stat"><div class="num" data-count="2.1" data-suffix=" bn">2.1 trillion bn</div><div class="lbl">rows in the largest data pipeline I've built</div></div>
+    <div class="sc-stat"><div class="num" data-count="2.1" data-decimals="1" data-suffix=" trillion">2.1 trillion</div><div class="lbl">rows in the largest data pipeline I've built</div></div>
     <div class="sc-stat"><div class="num" data-count="94" data-suffix="%">94%</div><div class="lbl">cut in its cloud storage costs after I re-architected it</div></div>
     <div class="sc-stat"><div class="num" data-count="200" data-prefix="$" data-suffix=" bn+">$200 bn+</div><div class="lbl">combined revenue of the companies whose C-suites I have advised</div></div>
     <div class="sc-stat"><div class="num" data-count="10000" data-format="comma" data-suffix="+">10,000+</div><div class="lbl">companies' climate data brought onto a platform I helped build</div></div>

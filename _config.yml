@@ -194,6 +194,12 @@ exclude:
   - readme_preview/
   - vendor
   - work_docs/
+  - AGENTS.md
+  - CLAUDE.md
+  - ANALYTICS.md
+  - QUICKSTART.md
+  - SEO.md
+  - TROUBLESHOOTING.md
   - "*.tex"
 keep_files:
   - CNAME

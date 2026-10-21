@@ -10,7 +10,7 @@ cv_pdf: /assets/pdf/Pearl_Ayem_CV.pdf
 <section class="sc-section sc-reveal" style="margin-top:0.5rem">
   <div class="sc-stats">
     <div class="sc-stat"><div class="num" data-count="10" data-suffix=" yrs">10 yrs</div><div class="lbl">across teaching, research, climate science, engineering, finance and policy</div></div>
-    <div class="sc-stat"><div class="num" data-count="2.1" data-suffix=" bn">2.1 trillion</div><div class="lbl">rows in largest pipeline I've built</div></div>
+    <div class="sc-stat"><div class="num" data-count="2.1" data-decimals="1" data-suffix=" trillion">2.1 trillion</div><div class="lbl">rows in the largest data pipeline I've built</div></div>
     <div class="sc-stat"><div class="num" data-count="40">40</div><div class="lbl">analysts led for GFANZ's COP27 data launch</div></div>
     <div class="sc-stat"><div class="num" data-count="820" data-prefix="£" data-suffix="K">£820K</div><div class="lbl">largest client contract I've closed</div></div>
   </div>
