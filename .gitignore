@@ -28,3 +28,6 @@ work_docs/
 
 # Private CV sources (contain confidential details)
 *.tex
+
+# Windows download metadata
+*:Zone.Identifier
